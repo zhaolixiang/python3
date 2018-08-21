@@ -16,4 +16,5 @@
 * [函数定义与调用](han-shu-ding-yi-yu-diao-yong.md)
 * [类的定义与操作](lei-de-ding-yi-yu-cao-zuo.md)
 * [模块](mo-kuai.md)
+* [设计模式](she-ji-mo-shi.md)
 
