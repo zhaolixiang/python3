@@ -180,8 +180,6 @@ terminate()：不管程任务是否完成，立即结束。
 join():主进程堵塞（就是不执行join下面的语句），直到子进程结束，注意，该方法必须在close或terminate之后使用。
 ```
 
-
-
 实例：
 
 ```
@@ -196,30 +194,63 @@ def test1(name):
     #random.random()会生成一个0——1的浮点数
     time.sleep(random.random()*3)
     t_end=time.time()
-    print("执行时间：%0.2f秒"%(name,t_end-t_start))
+    print("%s执行时间：%0.2f秒"%(name,t_end-t_start))
 
 pool=Pool(5)#设置线程池中最大线程数量为5
 for xx in range(0,7):
-    #下面一句是线程池调用方
+    #非阻塞运行
     pool.apply_async(test1,("mark"+str(id),))
-print("--start--")
+print("--start1--")
 pool.close()#关闭线程池，关闭后不再接受进的请求
 pool.join()#等待进程池所有进程都执行完毕后，开始执行下面语句
-print("--end--")
+print("--end1--")
+print("*"*30)
+pool=Pool(5)#设置线程池中最大线程数量为5
+for xx in range(0,7):
+    #阻塞运行
+    pool.apply(test1,("mark"+str(id),))
+print("--start2--")
+pool.close()#关闭线程池，关闭后不再接受进的请求
+pool.join()#等待进程池所有进程都执行完毕后，开始执行下面语句
+print("--end2--")
 ```
 
 结果：
 
 ```
---start--
-mark<built-in function id>运行中，pid=24298，父进程：24297
-mark<built-in function id>运行中，pid=24299，父进程：24297
-mark<built-in function id>运行中，pid=24300，父进程：24297
-mark<built-in function id>运行中，pid=24301，父进程：24297
-mark<built-in function id>运行中，pid=24302，父进程：24297
-mark<built-in function id>运行中，pid=24302，父进程：24297
-mark<built-in function id>运行中，pid=24298，父进程：24297
---end--
+--start1--
+mark<built-in function id>运行中，pid=28631，父进程：28626
+mark<built-in function id>运行中，pid=28632，父进程：28626
+mark<built-in function id>运行中，pid=28633，父进程：28626
+mark<built-in function id>运行中，pid=28634，父进程：28626
+mark<built-in function id>运行中，pid=28636，父进程：28626
+mark<built-in function id>执行时间：0.27秒
+mark<built-in function id>运行中，pid=28633，父进程：28626
+mark<built-in function id>执行时间：0.32秒
+mark<built-in function id>运行中，pid=28634，父进程：28626
+mark<built-in function id>执行时间：0.18秒
+mark<built-in function id>执行时间：0.55秒
+mark<built-in function id>执行时间：1.78秒
+mark<built-in function id>执行时间：1.92秒
+mark<built-in function id>执行时间：2.71秒
+--end1--
+******************************
+mark<built-in function id>运行中，pid=28647，父进程：28626
+mark<built-in function id>执行时间：0.70秒
+mark<built-in function id>运行中，pid=28648，父进程：28626
+mark<built-in function id>执行时间：1.66秒
+mark<built-in function id>运行中，pid=28649，父进程：28626
+mark<built-in function id>执行时间：2.87秒
+mark<built-in function id>运行中，pid=28650，父进程：28626
+mark<built-in function id>执行时间：2.68秒
+mark<built-in function id>运行中，pid=28651，父进程：28626
+mark<built-in function id>执行时间：1.42秒
+mark<built-in function id>运行中，pid=28647，父进程：28626
+mark<built-in function id>执行时间：1.20秒
+mark<built-in function id>运行中，pid=28648，父进程：28626
+mark<built-in function id>执行时间：2.01秒
+--start2--
+--end2--
 ```
 
 
