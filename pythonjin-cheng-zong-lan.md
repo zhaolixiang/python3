@@ -62,8 +62,8 @@ Process类常用发方：
 is_alive():判断进程是否还在运行。
 join([timeout]):是否等待进程实例执行完毕，或等待多少秒
 start():启动进程实例(创建子进程）
-run():如果没有给定target
-terminate():
+run():如果没有给定target参数，对该进程对象调用start()方法时，就会执行对象中的run()方法
+terminate():不管任务是否完成，立即终止
 ```
 
 实例：
