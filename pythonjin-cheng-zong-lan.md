@@ -253,5 +253,5 @@ mark<built-in function id>执行时间：2.01秒
 --end2--
 ```
 
-
+### 5、进程间通信：Queue
 
