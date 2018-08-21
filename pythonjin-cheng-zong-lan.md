@@ -173,12 +173,42 @@ if __name__=="__main__":
 实例：
 
 ```
+from multiprocessing import Pool
+import os
+import time
+import random#用来生成随机数
 
+def test1(name):
+    print("%s运行中，pid=%d，父进程：%d"%(name,os.getpid(),os.getppid()))
+    t_start=time.time()
+    #random.random()会生成一个0——1的浮点数
+    time.sleep(random.random()*3)
+    t_end=time.time()
+    print("执行时间：%0.2f秒"%(name,t_end-t_start))
+
+pool=Pool(5)#设置线程池中最大线程数量为5
+for xx in range(0,7):
+    #下面一句是线程池调用方
+    pool.apply_async(test1,("mark"+str(id),))
+print("--start--")
+pool.close()#关闭线程池，关闭后不再接受进的请求
+pool.join()#等待进程池所有进程都执行完毕后，开始执行下面语句
+print("--end--")
 ```
 
 结果：
 
 ```
-
+--start--
+mark<built-in function id>运行中，pid=24298，父进程：24297
+mark<built-in function id>运行中，pid=24299，父进程：24297
+mark<built-in function id>运行中，pid=24300，父进程：24297
+mark<built-in function id>运行中，pid=24301，父进程：24297
+mark<built-in function id>运行中，pid=24302，父进程：24297
+mark<built-in function id>运行中，pid=24302，父进程：24297
+mark<built-in function id>运行中，pid=24298，父进程：24297
+--end--
 ```
+
+
 
