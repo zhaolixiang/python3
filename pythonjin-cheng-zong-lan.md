@@ -76,6 +76,38 @@ pid：当前进程实例的PID
 实例：
 
 ```
+from multiprocessing import Process
+import os
+import time
+
+def test1(interval):
+    print("test1子进程运行中，pid=%d，父进程：%d"%(os.getpid(),os.getppid()))
+    t_start=time.time()
+    time.sleep(interval)
+    t_end=time.time()
+    print("test1执行时间：%0.2f秒"%(t_end-t_start))
+
+
+def test2(interval):
+    print("test2子进程运行中，pid=%d，父进程：%d"%(os.getpid(),os.getppid()))
+    t_start=time.time()
+    time.sleep(interval)
+    t_end=time.time()
+    print("test2执行时间：%0.2f秒"%(t_end-t_start))
+
+if __name__=="__main__":
+    print("父进程%d"%os.getpid())
+    #创建进程实例，第一个参数传要在子线程执行的函数，第二个参数传函数需要的参数
+    p1=Process(target=test1,args=(1,))
+    p2=Process(target=test2,name="mark1",args=(2,))
+    #启动进程
+    p1.start()
+    p2.start()
+
+    print("p2是否在运行：",p2.is_alive())
+
+    p2.join()#等待子进程运行结束再继续执行下面语句
+    print("p2是否在运行：", p2.is_alive())
 
 ```
 
