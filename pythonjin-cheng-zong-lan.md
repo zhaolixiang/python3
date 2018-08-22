@@ -255,3 +255,5 @@ mark<built-in function id>执行时间：2.01秒
 
 ### 5、进程间通信：Queue
 
+可以使用multiprocessing模块的Queue实现多进程之间的数据传递。Queue本身是一个消息队列。
+
