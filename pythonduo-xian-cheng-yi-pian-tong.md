@@ -5,12 +5,24 @@
 实例：
 
 ```
+#单线程实例
+import time
 
+def mark(index):
+    print("Mark的帅，远近闻名,第%d次传播"%index)
+    #暂停一秒，不然看不到效果哦
+    time.sleep(1)
+
+if __name__=="__main__":
+    for i in range(6):
+        mark(i)
 ```
 
-结果：
+结果：按照顺序依次打印
 
-```
+![](/assets/1、单线程.gif)
 
-```
+
+
+
 
