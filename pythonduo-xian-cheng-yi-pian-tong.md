@@ -29,8 +29,26 @@ if __name__=="__main__":
 实例：
 
 ```
+#多线程实例
+import time
+import threading
 
+def mark(index):
+    print("Mark的帅，远近闻名,第%d次传播"%index)
+    #暂停一秒，不然看不到效果哦
+    time.sleep(1)
+
+if __name__=="__main__":
+    for i in range(6):
+        #定义子线程
+        t=threading.Thread(target=mark,args=(i,))
+        #启动子线程
+        t.start()
 ```
 
 效果：
+
+![](/assets/2、多线程.gif)
+
+看到效果了，原来的单线程，顺序执行，至少需要6s，而使用多线程，差不多1秒多一点就完成，可见运行效率的差距，这也是我们为什么要使用多线程的原因。
 
