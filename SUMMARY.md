@@ -28,5 +28,6 @@
 * [用python度过一个完美的七夕情人节](yong-python-du-guo-yi-ge-wan-mei-de-qi-xi-qing-ren-jie.md)
 * [私有化与属性Property](si-you-hua-yu-shu-xing-property.md)
 * [Python垃圾回收详解](pythonla-ji-hui-shou-xiang-jie.md)
-* [Python进程总览](pythonjin-cheng-zong-lan.md)
+* [Python多线程一篇通](pythonduo-xian-cheng-yi-pian-tong.md)
+* [Python进程一篇通](pythonjin-cheng-zong-lan.md)
 
