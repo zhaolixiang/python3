@@ -57,10 +57,25 @@ if __name__=="__main__":
 要验证这一点很简单，直接看代码：
 
 ```
+#主线程会等待所有子线程执行完成才结束
+import time
+import threading
 
+def mark():
+    #暂停3秒
+    time.sleep(3)
+    print("Mark的帅，远近闻")
+
+if __name__=="__main__":
+    print("程序开始执行了")
+    # 定义子线程
+    t = threading.Thread(target=mark)
+    # 启动子线程
+    t.start()
+    print("单线程程序到这里主线程就会结束了，多线程呢，看看吧")
 ```
 
 效果：
 
-
+![](/assets/3、主线程会等待所有子线程执行完成才结束.gif)
 
