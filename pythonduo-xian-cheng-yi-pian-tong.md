@@ -22,7 +22,9 @@ if __name__=="__main__":
 
 ![](/assets/1、单线程.gif)
 
-上面是单线程显示效果，现在我们来用多线程处理一下。
+上面是单线程显示效果，现在我们来用多线程处理一下。在这之前，我们应该要知道，thread模块是python比较底层的模块，
+
+为了方便我们控制thread，python又使用threading模块对thread进行了封装，下面就用到了threading模块。
 
 实例：
 
