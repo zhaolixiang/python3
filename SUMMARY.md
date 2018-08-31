@@ -33,4 +33,5 @@
 * [test](test.md)
 * [Python实用技法100篇](pythonshi-yong-ji-fa-100-pian.md)
   * [数据结构与算法](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa.md)
+    * [将序列分解为单独的变量](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/jiang-xu-lie-fen-jie-wei-dan-du-de-bian-liang.md)
 
