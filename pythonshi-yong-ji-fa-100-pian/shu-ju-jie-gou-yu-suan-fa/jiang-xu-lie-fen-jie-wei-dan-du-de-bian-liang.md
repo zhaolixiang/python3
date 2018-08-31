@@ -11,13 +11,50 @@
 实例展示：
 
 ```
+#将序列分解为单独的变量
+m=(1,2)
+x,y=m
+print("x=",x)
+print("y=",y)
+
+print("*"*30)
+
+data=["mark",18,"超级帅",(1992,5,4)]
+name,age,feature,birthday=data
+print("name=",name)
+print("age=",age)
+print("feature=",feature)
+print("birthday=",birthday)
+print("*"*30)
+
+
+name,age,feature,(year,mon,day)=data
+print("name=",name)
+print("age=",age)
+print("feature=",feature)
+print("year=",year)
+print("mon=",mon)
+print("day=",day)
 
 ```
 
 结果
 
 ```
-
+x= 1
+y= 2
+******************************
+name= mark
+age= 18
+feature= 超级帅
+birthday= (1992, 5, 4)
+******************************
+name= mark
+age= 18
+feature= 超级帅
+year= 1992
+mon= 5
+day= 4
 ```
 
 # 3、思考🤔
@@ -27,12 +64,39 @@
 实例展示：
 
 ```
+#将序列分解为单独的变量
+mark="mark"
+m,a,r,k=mark
+print(m)
+print(a)
+print(r)
+print(k)
+print("*"*30)
 
+#有时候我们想丢弃某个值，单由于变量数量必须和要分解的对象的可分解数量相同，此时我们可以使用_来表示要丢弃的值。
+
+mark="mark"
+m,a,r,_=mark
+print(m)
+print(a)
+print(r)
+#其实_还是一个变量，指示看起来舒服点
+print(_)
 ```
 
 结果：
 
 ```
-
+m
+a
+r
+k
+******************************
+m
+a
+r
+k
 ```
+
+
 
