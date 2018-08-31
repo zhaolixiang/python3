@@ -31,5 +31,6 @@
 * [Python进程一篇通](pythonjin-cheng-zong-lan.md)
 * [Python多线程一篇通](pythonduo-xian-cheng-yi-pian-tong.md)
 * [test](test.md)
-* Python实用技法100篇
+* [Python实用技法100篇](pythonshi-yong-ji-fa-100-pian.md)
+  * [数据结构与算法](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa.md)
 
