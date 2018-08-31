@@ -35,7 +35,6 @@ print("feature=",feature)
 print("year=",year)
 print("mon=",mon)
 print("day=",day)
-
 ```
 
 结果
@@ -97,6 +96,10 @@ a
 r
 k
 ```
+
+# 4、需求升级🙀
+
+> 假如可序列号对象可分解为N个元素，难道我们就要创建N个元素吗？如果N值非常大怎么办？
 
 
 
