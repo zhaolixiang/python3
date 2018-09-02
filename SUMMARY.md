@@ -37,6 +37,7 @@
   * [进程间通信](pythonjin-cheng-zong-lan/jin-cheng-jian-tong-xin.md)
   * [共享数据与同步](pythonjin-cheng-zong-lan/gong-xiang-shu-ju-yu-tong-bu.md)
   * [托管对象](pythonjin-cheng-zong-lan/tuo-guan-dui-xiang.md)
+  * [分布集群的消息传递](pythonjin-cheng-zong-lan/fen-bu-ji-qun-de-xiao-xi-chuan-di.md)
 * [Python多线程一篇通](pythonduo-xian-cheng-yi-pian-tong.md)
 * [test](test.md)
 * [Python实用技法100篇](pythonshi-yong-ji-fa-100-pian.md)
