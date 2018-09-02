@@ -53,5 +53,94 @@ proxy._getvalue():返回调用者中引用对象的副本，如果这次调用�
 那么引用对象将被序列化，发送给调用者，然后再进行反序列化。如果无法序列号对象将引发异常。
 ```
 
+代码：
+
+```
+#继承BaseManager类，实现自定义对象的共享，利用代理公开属性与方法
+import multiprocessing
+from multiprocessing.managers import  BaseManager
+from multiprocessing.managers import  BaseProxy
+
+#普通需要共享的类，代理无法通过(.)这种形式直接访问属性
+class MyClass():
+    def __init__(self,value):
+        self.name=value
+
+    def __repr__(self):
+        return "MyClass(%s)"%self.name
+
+    def getName(self):
+        return self.name
+    def setName(self,value):
+        self.name=value
+
+    def __add__(self,valuye):
+        self.name+=valuye
+        return self
+
+#通过自定义继承BaseProxy来实现代理，从而正确的公开__add__方法，并使用特性(property)公开name属性。
+#BaseProxy来来自multiprocessing.managers模块
+class MyClassProxy(BaseProxy):
+    #referent上公开的所有方法列表
+    _exxposed_=['__add__','getName','setName']
+    #实现代理的公共结接口
+    def __add__(self, value):
+        self._callmethod('__add__',(value,))
+        return self
+    @property
+    def name(self):
+        return self._callmethod('getName',())
+    @name.setter
+    def name(self,value):
+        self._callmethod('setName',(value,))
+
+
+    def __repr__(self):
+        return "MyClass(%s)"%self.name
+
+    def getName(self):
+        return self.name
+    def setName(self,value):
+        self.name=value
+
+    def __add__(self,valuye):
+        self.name+=valuye
+        return self
+
+class MyManager(BaseManager):
+    pass
+
+#不使用代理
+#MyManager.register("MyClass",MyClass)
+#使用代理
+MyManager.register("MyClass",MyClass,proxytype=MyClassProxy)
+
+if __name__=="__main__":
+    m=MyManager()
+    m.start()
+
+    #创建托管对象,此时知识创建了一个实例代理，无法直接访问属性，必须使用函数来访问
+    #代理无法访问特殊方法和下划线(_)开头的所有方法。
+    a=m.MyClass("mark")
+    print(a)
+    print(a.getName())
+
+    #不使用代理，下面两条语句会异常
+    a.__add__("帅哥")
+    print(a.name)
+
+    #print(a.name)
+    #a.__add__("帅哥")
+
+```
+
+结果：
+
+```
+MyClass(mark)
+mark
+mark帅哥
+```
+
 
 
