@@ -30,8 +30,6 @@ method_to_typeid:从方法名称到类型IDS的映射，这里的IDS用于指定
 如果某个方法在这个映射中找不到，将复制和返回它的返回值，如果method_to_typeid为None，将使用proxytype_method_to_typeid_的值。
 
 create_method:一个布尔标志，用于指定是否在mgclass中创建名为typeid的方法，默认值为True。
-
-
 ```
 
 从BaseManager类派生的管理器的实例m必须手动启动才能运行。
@@ -45,8 +43,6 @@ create_method:一个布尔标志，用于指定是否在mgclass中创建名为ty
 | m.serve\_forever\(\) | 在当前进程中运行管理器服务器。 |
 | m.shutdown\(\) | 关闭由start\(\)启动的管理器服务器。 |
 | m.start\(\) | 启动一个单的子进程，并在该子进程中启动管理器服务器。 |
-
-
 
 ##### 
 
