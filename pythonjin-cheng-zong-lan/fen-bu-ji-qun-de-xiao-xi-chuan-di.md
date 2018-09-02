@@ -35,5 +35,51 @@ Listener实例listener支持一下方法和属性。
 | listener.close\(\) | 关闭侦听器正在使用的管道或套接字 |
 | listener.last\_accepted | 接受的最后一个客户端的地址。 |
 
+### 实例：服务器端与客户端发送消息
+
+* ##### 服务器端代码：
+
+```
+#服务器端，负责监听客户端并实现简单的远程操作
+from multiprocessing.connection import Listener
+serv=Listener(('',11111),authkey='123456'.encode())
+while True:
+    conn=serv.accept()
+    while True:
+        try:
+            x,y=conn.recv()
+        except EOFError:
+            print("出错了")
+            break
+        result=x+y
+        conn.send(result)
+    conn.close()
+
+```
+
+* ##### 客户端代码：
+
+```
+#客户端，向服务器端发送消息
+from multiprocessing.connection import Client
+conn=Client(('localhost',11111),authkey='123456'.encode())
+conn.send((5,6))
+r=conn.recv()
+print(r)
+
+
+conn.send(("mark","帅哥"))
+r=conn.recv()
+print(r)
+conn.close()
+```
+
+* ##### 客户端打印结果：
+
+```
+11
+mark帅哥
+```
+
 
 
