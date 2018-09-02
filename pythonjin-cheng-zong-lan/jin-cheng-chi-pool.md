@@ -8,7 +8,7 @@
 
 ```
 pool=Pool(numprocess,initializer,initargs)
-numproxess:需要创建的进程个数，如果忽略将使用cpu_count()的值。即cpu支持的最大进程数量。
+numproxess:需要创建的进程个数，如果忽略将使用cpu_count()的值。即系统上的CPU数量。
 initializer:每个进程启动时都要调用的对象。
 initargs:为
 initalizer传递的参数。
