@@ -39,6 +39,8 @@
   * [托管对象](pythonjin-cheng-zong-lan/tuo-guan-dui-xiang.md)
   * [分布集群的消息传递](pythonjin-cheng-zong-lan/fen-bu-ji-qun-de-xiao-xi-chuan-di.md)
   * [关于进程的实用工具函数](pythonjin-cheng-zong-lan/guan-yu-jin-cheng-de-shi-yong-gong-ju-han-shu.md)
+  * [GIL](pythonjin-cheng-zong-lan/gil.md)
+  * [多进程处理的一般建议](pythonjin-cheng-zong-lan/duo-jin-cheng-chu-li-de-yi-ban-jian-yi.md)
 * [Python多线程一篇通](pythonduo-xian-cheng-yi-pian-tong.md)
 * [test](test.md)
 * [Python实用技法100篇](pythonshi-yong-ji-fa-100-pian.md)
