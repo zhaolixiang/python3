@@ -15,7 +15,9 @@ t=Timer(interval,func,args,kwargs)
 ##### 常用方法：
 
 ```
+t.start():启动定时器。
 
+t.cancal()：如果函数还未执行，取消定时器。
 ```
 
 ### Lock对象
