@@ -63,13 +63,40 @@ if __name__=="__main__":
     print("end")
 ```
 
-##### 输出结果：
+##### 结果：
+
+![](/assets/4、利用Thread对象，简单创建一个线程，并启动一个函数.gif)
+
+### 实例2：通过继承Thread，实现线程类
+
+代码：
 
 ```
-循环等待时间时间3,等待前时间：Sat Sep  8 11:01:33 2018
-end
-等待后的时间：Sat Sep  8 11:01:36 2018
+#通过继承Thread，实现线程类
+from threading import Thread
+import time
+
+class MyThread(Thread):
+    def __init__(self,interval):
+        Thread.__init__(self)
+        self.daemon=False
+        self.interval=interval
+    def run(self):
+        print("循环等待时间时间%d,等待前时间：%s" % (self.interval, time.ctime()))
+        time.sleep(self.interval)
+        print("等待后的时间：%s" % time.ctime())
+
+if __name__=="__main__":
+    t=MyThread(3)
+    t.start()
+    #为了方便查看打印效果，加了一秒延迟
+    time.sleep(1)
+    print("end")
 ```
+
+结果：
+
+![](/assets/5、通过继承Thread，实现线程类.gif)
 
 
 
