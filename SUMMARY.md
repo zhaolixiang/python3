@@ -46,6 +46,7 @@
     * [多线程使用的必要性](pythonduo-xian-cheng-yi-pian-tong/duo-xian-cheng-shi-yong-de-bi-yao-xing.md)
     * [thread对象](pythonduo-xian-cheng-yi-pian-tong/threaddui-xiang.md)
     * [Timer对象、Lock对象、Rlock对象](pythonduo-xian-cheng-yi-pian-tong/timerdui-xiang-3001-lock-dui-xiang-3001-rlock-dui-xiang.md)
+    * [信号量与有边界的信号量](pythonduo-xian-cheng-yi-pian-tong/xin-hao-liang-yu-you-bian-jie-de-xin-hao-liang.md)
   * [网络编程与套接字](wang-luo-bian-cheng-yu-tao-jie-zi.md)
 * [Python实用技法100篇](pythonshi-yong-ji-fa-100-pian.md)
   * [数据结构与算法](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa.md)
