@@ -78,6 +78,7 @@ import time
 
 class MyThread(Thread):
     def __init__(self,interval):
+        #下面语句用来调用基类方法，必须调用
         Thread.__init__(self)
         self.daemon=False
         self.interval=interval
@@ -97,6 +98,4 @@ if __name__=="__main__":
 结果：
 
 ![](/assets/5、通过继承Thread，实现线程类.gif)
-
-
 
