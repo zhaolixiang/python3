@@ -39,8 +39,7 @@ lock=Lock()
 lock.acquire(blocking):获取锁，如果有必要，需要阻塞到释放锁为止。
 如果blocking为false，当无法获取锁时将立即返回False，如果成功获取锁则返回True。
 
-lock.release():
-
+lock.release():释放一个锁，当锁处于未锁定状态时，或者从与原本调用acquire()方法的线程的不同线程调用此方法，将会报错。
 ```
 
 ### Rlock对象
