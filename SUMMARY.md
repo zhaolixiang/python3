@@ -50,6 +50,7 @@
     * [事件](pythonduo-xian-cheng-yi-pian-tong/shi-jian.md)
     * [条件变量](pythonduo-xian-cheng-yi-pian-tong/tiao-jian-bian-liang.md)
     * [使用锁的注意事项](pythonduo-xian-cheng-yi-pian-tong/shi-yong-suo-de-zhu-yi-shi-xiang.md)
+    * [线程终止与挂起](pythonduo-xian-cheng-yi-pian-tong/xian-cheng-zhong-zhi-yu-gua-qi.md)
   * [网络编程与套接字](wang-luo-bian-cheng-yu-tao-jie-zi.md)
 * [Python实用技法100篇](pythonshi-yong-ji-fa-100-pian.md)
   * [数据结构与算法](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa.md)
