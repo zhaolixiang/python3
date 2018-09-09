@@ -37,9 +37,10 @@ def producer():
     while True:
         c.acquire()
         #生产东西
+        ...
         c.notify()
         c.release()
-        
+
 def consumer():
     while True:
         c.acquire()
@@ -47,8 +48,9 @@ def consumer():
             c.wait()#等待出现
         c.release()
         #使用生产的东西
-        
+        ...
+
 ```
 
-
+>
 
