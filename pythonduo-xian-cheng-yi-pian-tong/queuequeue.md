@@ -17,7 +17,13 @@ q=PriorityQueue(maxsize)：创建一个优先级队列，其中项按照优先�
 ### 常用方法
 
 ```
+q.size()
 
+q.empty()
+
+q.full()
+
+q.put(item,block,timeout)
 ```
 
 
