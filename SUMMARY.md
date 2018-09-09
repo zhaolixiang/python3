@@ -54,6 +54,7 @@
     * [线程终止与挂起](pythonduo-xian-cheng-yi-pian-tong/xian-cheng-zhong-zhi-yu-gua-qi.md)
     * [实用工具函数](pythonduo-xian-cheng-yi-pian-tong/shi-yong-gong-ju-han-shu.md)
     * [queue](pythonduo-xian-cheng-yi-pian-tong/queuequeue.md)
+    * [多线程按顺序执行](pythonduo-xian-cheng-yi-pian-tong/duo-xian-cheng-an-shun-xu-zhi-xing.md)
   * [网络编程与套接字](wang-luo-bian-cheng-yu-tao-jie-zi.md)
 * [Python实用技法100篇](pythonshi-yong-ji-fa-100-pian.md)
   * [数据结构与算法](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa.md)
