@@ -26,7 +26,29 @@ n指定要唤醒的线程数量，默认为1.被唤醒的线程在它们重新�
 c.notify_all()：唤醒所有等待此条件的线程。
 ```
 
-### 实例：使用条件变量
+### 实例模版：使用条件变量
+
+```
+#条件变量实例
+from threading import Condition
+
+c=Condition()
+def producer():
+    while True:
+        c.acquire()
+        #生产东西
+        c.notify()
+        c.release()
+        
+def consumer():
+    while True:
+        c.acquire()
+        while 没有可用的东西:
+            c.wait()#等待出现
+        c.release()
+        #使用生产的东西
+        
+```
 
 
 
