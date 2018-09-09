@@ -41,5 +41,48 @@ q.task_done():在队列种数据的消费者用来指示对于项的处理已经
 q.join()：阻塞直到队列中的所有项均被删除和处理为止。一旦为队列中的每一项都调用了一次q.task_done()方法，此方法将会直接返回。
 ```
 
+实例：
+
+> 使用 队列一般可以简化多线程的程序。例如，可以使用共享队列将线程连接在一起，而不必依赖锁的保护。
+>
+> 在这种模型下，工作者线程一般充当数据的消费者。
+
+```
+from threading import Thread
+from queue import Queue
+class WorkerThread(Thread):
+    def __init__(self,*args,**kwargs):
+        Thread.__init__(self,*args,**kwargs)
+        self.input_queue=Queue()
+
+    def send(self,item):
+        self.input_queue.put(item)
+    def close(self):
+        self.input_queue.put(None)
+        self.input_queue.join()
+    def run(self):
+        while True:
+            item=self.input_queue.get()
+            if item is None:
+                break
+            #实际开发中，此处应该使用有用的工作代替
+            print(item)
+            self.input_queue.task_done()
+        #完成，指示收到和返回哨兵
+        self.input_queue.task_done()
+        return
+
+if __name__=="__main__":
+    w=WorkerThread()
+    w.start()
+    w.send("Mark")
+    w.send("好")
+    w.send("TM")
+    w.send("帅")
+    w.close()
+
+
+```
+
 
 
