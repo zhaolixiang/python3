@@ -2,13 +2,22 @@
 >
 > queue模块定义了3种不同的队列类。
 
+### 3种不同的队列类
+
 ```
-Queue(maxsize):创建一个FIFO(first-in first-out,先进先出)队列。maxsize是队列中金额以放入的项的最大数量。
+q=Queue(maxsize):创建一个FIFO(first-in first-out,先进先出)队列。maxsize是队列中金额以放入的项的最大数量。
 如果省略maxsize参数或将它置为0，队列大小将无穷大。
 
-LifoQueue(maxsize)：创建一个LIFO（last-in first-out，后进先出）队列(栈)。
+q=LifoQueue(maxsize)：创建一个LIFO（last-in first-out，后进先出）队列(栈)。
 
-PriorityQueue(maxsize)
+q=PriorityQueue(maxsize)：创建一个优先级队列，其中项按照优先级从低到高依次排好。
+使用这种队列时，项应该是(priority,data)形式的元组，其中priority时一个标识优先级的数字。
+```
+
+### 常用方法
+
+```
+
 ```
 
 
