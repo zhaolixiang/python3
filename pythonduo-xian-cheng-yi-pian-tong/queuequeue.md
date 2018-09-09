@@ -17,9 +17,9 @@ q=PriorityQueue(maxsize)：创建一个优先级队列，其中项按照优先�
 ### 常用方法
 
 ```
-q.size()
+q.size()：返回队列的正确大小。因为其他线程可能正在更新此队列，所以此方法的返回数字不可靠。
 
-q.empty()
+q.empty()：如果队列为空，返回True，否则返回False
 
 q.full()
 
