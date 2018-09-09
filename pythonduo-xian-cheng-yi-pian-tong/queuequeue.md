@@ -80,8 +80,15 @@ if __name__=="__main__":
     w.send("TM")
     w.send("帅")
     w.close()
+```
 
+运行 结果：
 
+```
+Mark
+好
+TM
+帅
 ```
 
 
