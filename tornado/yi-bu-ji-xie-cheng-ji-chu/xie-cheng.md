@@ -5,6 +5,18 @@
 实例：用协程技术开发网页访问功能
 
 ```
+#用协程技术开发网页访问功能
+from tornado import  gen #引入协程库gen
+from tornado.httpclient import AsyncHTTPClient
+import time
 
+#使用gen.coroutine修饰器
+@gen.coroutine
+def coroutine_visit():
+    http_client=AsyncHTTPClient()
+    response=yield http_client.fetch("http://www.baidu.com")
+    print(response.body)
 ```
+
+
 
