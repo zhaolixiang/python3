@@ -81,5 +81,7 @@ for x in demoIternator():
     time.sleep(1)
 ```
 
+结果
 
+![](/assets/5、使用yield.gif)
 
