@@ -66,7 +66,19 @@ print(t.__next__())
 实例：
 
 ```
+import time
+def demoIternator():
+    print("---1---")
+    yield 1
+    print("---2---")
+    yield 2
+    print("---3---")
+    yield 3
+    print("---4---")
 
+for x in demoIternator():
+    print(x)
+    time.sleep(1)
 ```
 
 
