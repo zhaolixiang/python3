@@ -1,2 +1,8 @@
 Tornado是一个可扩展的非阻塞Web服务器以及相关工具的总称。Tornado每秒可以处理数以千计的连接，所以对于实时Web服务来说，Tornado是一个理想的Web框架。
 
+Tornado作为FriendFeed网站的基础框架，于2009年9月10日发布，目前已经获得了很多社区的支持，并且在一系列不同的场景种得到应用。除了FriendFeed和Facebook外，还有很多公司在转向Tornado。
+
+相对其他Python网络框架，Tornado有如下特点：
+
+
+
