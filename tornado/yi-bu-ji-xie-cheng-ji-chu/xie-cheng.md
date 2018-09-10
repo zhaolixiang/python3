@@ -18,5 +18,5 @@ def coroutine_visit():
     print(response.body)
 ```
 
-
+本例中任然使用了异步客户端AsyncHTTPClient进行页面访问，装饰器@gen.coroutine声明这是一个协程函数，由于yield关键字的作用，使得代码中不用再编写回调函数用于处理访问结果，而可以直接在yield语句的后面编写结果处理语句。
 
