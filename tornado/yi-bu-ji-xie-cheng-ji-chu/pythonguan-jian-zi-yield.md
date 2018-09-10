@@ -55,3 +55,7 @@ print(t.__next__())
 
 调用者可以一直调用`__next__()`方法，直到返回StopIteration异常。
 
+### 2、使用yield
+
+
+
