@@ -26,5 +26,17 @@ HTTPClient是Tornato的同步访问HTTP客户端。上述代码中的synchronous
 
 ### Tornado异步I/O的简单代码实例：
 
+```
+from tornado.httpclient import AsyncHTTPClient
+def handle_response(response):
+    print(response.body)
 
+def asyncronous_visit():
+    http_client=AsyncHTTPClient()
+    http_client.fetch("http://www.baoidu.com",callback=handle_response)
+
+asyncronous_visit()
+```
+
+AsyncHTTPClient是Tornado的异步访问HTTP客户端。在上述代码中的asynchronous\_visit\(\)函数中使用了AsyncHTTPClient对第三方网站进行异步访问，`http_client.fetch()`函数会在调用后立刻返回而无需等待实际访问的完成，从而导致`as`
 
