@@ -10,5 +10,5 @@ Tornado作为FriendFeed网站的基础框架，于2009年9月10日发布，目�
 * 提供高效的内部HTTP服务器：虽然其他Python网络框架（Django、Flask）也提供了内部HTTP服务器，但它们的HTTP服务器由于性能原因只能用于测试环境。而Tornado的HTTP服务器与Tornado异步调用紧密结合，可以直接用于生产环境。
 * 完备的WebSocket支持：WebSocket是HTML5的一种新标准，实现了浏览器与服务器之间的双向实时通信。
 
-
+因为Tornado的上述特点，Tornado常被用作大型站点的接口服务框架，而不像Django那样着眼于建立完整的大型网站。
 
