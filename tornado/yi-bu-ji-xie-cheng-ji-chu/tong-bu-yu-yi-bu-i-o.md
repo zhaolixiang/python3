@@ -38,5 +38,5 @@ def asyncronous_visit():
 asyncronous_visit()
 ```
 
-AsyncHTTPClient是Tornado的异步访问HTTP客户端。在上述代码中的asynchronous\_visit\(\)函数中使用了AsyncHTTPClient对第三方网站进行异步访问，`http_client.fetch()`函数会在调用后立刻返回而无需等待实际访问的完成，从而导致`as`
+AsyncHTTPClient是Tornado的异步访问HTTP客户端。在上述代码中的asynchronous\_visit\(\)函数中使用了AsyncHTTPClient对第三方网站进行异步访问，`http_client.fetch()`函数会在调用后立刻返回而无需等待实际访问的完成，从而导致`asynchronous`_`visit()`也会立刻执行完成。当对网址的访问实际完成后，AsyncHTTPClient会调用callback参数指定的函数，可以在这个函数中处理访问结果。
 
