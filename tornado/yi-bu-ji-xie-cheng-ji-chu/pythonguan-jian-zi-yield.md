@@ -29,5 +29,30 @@ print(t)
 <list_iterator object at 0x10e805748>
 ```
 
+迭代器与普通Python对象相比，多了一个`__next__()`方法，每次调用该方法可以返回一个元素，调用者（例如for语句）可以通过不断调用`__next__()`方法来煮个访问集合元素。
+
+例如：
+
+```
+numbers=[1,2,3,4,5]
+#t就是迭代器
+t=iter(numbers)
+#打印t对象，以便查看其类型
+print(t.__next__())
+print(t.__next__())
+print(t.__next__())
+print(t.__next__())
+
+```
+
+返回结果：
+
+```
+1
+2
+3
+4
+```
+
 
 
