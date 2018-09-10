@@ -4,5 +4,11 @@ Tornado作为FriendFeed网站的基础框架，于2009年9月10日发布，目�
 
 相对其他Python网络框架，Tornado有如下特点：
 
+* 完备的Web框架：与Django、Flask一样，Tornado也提供了URL路由映射、Request上下文、基于模板的页面渲染技术等开发web应用的必备工具。
+* 是一个高效的网络库，性能与Twisted、Gevent等底层Python框架相媲美：提供了异步I/O支持、超时事件处理，这使得Tornado除了可以作为Web应用服务器框架外，还可以用来做爬虫应用、物联网关、游戏服务器等后台应用。
+* 提供高效HTTPClient：除了服务器端框架，Tornado还提供了基于异步框架的HTTP客户端。
+* 提供高效的内部HTTP服务器：虽然其他Python网络框架（Django、Flask）也提供了内部HTTP服务器，但它们的HTTP服务器由于性能原因只能用于测试环境。而Tornado的HTTP服务器与Tornado异步调用紧密结合，可以直接用于生产环境。
+* 完备的WebSe
+
 
 
