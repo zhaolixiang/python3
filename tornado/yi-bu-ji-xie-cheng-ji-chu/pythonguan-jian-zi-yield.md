@@ -16,6 +16,18 @@ for number in range(5):#range返回一个列表
 其中的range\(\)返回一个包含所指定元素的集合，而for语句将其封装成一个迭代器后访问，使用iter\(\)可以讲列表、集合转换成迭代器，例如：
 
 ```
+numbers=[1,2,3,4,5]
+#t就是迭代器
+t=iter(numbers)
+#打印t对象，以便查看其类型
+print(t)
+```
+
+返回结果：
 
 ```
+<list_iterator object at 0x10e805748>
+```
+
+
 
