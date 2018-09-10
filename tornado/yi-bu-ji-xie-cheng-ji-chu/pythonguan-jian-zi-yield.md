@@ -42,7 +42,6 @@ print(t.__next__())
 print(t.__next__())
 print(t.__next__())
 print(t.__next__())
-
 ```
 
 返回结果：
@@ -54,5 +53,5 @@ print(t.__next__())
 4
 ```
 
-
+调用者可以一直调用`__next__()`方法，直到返回StopIteration异常。
 
