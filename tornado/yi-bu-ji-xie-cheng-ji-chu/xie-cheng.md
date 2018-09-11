@@ -113,7 +113,7 @@ def func_normal():
 
 > spawn\_callback\(\)函数将不会等待被调用协程执行完成，所有上下两条打印语句将马上完成，而coroutine\_\_visit本身将会由IOLoop在合适的时机进行调用。
 >
-> ⚠️注意：IOLoop的spawn\_callback\(\)函数没有为开发者提
+> ⚠️注意：IOLoop的spawn_callback\(\)函数没有为开发者提供获取协程函数调用返回值的方法，所以只能用span_callback()调用没有返回值的协程函数。
 
 
 
