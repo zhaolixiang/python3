@@ -26,9 +26,32 @@ def coroutine_visit():
 协程函数可以通过以下三张方式调用：
 
 * 在本身是协程的函数内通过yield关键字调用。
-* 在IOLoop尚未启动时，通过IOLoop的run_sync()函数调用。
-* 在IOLoop已经启动时，通过IOLoop的spawn_callback()函数调用。
+* 在IOLoop尚未启动时，通过IOLoop的run\_sync\(\)函数调用。
+* 在IOLoop已经启动时，通过IOLoop的spawn\_callback\(\)函数调用。
 
 ##### 实例：通过协程函数调用协程函数
 
+代码：
+
+```
+#用协程技术开发网页访问功能
+from tornado import  gen #引入协程库gen
+from tornado.httpclient import AsyncHTTPClient
+import time
+
+#使用gen.coroutine修饰器
+@gen.coroutine
+def coroutine_visit():
+    http_client=AsyncHTTPClient()
+    response=yield http_client.fetch("http://www.baidu.com")
+    print(response.body)
+
+@gen.coroutine
+def outer_coroutine():
+    print("start call coroutine_visit")
+    yield coroutine_visit()
+    print("end call coroutine_cisit")
+```
+
+本例中outer_coroutine\(\)和coroutine\_visit\(\)都是协程函数，所以他们之间可以通过yield关键字调用。_
 
