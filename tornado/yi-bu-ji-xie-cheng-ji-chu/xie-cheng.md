@@ -148,5 +148,24 @@ def call_blocking():
 
 ##### 实例：使用列表方式传递多个异步调用
 
+```
+#使用列表方式传递多个异步调用
+from tornado import gen  #引入协程库gen
+from tornado.httpclient import AsyncHTTPClient
+
+@gen.coroutine   #使用gen.coroutine修饰器
+def coroutine_visit():
+    http_client=AsyncHTTPClient()
+    list_response=yield [
+        http_client.fetch("http://www.baidu.com"),
+        http_client.fetch("http://www.api.jiutouxiang.com")
+    ]
+    for response in list_response:
+        print(response.body)
+
+
+
+```
+
 
 
