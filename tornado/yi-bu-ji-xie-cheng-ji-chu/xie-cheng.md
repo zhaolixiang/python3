@@ -169,6 +169,22 @@ def coroutine_visit():
 实例：用字典方式传递多个异步调用：
 
 ```
+#使用列表方式传递多个异步调用
+from tornado import gen  #引入协程库gen
+from tornado.httpclient import AsyncHTTPClient
+
+@gen.coroutine   #使用gen.coroutine修饰器
+def coroutine_visit():
+    http_client=AsyncHTTPClient()
+    dict_response=yield {
+       "baidu": http_client.fetch("http://www.baidu.com"),
+        "9siliao":http_client.fetch("http://www.api.jiutouxiang.com")
+    }
+    print(dict_response["baidu"].body)
+
+
 
 ```
+
+
 
