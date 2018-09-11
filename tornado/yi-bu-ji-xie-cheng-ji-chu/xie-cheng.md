@@ -88,5 +88,9 @@ def func_normal():
 >
 > 【启动IOLoop】》【调用被lambda封装的协程函数】》【停止IOLoop】
 
+##### 实例：在IOLoop启动时，通过spawn\_callback\(\)函数调用
+
+
+
 
 
