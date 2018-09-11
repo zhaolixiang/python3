@@ -21,11 +21,14 @@ def coroutine_visit():
 本例中任然使用了异步客户端AsyncHTTPClient进行页面访问，装饰器@gen.coroutine声明这是一个协程函数，由于yield关键字的作用，使得代码中不用再编写回调函数用于处理访问结果，而可以直接在yield语句的后面编写结果处理语句。
 
 ### 2、调用协程函数
-由于Tornado协程基于Python的yield关键字实现，所以不能像普通函数那样直接调用。
+
+由于Tornado协程基于Python的yield关键字实现，所以不能像普通函数那样直接调用。  
 协程函数可以通过以下三张方式调用：
 
+* 在本身是协程的函数内通过yield关键字调用。
+* 在IOLoop尚未启动时，通过IOLoop的run_sync()函数调用。
+* 在IOLoop已经启动时，通过IOLoop的spawn_callback()函数调用。
 
-
-
+##### 实例：通过协程函数调用协程函数
 
 
