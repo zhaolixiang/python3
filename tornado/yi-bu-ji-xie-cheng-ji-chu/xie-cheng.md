@@ -55,3 +55,33 @@ def outer_coroutine():
 
 本例中outer_coroutine\(\)和coroutine\_visit\(\)都是协程函数，所以他们之间可以通过yield关键字调用。_
 
+##### 实例：IOLoo尚未启动时，通过IOLoop的run\_sync\(\)函数调用。
+
+> IOLoop是Tornado的主事件循环对象，Tornado程序通过它监听外部客户端的访问请求，并执行相应操作。
+
+代码：
+
+```
+#用协程技术开发网页访问功能
+from tornado import  gen #引入协程库gen
+from tornado.httpclient import AsyncHTTPClient
+from tornado.ioloop import IOLoop  #引入IOLoop对象
+
+#使用gen.coroutine修饰器
+@gen.coroutine
+def coroutine_visit():
+    http_client=AsyncHTTPClient()
+    response=yield http_client.fetch("http://www.baidu.com")
+    print(response.body)
+
+def func_normal():
+    print("start call coroutine_visit")
+    IOLoop.current().run_sync(lambda :coroutine_visit())
+    print("end call coroutine_visit")
+
+```
+
+> 当程序尚未进入IOLoop的running状态时，可以通过run\_sync\(\)函数调用协程函数。
+
+
+
