@@ -140,5 +140,11 @@ def call_blocking():
     print("end")
 ```
 
-代码中首先引用了concurrent.futures种的ThreadPoolExecutor类，实例化了一个由两个线程的线程池thread_pool。在需要调用阻塞函数的协程call_blocking种，使用thread_pool.submit调用阻塞函数，并通过yield返回。这样便不会阻塞协程所在的线程的继续执行，也保证了阻塞函数前后代码的执行顺序。
+代码中首先引用了concurrent.futures种的ThreadPoolExecutor类，实例化了一个由两个线程的线程池thread\_pool。在需要调用阻塞函数的协程call\_blocking种，使用thread\_pool.submit调用阻塞函数，并通过yield返回。这样便不会阻塞协程所在的线程的继续执行，也保证了阻塞函数前后代码的执行顺序。
+
+### 4、在协程中等待多个异步调用
+
+
+
+
 
