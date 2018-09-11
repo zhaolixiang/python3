@@ -78,10 +78,15 @@ def func_normal():
     print("start call coroutine_visit")
     IOLoop.current().run_sync(lambda :coroutine_visit())
     print("end call coroutine_visit")
-
 ```
 
 > 当程序尚未进入IOLoop的running状态时，可以通过run\_sync\(\)函数调用协程函数。
+>
+> ⚠️注意：run\_sync\(\)函数将阻塞当前函数的调用，直到被调用的协程执行完成。
+>
+> 事实上，Tornado要求协程函数在IOLoop的running状态种才能被调用，只不过run\_sync函数自动完成了启动、停止IOLoop的操作步骤，他的实现逻辑是：
+>
+> 【启动IOLoop】》【调用被lambda封装的协程函数】》【停止IOLoop】
 
 
 
