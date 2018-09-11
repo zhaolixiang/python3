@@ -166,7 +166,7 @@ def coroutine_visit():
 
 在代码中仍然使用@gen.coroutine装饰器定义协程，在需要yield的地方用列表传递若干个异步调用，只有在列表种的所有调用都执行完成后，yield才会返回并且继续执行。yield以列表方式返回调用结果。
 
-实例：用字典方式传递多个异步调用：
+##### 实例：用字典方式传递多个异步调用：
 
 ```
 #使用列表方式传递多个异步调用
@@ -181,9 +181,6 @@ def coroutine_visit():
         "9siliao":http_client.fetch("http://www.api.jiutouxiang.com")
     }
     print(dict_response["baidu"].body)
-
-
-
 ```
 
 
