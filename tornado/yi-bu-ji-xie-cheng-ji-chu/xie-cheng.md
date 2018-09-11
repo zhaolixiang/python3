@@ -90,7 +90,26 @@ def func_normal():
 
 ##### 实例：在IOLoop启动时，通过spawn\_callback\(\)函数调用
 
+代码：
 
+```
+#用协程技术开发网页访问功能
+from tornado import  gen #引入协程库gen
+from tornado.httpclient import AsyncHTTPClient
+from tornado.ioloop import IOLoop  #引入IOLoop对象
+
+#使用gen.coroutine修饰器
+@gen.coroutine
+def coroutine_visit():
+    http_client=AsyncHTTPClient()
+    response=yield http_client.fetch("http://www.baidu.com")
+    print(response.body)
+
+def func_normal():
+    print("start call coroutine_visit")
+    IOLoop.current().spawn_callback(coroutine_visit)
+    print("end call coroutine_visit")
+```
 
 
 
