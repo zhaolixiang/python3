@@ -122,8 +122,23 @@ def func_normal():
 代码实例：
 
 ```
+from concurrent.futures import ThreadPoolExecutor
+from tornado import gen
 
+#定义线程池
+thread_pool=ThreadPoolExecutor(2)
+
+def mySleep(count):
+    import time
+    for x in range(count):
+        time.sleep(1)
+
+@gen.coroutine
+def call_blocking():
+    print("start")
+    yield thread_pool.submit(mySleep,10)
+    print("end")
 ```
 
-
+代码中首先引用了concurrent.futures种的ThreadPoolExecutor类，实例化了一个由两个线程的线程池thread_pool。在需要调用阻塞函数的协程call_blocking种，使用thread_pool.submit调用阻塞函数，并通过yield返回。这样便不会阻塞协程所在的线程的继续执行，也保证了阻塞函数前后代码的执行顺序。
 
