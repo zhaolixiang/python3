@@ -162,10 +162,13 @@ def coroutine_visit():
     ]
     for response in list_response:
         print(response.body)
+```
 
+在代码中仍然使用@gen.coroutine装饰器定义协程，在需要yield的地方用列表传递若干个异步调用，只有在列表种的所有调用都执行完成后，yield才会返回并且继续执行。yield以列表方式返回调用结果。
 
+实例：用字典方式传递多个异步调用：
 
 ```
 
-
+```
 
