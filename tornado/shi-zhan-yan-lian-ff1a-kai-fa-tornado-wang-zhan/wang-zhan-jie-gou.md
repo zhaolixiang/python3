@@ -31,5 +31,11 @@ if __name__=="__main__":
 Hello World
 ```
 
+下面逐行解析上面的代码做了些什么：
+
+1. 首先通过import语句引入tornado包中的ioloop和web类。这两个类是Tornado程序的基础。
+2. 实现一个web.RequestHandler子类，重载其中的get\(\)函数，该函数负责相应定位到该RequestHandler的HTTP GET请求的处理。本实例通过self.write\(\)函数输出『Hello world』。
+3. 定义了make\_app\(\)函数，该函数返回一个web.Application对象。
+
 
 

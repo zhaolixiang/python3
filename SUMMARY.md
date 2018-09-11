@@ -65,7 +65,7 @@
     * [Python关键字yield](tornado/yi-bu-ji-xie-cheng-ji-chu/pythonguan-jian-zi-yield.md)
     * [协程](tornado/yi-bu-ji-xie-cheng-ji-chu/xie-cheng.md)
   * [实战演练：开发Tornado网站](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan.md)
-    * [网站结构](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/wang-zhan-jie-gou.md)
+    * [网站结构：HelloWorld](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/wang-zhan-jie-gou.md)
 * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
   * [行结构和缩进](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
   * [标识符和保留字](ci-fa-yue-ding-he-yu-fa/biao-shi-fu-he-bao-liu-zi.md)
