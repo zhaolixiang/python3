@@ -29,7 +29,10 @@ class MainHandler(tornado.web.RequestHandler):
 进行页面重定向。在RequestHandler处理过程中，可以随时调用redirect()函数进行页面重定向。
 ##### 8、RequestHandler.clear()
 清空所有在本次请求中之前写入的Header和Body内容。
-
+##### 9、RequestHandler.set_cookie(name,value)
+按键值对设置Response中的Cookie的值
+##### 10、RequestHandler.clear_all_cookies(path="/",domain=None)
+清空本次请求中的所有Cookie
 
 
 
