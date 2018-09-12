@@ -71,6 +71,7 @@
     * [RequestHandler：输入捕捉](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/requesthandlerff1a-shu-ru-bu-zhuo.md)
     * [RequestHandler：输出相应函数](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/requesthandlerff1a-shu-chu-xiang-ying-han-shu.md)
     * [异步与协程化](yi-bu-yu-xie-cheng-hua.md)
+    * [安全Cookie机制](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/an-quan-cookie-ji-zhi.md)
 * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
   * [行结构和缩进](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
   * [标识符和保留字](ci-fa-yue-ding-he-yu-fa/biao-shi-fu-he-bao-liu-zi.md)
