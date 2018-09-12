@@ -43,7 +43,7 @@ if __name__=="__main__":
     main()
 ```
 
-在浏览器输入：http://localhost:8888/id/666
+在浏览器输入：[http://localhost:8888/id/666](http://localhost:8888/id/666)
 
 页面输出：
 
@@ -63,5 +63,5 @@ http://xxx.xxx.xxx/id/xxx
 http://xxx.xxx.xxx/id
 ```
 
-
+要想也匹配这个字符，可以修改正在表达式，将：`/id/([^/]+)`改为`/id/([^/]+)`即可。
 
