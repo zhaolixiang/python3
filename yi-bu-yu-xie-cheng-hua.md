@@ -14,6 +14,26 @@ Tornado协程结合了同步处理和异步处理的有点，使得代码即清�
 代码：
 
 ```
+import tornado.web
+import tornado.httpclient
+from tornado.web import Application
+import tornado.ioloop
+class MainHandler(tornado.web.RequestHandler):
 
+
+    @tornado.gen.coroutine
+    def get(self):
+        http=tornado.httpclient.AsyncHTTPClient()
+        response=yield http.fetch("http://www.baidu.com")
+        self.write(response.body)
+
+if __name__ == '__main__':
+    app=Application([
+        ("/",MainHandler)
+    ])
+    app.listen("8888")
+    tornado.ioloop.IOLoop.current().start()
 ```
+
+
 
