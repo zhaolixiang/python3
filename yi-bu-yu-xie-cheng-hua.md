@@ -39,6 +39,7 @@ if __name__ == '__main__':
 
 * 用tornado.gen.coroutine装饰MainHandler的get\(\)、post\(\)等处理函数。
 * 使用异步对象处理耗时操作，比如本例的AsyncHTTPClient。
-* 
+* 调用yield关键字获取异步对象的处理结果。
+
 
 
