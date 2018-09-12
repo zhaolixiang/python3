@@ -1,0 +1,2 @@
+在Tornado的RequestHandler类中有一个current_user属性用于保存当前请求的用户名。RequestHandler.get_current_user的默认值是None，
+
