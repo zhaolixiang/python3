@@ -45,5 +45,25 @@ if __name__=="__main__":
 test.db
 ```
 
+### 2、RequestHandler.prepare\(\)、RequestHandler.on\_finish\(\)
+
+prepare\(\)方法用于调用请求处理（get、post等）方法之前的初始化处理，通常用来做资源初始化操作。
+
+on\_finish\(\)方法用于请求处理结束后的一些清理工作，通常用来清理对象占用的内存或者关闭数据库连接等工作。
+
+### 3、HTTP Action处理函数
+
+每个HTTP Action在RequestHandler中都以单独的函数进行分开处理：
+
+* RequestHandler.get\(\*args,\*\*kwargs\)
+* RequestHandler.post\(\*args,\*\*kwargs\)
+* RequestHandler.head\(\*args,\*\*kwargs\)
+* RequestHandler.delete\(\*args,\*\*kwargs\)
+* RequestHandler.patch\(\*args,\*\*kwargs\)
+* RequestHandler.put\(\*args,\*\*kwargs\)
+* RequestHandler.options\(\*args,\*\*kwargs\)
+
+每个处理函数都是HTTP Action的小写名字命名。
+
 
 
