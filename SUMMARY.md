@@ -75,5 +75,4 @@
 * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
   * [行结构和缩进、标识符和保留字](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
   * [注释、变量、类型](zhu-shi-3001-bian-liang-3001-lei-xing.md)
-  * [数字类型、字符串类型](ci-fa-yue-ding-he-yu-fa/shu-zi-zi-mian-liang-3001-zi-fu-chuan-zi-mian-liang.md)
 
