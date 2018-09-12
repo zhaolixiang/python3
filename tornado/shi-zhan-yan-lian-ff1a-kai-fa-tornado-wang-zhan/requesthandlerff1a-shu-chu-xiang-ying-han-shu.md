@@ -16,6 +16,17 @@
 
 ##### 6、RequestHandler.render(template_name,**kwargs)
 用给定的参数渲染模块，可以在本函数中传入模板文件名称和模板参数。
+实例
+```
+import tornado.web
+class MainHandler(tornado.web.RequestHandler):
+    def get(self):
+        items=["Python","C++","Java"]
+        #第一个参数是模板名称，后面是模板参数
+        self.render("template.html",title="Tornado Template",items=items)
+```
+
+
 
 
 
