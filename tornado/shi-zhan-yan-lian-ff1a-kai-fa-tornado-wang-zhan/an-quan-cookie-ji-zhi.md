@@ -24,4 +24,4 @@ if __name__ == '__main__':
 ```
 
 本例中用get_cookie\(\)函数判断Cookie名【session】是否存在，如果不存在则为其赋予新的session_id.
-
+> 在实际应用中，Cookie经常像本例这样用于保存session信息。
