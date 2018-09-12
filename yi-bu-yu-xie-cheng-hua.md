@@ -35,5 +35,9 @@ if __name__ == '__main__':
     tornado.ioloop.IOLoop.current().start()
 ```
 
+协程化的关键技术点如下：
+
+* 用tornado.gen.coroutine装饰MainHandler的get\(\)、post\(\)等处理函数。
+
 
 
