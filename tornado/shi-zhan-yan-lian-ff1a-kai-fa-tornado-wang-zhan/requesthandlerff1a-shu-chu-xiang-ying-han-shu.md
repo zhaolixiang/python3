@@ -4,6 +4,15 @@
 设置HTTP Response中的返回码，如果有描述性的语句，则可以赋值给reason参数。
 ##### 2、RequestHandler.set_header(name,value)
 以键值对的方式设置HTTP Response中的HTTP头参数，使用set_header配置的Header值将覆盖之前配置的Header。
+##### 3、RequestHandler.add_header(name,value)
+以键值对的方式设置HTTP Response中的HTTP头参数。与set_header不同的是add_header配置的Header值将不会覆盖之前配置的Header。
+##### 4、RequestHandler.write(chunk)
+将给定的块作为HTTP Body发送客户端。在一般情况下，用本函数输出字符串给客户端。
+如果给定的块是一个字典，则会将这个块以JSON格式发送给客户端，同时将HTTP Header中的Content_Type设置为application/json.
+
+##### 5、RequestHandler.finish(chunk=None)
+本方法通知Tornado.Response的生成工作已完成，chunk参数是需要传递给客户端的HTTP body。调用finish()后，Tornado将向客户端发送HTTP Response。
+本方法适用于对RequestHandler的异步请求处理，在同步或协程访问处理的函数中，无须调用finish()函数。
 
 
 
