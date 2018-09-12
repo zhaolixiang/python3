@@ -21,7 +21,46 @@ Handlers=[
 实例：参数路径
 
 ```
+import tornado.ioloop
+import tornado.web
 
+class MainHandler(tornado.web.RequestHandler):
+    def get(self,id):
+        self.write("Hello World"+id)
+
+def make_app():
+    return tornado.web.Application([
+        ("/id/([^/]+)",MainHandler),
+
+    ])
+
+def main():
+    app=make_app()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
+
+if __name__=="__main__":
+    main()
+```
+
+在浏览器输入：http://localhost:8888/id/666
+
+页面输出：
+
+```
+Hello World666
+```
+
+其中的`/id/([^/]+)是正在表达式。可以匹配：`
+
+```
+http://xxx.xxx.xxx/id/xxx
+```
+
+但是无法匹配：
+
+```
+http://xxx.xxx.xxx/id
 ```
 
 
