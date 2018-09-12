@@ -69,6 +69,7 @@
     * [路由解析](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/lu-you-jie-xi.md)
     * [RequestHandler：接入点函数](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/requesthandlerff1a-jie-ru-dian-han-shu.md)
     * [RequestHandler：输入捕捉](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/requesthandlerff1a-shu-ru-bu-zhuo.md)
+    * [RequestHandler：输出相应函数](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/requesthandlerff1a-shu-chu-xiang-ying-han-shu.md)
 * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
   * [行结构和缩进](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
   * [标识符和保留字](ci-fa-yue-ding-he-yu-fa/biao-shi-fu-he-bao-liu-zi.md)
