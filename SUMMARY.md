@@ -75,5 +75,4 @@
     * [用户身份认证](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/yong-hu-shen-fen-ren-zheng.md)
 * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
   * [行结构和缩进](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
-  * [标识符和保留字](ci-fa-yue-ding-he-yu-fa/biao-shi-fu-he-bao-liu-zi.md)
 
