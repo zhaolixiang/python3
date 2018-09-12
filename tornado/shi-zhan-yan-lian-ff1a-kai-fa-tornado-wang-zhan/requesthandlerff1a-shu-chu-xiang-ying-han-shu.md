@@ -25,7 +25,8 @@ class MainHandler(tornado.web.RequestHandler):
         #第一个参数是模板名称，后面是模板参数
         self.render("template.html",title="Tornado Template",items=items)
 ```
-
+##### 7、RequestHandler.redirect(url,permanent=False,status=None)
+进行页面重定向。在RequestHandler处理过程中，可以随时调用redirect()函数进行页面重定向，
 
 
 
