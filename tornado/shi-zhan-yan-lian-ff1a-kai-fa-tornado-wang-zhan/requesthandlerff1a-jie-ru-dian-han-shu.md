@@ -9,8 +9,40 @@
 ##### 实例：
 
 ```
+from tornado.web import RequestHandler,Application
+import tornado.ioloop
+import tornado.web
+
+class ProfileHandler(RequestHandler):
+    def initialize(self,database):
+        self.database=database
+
+    def get(self):
+        return self.write(self.database)
+
+    def post(self):
+        pass
+
+def make_app():
+    return Application([
+    (r"/test",ProfileHandler,dict(database="test.db",))
+])
+
+def main():
+    app=make_app()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
+
+if __name__=="__main__":
+    main()
 
 ```
 
+在浏览器上输入：http://localhost:8888/test
 
+页面显示：
+
+```
+
+```
 
