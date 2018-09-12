@@ -4,7 +4,6 @@
 * [First Chapter](chapter1.md)
 * [python知识语法精讲](pythonzhi-shi-yu-fa-jing-jiang.md)
   * [mac安装python3](macan-zhuang-python3.md)
-  * [注释、变量、类型](zhu-shi-3001-bian-liang-3001-lei-xing.md)
   * [python控制台输入、输出](pythonkong-zhi-tai-shu-ru-3001-shu-chu.md)
   * [python运算符、比较、逻辑运算符](pythonyun-suan-fu-3001-bi-jiao-3001-luo-ji-yun-suan-fu.md)
   * [python判断与循环语句](pythonpan-duan-yu-xun-huan-yu-ju.md)
@@ -75,4 +74,6 @@
     * [用户身份认证](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/yong-hu-shen-fen-ren-zheng.md)
 * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
   * [行结构和缩进、标识符和保留字](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
+  * [注释、变量、类型](zhu-shi-3001-bian-liang-3001-lei-xing.md)
+  * [数字类型、字符串类型](ci-fa-yue-ding-he-yu-fa/shu-zi-zi-mian-liang-3001-zi-fu-chuan-zi-mian-liang.md)
 
