@@ -44,7 +44,7 @@ if __name__ == '__main__':
     tornado.ioloop.IOLoop.current().start()
 ```
 
-浏览器输入：http://localhost:8888/request
+浏览器输入：[http://localhost:8888/request](http://localhost:8888/request)
 
 页面显示：
 
@@ -61,13 +61,14 @@ ip地址为::1,host为localhost:8888
 | path | uri路径名，即不包含查询字符串 |
 | query | uri中的查询字符串 |
 | version | 客户端发送请求时使用的HTTP版本，例如：HTTP/1.1 |
-| headers |  |
-| body |  |
-| remote\_ip |  |
-| protocol |  |
-| host |  |
-| arguments |  |
-| cookies |  |
+| headers | 以字典方式的形式返回HTTP Headers |
+| body | 以字符串的形式返回HTTP消息体 |
+| remote\_ip | 客户端的IP地址 |
+| protocol | 请求协议，例如：HTTP、HTTPS |
+| host | 请求消息的主机名 |
+| arguments | 客户端提交的所有参数。 |
+| files | 以字典形式返回客户端上传的文件，每个文件名对应一个HTTPFile |
+| cookies | 客户端提交的Cookies字典 |
 
 
 
