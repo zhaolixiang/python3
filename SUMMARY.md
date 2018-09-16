@@ -82,6 +82,6 @@
     * [文档说明字符串](ci-fa-yue-ding-he-yu-fa/wen-dang-shuo-ming-zi-fu-chuan.md)
   * [类型与对象](lei-xing-yu-dui-xiang.md)
     * [对象标识与类型](lei-xing-yu-dui-xiang/dui-xiang-biao-shi-yu-lei-xing.md)
-    * 引用计数于垃圾回收
+    * [引用计数于垃圾回收](lei-xing-yu-dui-xiang/yin-yong-ji-shu-yu-la-ji-hui-shou.md)
   * [运算符与表达式](yun-suan-fu-yu-biao-da-shi.md)
 
