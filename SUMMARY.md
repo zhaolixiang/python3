@@ -68,7 +68,9 @@
     * [网站结构：HelloWorld](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/wang-zhan-jie-gou.md)
     * [路由解析](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/lu-you-jie-xi.md)
     * [RequestHandler：接入点函数](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/requesthandlerff1a-jie-ru-dian-han-shu.md)
-* [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
-  * [行结构和缩进](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
-  * [标识符和保留字](ci-fa-yue-ding-he-yu-fa/biao-shi-fu-he-bao-liu-zi.md)
+* [Python参考手册](pythoncan-kao-shou-ce.md)
+  * [类型与对象](pythoncan-kao-shou-ce/lei-xing-yu-dui-xiang.md)
+  * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
+    * [行结构和缩进](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
+    * [标识符和保留字](ci-fa-yue-ding-he-yu-fa/biao-shi-fu-he-bao-liu-zi.md)
 
