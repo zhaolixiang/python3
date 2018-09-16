@@ -72,14 +72,14 @@
     * [异步与协程化](yi-bu-yu-xie-cheng-hua.md)
     * [安全Cookie机制](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/an-quan-cookie-ji-zhi.md)
     * [用户身份认证](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/yong-hu-shen-fen-ren-zheng.md)
-* [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
-  * [行结构和缩进、标识符和保留字](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
-  * [注释、变量、类型](zhu-shi-3001-bian-liang-3001-lei-xing.md)
-  * 文档说明字符串
 * [redis](redis.md)
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
-  * 类型与对象
+  * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
+    * [行结构和缩进、标识符和保留字](ci-fa-yue-ding-he-yu-fa/xing-jie-gou-he-suo-jin.md)
+    * [注释、变量、类型](zhu-shi-3001-bian-liang-3001-lei-xing.md)
+    * 文档说明字符串
+  * [类型与对象](lei-xing-yu-dui-xiang.md)
   * 运算符与表达式
 
