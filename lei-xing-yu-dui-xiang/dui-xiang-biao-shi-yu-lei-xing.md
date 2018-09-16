@@ -9,6 +9,16 @@ is运算符用于比较两个对象的标识，依次判断两个对象是否是
 实例：
 
 ```
+mark=[]
+if type(mark) is list:
+    print("mark is list")
+```
+
+结果：
 
 ```
+mark is list
+```
+
+
 
