@@ -81,6 +81,5 @@
     * [注释、变量、类型](zhu-shi-3001-bian-liang-3001-lei-xing.md)
     * [文档说明字符串](ci-fa-yue-ding-he-yu-fa/wen-dang-shuo-ming-zi-fu-chuan.md)
   * [类型与对象](lei-xing-yu-dui-xiang.md)
-    * [术语](lei-xing-yu-dui-xiang/zhu-yu.md)
   * [运算符与表达式](yun-suan-fu-yu-biao-da-shi.md)
 
