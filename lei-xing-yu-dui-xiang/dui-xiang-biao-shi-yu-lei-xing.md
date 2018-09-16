@@ -20,7 +20,7 @@ if type(mark) is list:
 mark is list
 ```
 
-上面虽然可以检查类型，但坚检查最佳的方式是内置函数：isinstance\(objecy,type\):
+上面虽然可以检查类型，但坚检查最佳的方式是内置函数：isinstance\(objecy,type\)，因为isinstance\(\)函数能够辨别继承。
 
 实例：
 
@@ -36,5 +36,5 @@ if isinstance(mark,list):
 mark is list
 ```
 
-因为isinstance\(\)
+
 
