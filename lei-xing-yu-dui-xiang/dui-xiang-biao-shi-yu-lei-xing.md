@@ -36,5 +36,5 @@ if isinstance(mark,list):
 mark is list
 ```
 
-
+因为isinstance\(\)
 
