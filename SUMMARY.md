@@ -79,5 +79,7 @@
 * [redis](redis.md)
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
 * [Mysql](mysql.md)
-* python参考手册
+* [python参考手册](pythoncan-kao-shou-ce.md)
+  * 类型与对象
+  * 运算符与表达式
 
