@@ -33,7 +33,6 @@ if isinstance(mark,list):
 结果：
 
 ```
-/Users/zhaolixiang/Desktop/python/test1/venv/bin/python /Users/zhaolixiang/Desktop/python/test1/Python参考手册/类型于对象/2、isinstance.py
 mark is list
 ```
 
