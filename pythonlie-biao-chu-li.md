@@ -230,7 +230,6 @@ print("pop(0)后：",list)
 list=["my","name",18,"is",18,"mark","age",18]
 list.remove(18)
 print("remove后：",list)
-
 ```
 
 结果：
