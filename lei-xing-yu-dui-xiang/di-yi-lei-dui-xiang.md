@@ -13,7 +13,11 @@ items={
 
 ```
 items["func"]=abs    #添加abs()函数
-
+import math
+items["mod"]=math    #添加一个模块
+items["error"]=ValueError  #添加一个异常类型
+nums=[1,2,3,4]
+items["append"]=nums.append  #添加另一个对象的一个方法
 ```
 
 
