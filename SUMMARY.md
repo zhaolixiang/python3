@@ -76,6 +76,7 @@
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
   * [第一章：初识Redis](redis/di-yi-zhang-ff1a-chu-shi-redis.md)
     * [Redis简介](redis/di-yi-zhang-ff1a-chu-shi-redis/redisjian-jie.md)
+    * [Redis数据结构简介](redis/di-yi-zhang-ff1a-chu-shi-redis/redisshu-ju-jie-gou-jian-jie.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
