@@ -74,6 +74,8 @@
     * [用户身份认证](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/yong-hu-shen-fen-ren-zheng.md)
 * [redis](redis.md)
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
+  * [第一章：初识Redis](redis/di-yi-zhang-ff1a-chu-shi-redis.md)
+    * [Redis简介](redis/di-yi-zhang-ff1a-chu-shi-redis/redisjian-jie.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
