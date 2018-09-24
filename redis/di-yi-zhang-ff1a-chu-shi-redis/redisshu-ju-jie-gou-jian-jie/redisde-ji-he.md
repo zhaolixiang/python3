@@ -16,12 +16,46 @@ Redis的集合和列表都可以存储多个字符串，他们的不同在于，
 ##### 实例：
 
 ```
+import redis #导入redis包包
+
+#与本地redis进行链接，地址为：localhost，端口号为6379
+r=redis.StrictRedis(host='localhost',port=6379)
+
+r.delete("set-key")
+
+print(r.sadd("set-key","item1")) #向集合中添加新的元素，语句返回1表示这个元素被成功添加到集合中，返回0则表示这个元素已经存在集合中
+print(r.sadd("set-key","item2")) #向集合中添加新的元素，语句返回1表示这个元素被成功添加到集合中，返回0则表示这个元素已经存在集合中
+print(r.sadd("set-key","item3")) #向集合中添加新的元素，语句返回1表示这个元素被成功添加到集合中，返回0则表示这个元素已经存在集合中
+
+print(r.sadd("set-key","item3")) #向集合中添加新的元素，语句返回1表示这个元素被成功添加到集合中，返回0则表示这个元素已经存在集合中
+
+print(r.smembers("set-key"))  #返回集合包含的所有元素
+
+print(r.sismember("set-key","item1")) #判断一个元素是否存在于集合汇总
+print(r.sismember("set-key","item4")) #判断一个元素是否存在于集合汇总
+
+print(r.srem("set-key","item1"))  #如果指定元素在集合中存在，就移除，结果返回移除元素的数量
+print(r.srem("set-key","item4"))  #如果指定元素在集合中存在，就移除，结果返回移除元素的数量
+
+print(r.smembers("set-key"))  #返回集合包含的所有元素
+
 
 ```
 
 结果：
 
 ```
-
+1
+1
+1
+0
+{b'item2', b'item3', b'item1'}
+True
+False
+1
+0
+{b'item2', b'item3'}
 ```
+
+
 
