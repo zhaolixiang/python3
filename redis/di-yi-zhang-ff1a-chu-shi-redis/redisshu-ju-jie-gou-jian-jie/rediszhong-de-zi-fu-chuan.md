@@ -23,7 +23,7 @@ print(r.set("Hello","World"))#SET命令执行成功，会返回OK，在Python中
 
 print(r.get("Hello"))  #获取指定键【Hello】对应的值
 
-r.delete("Hello")
+r.delete("Hello")  #删除
 
 print(r.get("Hello"))
 ```
