@@ -79,6 +79,7 @@
     * [Redis数据结构简介](redis/di-yi-zhang-ff1a-chu-shi-redis/redisshu-ju-jie-gou-jian-jie.md)
       * [Redis中的字符串](redis/di-yi-zhang-ff1a-chu-shi-redis/redisshu-ju-jie-gou-jian-jie/rediszhong-de-zi-fu-chuan.md)
       * [Redis中的列表](redis/di-yi-zhang-ff1a-chu-shi-redis/redisshu-ju-jie-gou-jian-jie/rediszhong-de-lie-biao.md)
+      * [Redis的集合](redis/di-yi-zhang-ff1a-chu-shi-redis/redisshu-ju-jie-gou-jian-jie/redisde-ji-he.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
