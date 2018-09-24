@@ -31,11 +31,11 @@ print(r.zadd("zset-key",7,"member3")) #返回添加元素的数量,如果存在�
 
 print(r.zrange("zset-key",0,-1)) #h获取有序集合所包含的所有元素，多个元素或安装分值大小进行排序
 
-print(r.zrangebyscore("zset-key",0,7,withscores=memoryview)) #根据分值来获取集合中的一部分元素
+print(r.zrangebyscore("zset-key",0,7)) #根据分值来获取集合中的一部分元素
 
 print(r.zrem("zset-key","member1"))  #返回移除元素的数量
 
-print(r.zrange("zset-key",0,-1,withscores=memoryview)) #h获取有序集合所包含的所有元素，多个元素或安装分值大小进行排序
+print(r.zrange("zset-key",0,-1)) #h获取有序集合所包含的所有元素，多个元素或安装分值大小进行排序
 
 
 
@@ -45,7 +45,14 @@ print(r.zrange("zset-key",0,-1,withscores=memoryview)) #h获取有序集合所�
 结果：
 
 ```
-
+1
+1
+1
+0
+[b'member1', b'member3', b'member2']
+[b'member1', b'member3']
+1
+[b'member3', b'member2']
 ```
 
 
