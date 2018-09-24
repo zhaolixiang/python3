@@ -16,6 +16,29 @@
 ##### 实例：
 
 ```
+import redis #导入redis包包
+
+#与本地redis进行链接，地址为：localhost，端口号为6379
+r=redis.StrictRedis(host='localhost',port=6379)
+
+r.delete("zset-key")
+
+print(r.zadd("zset-key",7,"member1")) #返回添加元素的数量
+print(r.zadd("zset-key",9,"member2")) #返回添加元素的数量
+print(r.zadd("zset-key",8,"member3")) #返回添加元素的数量
+print(r.zadd("zset-key",7,"member3")) #返回添加元素的数量,如果存在就覆盖值
+
+
+print(r.zrange("zset-key",0,-1)) #h获取有序集合所包含的所有元素，多个元素或安装分值大小进行排序
+
+print(r.zrangebyscore("zset-key",0,7,withscores=memoryview)) #根据分值来获取集合中的一部分元素
+
+print(r.zrem("zset-key","member1"))  #返回移除元素的数量
+
+print(r.zrange("zset-key",0,-1,withscores=memoryview)) #h获取有序集合所包含的所有元素，多个元素或安装分值大小进行排序
+
+
+
 
 ```
 
