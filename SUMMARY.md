@@ -83,6 +83,7 @@
       * [Redis的散列](redis/di-yi-zhang-ff1a-chu-shi-redis/redisshu-ju-jie-gou-jian-jie/redisde-san-lie.md)
       * [Redis有序集合](redis/di-yi-zhang-ff1a-chu-shi-redis/redisshu-ju-jie-gou-jian-jie/redisyou-xu-ji-he.md)
     * [你好Redis](redis/di-yi-zhang-ff1a-chu-shi-redis/ni-hao-redis.md)
+      * [对文章进行投票](redis/di-yi-zhang-ff1a-chu-shi-redis/ni-hao-redis/dui-wen-zhang-jin-xing-tou-piao.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
