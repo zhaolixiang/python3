@@ -41,5 +41,7 @@ def post_article(conn,user,title,link):
 
 > 注意：因为有序集合根据成员的分值从小到大排列，所以使用zrevrange命令，以【分值从大到小】的排列顺序取出文章ID才是正确的做法。
 
+```
 
+```
 
