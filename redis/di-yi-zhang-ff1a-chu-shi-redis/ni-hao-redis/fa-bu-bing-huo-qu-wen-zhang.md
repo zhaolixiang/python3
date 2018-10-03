@@ -30,5 +30,12 @@ def post_article(conn,user,title,link):
     return article_id
 ```
 
+好了，我们已经陆续实现了文章的投票功能和文章发布功能，接下来要考虑的就是如何取出评分最高的文章已经如何取出最新发布的文章。
+
+为了实现这两个功能，
+
+* 首先需要使用zrevrange命令取出多个文章ID
+* 然后再对每个文章ID执行一次hgetall命令来取出文章的详细信息。
+
 
 
