@@ -4,5 +4,31 @@
 * 接着程序需要使用sadd将文章发布者的ID添加到记录文章已投票用户名单的集合里面，并使用expire命令为这个集合设置一个过期时间，让Redis在文章发布期满一周之后自动删除这个集合。
 * 之后，程序会使用hmset命令来存储文章的相关信息，并执行两个zadd命令，将文章的初始评分（initial score）和发布时间分别添加到两个相应的有序集合里面。
 
+```
+#发布文章
+def post_article(conn,user,title,link):
+    article_id=str(conn.incr('article:'))
+
+    voted='voted:'+article_id
+
+    conn.sadd(voted,user)
+    conn.expire(voted,ONE_WEEK_IN_SECONDS)
+
+    now=time.time()
+    article='article:'+article_id
+    conn.hmset(article,{
+        'title':title,#文章标题
+        'link':link,#文章链接
+        'poster':user,
+        'time':now,
+        'votes':1
+    })
+
+    conn.zadd('score:',article,now+VOTE_SCORE)
+    conn.zadd('time',article,now)
+
+    return article_id
+```
+
 
 
