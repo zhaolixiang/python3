@@ -42,6 +42,22 @@ def post_article(conn,user,title,link):
 > 注意：因为有序集合根据成员的分值从小到大排列，所以使用zrevrange命令，以【分值从大到小】的排列顺序取出文章ID才是正确的做法。
 
 ```
+ARTICLES_PER_PAGE=25 #每页展示数量
 
+def get_articls(conn,page,order='score:'):
+    start=(page-1)*ARTICLES_PER_PAGE  #设置文章的起始索引
+    end=start+ARTICLES_PER_PAGE-1     #设置文章的结束索引
+
+    ids=conn.zrevrange(order,start,end) #获取多个文章ID
+
+    articles=[]
+
+    for id in ids:
+        article_data=conn.hgetall(id)
+        article_data['id']=id
+        articles.append(article_data)
+    return articles
 ```
+
+虽然我们构建的网站现在已经可以展示最新发布的文章和评分最高的文章了，但它还不具备目前很多投票网站都支持的群组【group】功能：可以让用户看见与特定话题有关的文章，比如：【可爱的动物】、【历史】、【政治】等等。
 
