@@ -28,20 +28,16 @@
 ```
 import time
 
-
 ONE_WEEK_IN_SECONDS=7*86400  #一周秒数
 VOTE_SCORE=432  #点赞一次增加的分值
 
-
+#投票
 def article_vote(conn,user,article):
     cutoff=time.time()-ONE_WEEK_IN_SECONDS
     #提示：本案例使用冒号作为分隔符
-    if conn.zscore('time:',article)
-<
-cutoff:
+    if conn.zscore('time:',article)<cutoff:
         #判断文章发布时间是否已经超过七天
         return
-
 
     article_id=article.partition(':')[-1]
     if conn.sadd('voted:'+article_id,user):
