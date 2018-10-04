@@ -21,6 +21,17 @@ def add_remove_groups(conn,article_id,to_add=[],to_remove=[]):
 而通过对存储群组文章的集合和存储文章发布时间的有序集合执行zinterstore命令，程序则可以得到按照文章发布时间排序的群组文章。如果群组包含的文章非常多，那么执行zinterstore命令就会比较花时间，为了尽量减少Redis的工作量，程序会将这个命令的计算结果缓存60秒。
 
 ```
-
+#分页并获取群组文章
+def get_group_articles(conn,group,page,order='score:'):
+    key=order+group #为每个群组的每种排列顺序都创建一个键
+    #检查是否已有缓存的排序结果，如果没有的话现在就进行排序
+    if not conn.exists(key):
+        conn.zinterstore(key,
+                         ['group:'+group,order],
+                         aggregate='max')
+        conn.expire(key,60) #让redis在60秒后自动删除这个有序集合
+    return get_articls(conn,page,key)
 ```
+
+
 
