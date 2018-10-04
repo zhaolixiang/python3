@@ -33,5 +33,7 @@ def get_group_articles(conn,group,page,order='score:'):
     return get_articls(conn,page,key)
 ```
 
+> 友情提示，上面只是部分代码，无法直接运行，只需要先理解思路就行。
+
 
 
