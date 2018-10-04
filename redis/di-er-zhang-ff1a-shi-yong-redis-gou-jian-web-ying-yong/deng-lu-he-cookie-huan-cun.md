@@ -31,6 +31,21 @@ def check_token(conn,token):
 对令牌进行检查并不困难，因为大部分复杂的工作都是在更新令牌时完成的：用户每次浏览页面时，程序都会对用户存储在登录散列里面的信息进行更新，并将用户的令牌和当前时间戳添加到记录最近登录用户的有序集合里面；如果用户正在浏览的是一个商品页面，那么程序还会将这个商品添加到记录这个用户最近浏览过的商品的有序集合里面，并在被记录商品的数据超过25个时，对这个有序集合进行修建。
 
 ```
+def check_token(conn,token):
+    #尝试获取并返回令牌对应的用户
+    return conn.hget('login:',token)
 
+
+#更新令牌
+import time
+def update_token(conn,token,user,item=None):
+    timestamp=time.time() #h获取当前时间戳
+    conn.hset('login:',token,user) #维持令牌与已登陆用户之间的映射
+    conn.zadd('recent:',token,timestamp) #记录领哦哎最后一次出现的时间
+    if item:
+        conn.zadd('viewed:'+token,item,timestamp) #记录用户浏览郭的商品
+        conn.zremrangebyrank('viewed:'+token,0,-26) #移除旧的记录，值保留用户最近浏览过的25个商品
 ```
+
+
 
