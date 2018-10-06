@@ -19,6 +19,36 @@ def add_to_cart(conn,session,item,count):
 接着，我们需要对之前的会话清理函数进行更新，让它在清理会话的同时，将旧会话对应用户的购物车也一并删除：
 
 ```
+#清理旧会话
+import time
 
+QUIT=False
+LIMIT=10,000,000
+
+def clean_sessions(conn):
+    while not QUIT:
+        #目前已有令牌的数量
+        size=conn.zcard('recent:')
+        if size<=LIMIT:
+            #令牌数量未超过限制，休眠1秒后再重新检查
+            time.sleep(1)
+            continue
+        end_index=min(size-LIMIT,100)
+        tokens=conn.zrange('recent:',0,end_index-1)
+
+        session_keys=[]
+        #为那些将要删除的令牌构建键名
+        for token in tokens:
+            session_keys.append('viewed:'+token)
+            #新增下面有一行代码用于删除旧会话对应用户的购物车
+            session_keys.append('cart:'+token)
+        #移除最旧的那些令牌
+        conn.delete(*session_keys)
+        conn.hdel('login:',*tokens)
+        conn.zrem('recent:',*tokens)
 ```
+
+我们现在讲会话和购物车都存储到了Redis里面，这种做法除了可以减少请求的体积之外，还使得我们可以根据用户浏览过的商品、用户放入购物车的商品以及用户最终购买的商品进行统计计算，并构建起很多大型网络零售商都在提供的【在查看过这件商品的用户当中，有X%的用户最终购买了 这件商品】、【购买了这件商品的用户也购买了XXX商品】等功能，这些功能可以帮众用户查找其它相关的商品，并最终提升网站的销售业绩。
+
+通过将会话cookie和购物车cookie存储在Redis里面，我们得到了进行数据分析所需的两个重要的数据来源，接下来将展示如果使用缓存来减少数据库和Web前端的负载。
 
