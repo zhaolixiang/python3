@@ -91,7 +91,7 @@
     * [使用Redis实现购物车](redis/di-er-zhang-ff1a-shi-yong-redis-gou-jian-web-ying-yong/shi-yong-redis-shi-xian-gou-wu-che.md)
     * [网页缓存](redis/di-er-zhang-ff1a-shi-yong-redis-gou-jian-web-ying-yong/wang-ye-huan-cun.md)
     * [数据行缓存](redis/di-er-zhang-ff1a-shi-yong-redis-gou-jian-web-ying-yong/shu-ju-xing-huan-cun.md)
-    * 网页分析
+    * [网页分析](redis/di-er-zhang-ff1a-shi-yong-redis-gou-jian-web-ying-yong/wang-ye-fen-xi.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
