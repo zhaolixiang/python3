@@ -16,5 +16,9 @@ def add_to_cart(conn,session,item,count):
         conn.hset('cart:'+session,item,count)
 ```
 
+接着，我们需要对之前的会话清理函数进行更新，让它在清理会话的同时，将旧会话对应用户的购物车也一并删除：
 
+```
+
+```
 
