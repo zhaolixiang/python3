@@ -72,7 +72,7 @@
     * [异步与协程化](yi-bu-yu-xie-cheng-hua.md)
     * [安全Cookie机制](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/an-quan-cookie-ji-zhi.md)
     * [用户身份认证](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/yong-hu-shen-fen-ren-zheng.md)
-* [redis](redis.md)
+* [redis实战](redis.md)
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
   * [第一章：初识Redis](redis/di-yi-zhang-ff1a-chu-shi-redis.md)
     * [Redis简介](redis/di-yi-zhang-ff1a-chu-shi-redis/redisjian-jie.md)
