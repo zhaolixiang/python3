@@ -75,5 +75,9 @@ True
 | bitcount | bitcount key-name \[start end\] | 统计二进制位串里面值为1的二进制位的数量，如果给定了可选的start偏移量和end偏移量，那么只对偏移量范围内的二进制位进行统计 |
 | bitop | bitop operation dest-key key-name \[key-namr ...\] | 对一个或多个二进制位串执行包括并【and】、或【or】、异或【xor】、非【not】在内的任意一种按位运算操作，并将计算得出的结果保存在dest-key键里面 |
 
+> Redis现在的getrange命令是由以前的substr命令改名而来的，因此，Python客户端至今仍然可以使用substr\(\)方法来获取子串，但如果读者使用的是2.6或以上版本的Redis，那么最好是使用getrang\(\)方法获取子串。
+
+
+
 
 
