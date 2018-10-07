@@ -67,14 +67,13 @@ True
 
 | 命令 | 用例 | 用例描述 |
 | :--- | :--- | :--- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| append | append key-namr value | 将值value追加到给定键key-name当前存储的值得尾部 |
+| getrange | getrange key-name start end | 获取一个由偏移量start至偏移量end范围内所有字符组成的子串，包括start和end在内 |
+| setrange | setrange key-name offset value | 将从start偏移量开始的子串设置为给定值 |
+| getbit | getbit key-name offset | 将字节串看做是二进制位串【bit string】，并返回位串中偏移量为offset的二进制位的值 |
+| setbit | setbit key-name offset value | 将字节串看做是二进制位串，并将位串中偏移量为offset的二进制位设置为value |
+| bitcount | bitcount key-name \[start end\] | 统计二进制位串里面值为1的二进制位的数量，如果给定了可选的start偏移量和end偏移量，那么只对偏移量范围内的二进制位进行统计 |
+| bitop | bitop operation dest-key key-name \[key-namr ...\] | 对一个或多个二进制位串执行包括并【and】、或【or】、异或【xor】、非【not】在内的任意一种按位运算操作，并将计算得出的结果保存在dest-key键里面 |
 
 
 
