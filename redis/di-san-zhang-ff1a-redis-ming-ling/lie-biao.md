@@ -77,5 +77,11 @@ True
 | rpoplpush | rpoplpush source-key dest-key | 从source-key列表中弹出位于最右端的元素，然后将这个元素推入dest-key列表的最左端，并向用户返回这个元素。 |
 | brpoplpush | brpoplpush source-key dest-key timeout | 从source-key列表中弹出位于最右端的元素，然后将这个元素推入dest-key列表的最左端，并向用户返回这个元素；如果source-key为空，那么在timeout秒之内阻塞并等待可弹出的元素出现。 |
 
+### 使用brpoplpush移动列表元素、使用blpop从列表中弹出多个元素的实例
+
+```
+
+```
+
 
 
