@@ -94,6 +94,7 @@
     * [网页分析](redis/di-er-zhang-ff1a-shi-yong-redis-gou-jian-web-ying-yong/wang-ye-fen-xi.md)
   * [第三章：Redis命令](redis/di-san-zhang-ff1a-redis-ming-ling.md)
     * [字符串](redis/di-san-zhang-ff1a-redis-ming-ling/zi-fu-chuan.md)
+    * [列表](redis/di-san-zhang-ff1a-redis-ming-ling/lie-biao.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
