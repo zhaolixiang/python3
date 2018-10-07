@@ -19,7 +19,51 @@
 ### 列表推入、弹出操作实例
 
 ```
+import redis #导入redis包包
 
+#与本地redis进行链接，地址为：localhost，端口号为6379
+r=redis.StrictRedis(host='localhost',port=6379)
+r.delete('list-key')
+
+#推入操作完成之后会返回列表当前的长度
+#从语义上来说，列表的左端为开头，右端为结尾
+print(r.rpush('list-key','last'))
+
+print(r.lpush('list-key','first'))
+
+print(r.rpush('list-key','new last'))
+
+print(r.lrange('list-key',0,-1))
+
+#通过重复的弹出列表左端的元素，可以按照从左到右的顺序来获取列表中的元素
+print(r.lpop('list-key'))
+print(r.lpop('list-key'))
+
+print(r.lrange('list-key',0,-1))
+
+#可以同时推入多个元素
+print(r.lpush('list-key','a','b','c'))
+print(r.lrange('list-key',0,-1))
+
+#可以从列表的左端、右端或者左右两端删减任意数量的元素
+print(r.ltrim('list-key',2,-1))
+print(r.lrange('list-key',0,-1))
+```
+
+运行结果：
+
+```
+1
+2
+3
+[b'first', b'last', b'new last']
+b'first'
+b'last'
+[b'new last']
+4
+[b'c', b'b', b'a', b'new last']
+True
+[b'a', b'new last']
 ```
 
 
