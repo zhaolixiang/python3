@@ -82,8 +82,34 @@ True
 ### 使用brpoplpush移动列表元素、使用blpop从列表中弹出多个元素的实例
 
 ```
+import redis #导入redis包包
+
+#与本地redis进行链接，地址为：localhost，端口号为6379
+r=redis.StrictRedis(host='localhost',port=6379)
+r.delete('list-key1')
+r.delete('list-key2')
+
+#将一些元素添加到两个列表里面
+print(r.rpush('list-key1','item1'))
+print(r.rpush('list-key1','item2'))
+print(r.rpush('list-key2','item3'))
+
+#将一个元素从一个列表移动到另一个列表，并返回被移动的元素
+print(r.brpoplpush('list-key2','list-key1',1))
+#当列表不包含任何元素时，阻塞弹出操作会在给定的期限内等待可弹出的元素出现，并在时限到达后返回None
+print(r.brpoplpush('list-key2','list-key1',1))
+print(r.lrange('list-key1',0,-1))
+print(r.lrange('list-key2',0,-1))
+
+#blpop命令会从左到右地检查传入到列表，并对最先遇到的非空列表执行弹出操作
+print(r.blpop(['list-key1','list-key2'],1))
+print(r.blpop(['list-key1','list-key2'],1))
+print(r.blpop(['list-key1','list-key2'],1))
+
 
 ```
 
+运行结果：
 
+![](/assets/使用brpoplpush移动列表元素、使用blpop从列表中弹出多个元素的实例.gif)
 
