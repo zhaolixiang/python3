@@ -72,10 +72,10 @@ True
 
 | 命令 | 用例 | 用例描述 |
 | :--- | :--- | :--- |
-| blpop | blpop key-name \[key-name ...\] timeout |  |
-| brpop | brpop key-name \[key-name ...\] timeout |  |
-| rpoplpush | rpoplpush source-key dest-key |  |
-| brpoplpush | brpoplpush source-key dest-key timeout |  |
+| blpop | blpop key-name \[key-name ...\] timeout | 从第一个非空列表中弹出位于最左端的元素，或者在timeout秒之内阻塞并等待可弹出的元素出现。 |
+| brpop | brpop key-name \[key-name ...\] timeout | 从第一个非空列表中弹出位于最右端的元素，或者在timeout秒之内阻塞并等待可弹出的元素出现。 |
+| rpoplpush | rpoplpush source-key dest-key | 从source-key列表中弹出位于最右端的元素，然后将这个元素推入dest-key列表的最左端，并向用户返回这个元素。 |
+| brpoplpush | brpoplpush source-key dest-key timeout | 从source-key列表中弹出位于最右端的元素，然后将这个元素推入dest-key列表的最左端，并向用户返回这个元素；如果source-key为空，那么在timeout秒之内阻塞并等待可弹出的元素出现。 |
 
 
 
