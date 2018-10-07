@@ -95,6 +95,7 @@
   * [第三章：Redis命令](redis/di-san-zhang-ff1a-redis-ming-ling.md)
     * [字符串](redis/di-san-zhang-ff1a-redis-ming-ling/zi-fu-chuan.md)
     * [列表](redis/di-san-zhang-ff1a-redis-ming-ling/lie-biao.md)
+    * 集合
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
