@@ -23,6 +23,32 @@ def update_token(conn,token,user,item=None):
 为了让商品浏览次数排行榜能够保持最新，我们需要定期修剪有序集合的长度并调整已有元素的分值，从而使得新流行的商品也可以在排行榜里面占据一席之地。之前已经介绍过从有序集合里面移除元素的方法，而调整元素分值的动作则可以通过zinterstore命令来完成。zinterstore命令可以组合起一个或多个有序集合，并将有序集合包含的每个分值都乘以一个给定的数值【用户可以为每个有序集合分别指定不同的相乘数值】。每个5分值，函数就会删除所有排名在20 000名之后的商品，并将删除之后剩余的所有商品的浏览次数减半。
 
 ```
+def rescale_viewed(conn):
+    while not QUIT:
+        #删除所有排名在20 000名之后的商品
+        conn.zremrangebyrank('viewed:',0,-20001)
+        #将浏览次数降低为原来的一半
+        conn.zinterstore('viewed:',{'viewed:':.5})
+        #5分钟之后再次执行该操作
+        time.sleep(300)
+```
+
+通过记录商品的浏览次数，并定期对记录浏览次数的有序集合进行修剪和分值调整，我们为我们的网站建立起了一个持续更新的最常浏览商品的排行榜。
 
 ```
+
+#判断页面是否需要被缓存
+def can_cache(conn,request):
+    #尝试从页面里面取出商品ID
+    item_id=extract_item_id(request)
+    #检查这个页面能否额比缓存以及这个页面是否为商品页面
+    if not item_id or is_dynamic(request):
+        return False
+    #取得商品的浏览次数排名
+    rank=conn.zrank('viewed:',item_id)
+    #根据商品的浏览次数排名来判断是否需要缓存这个页面
+    return rank is not None and rank<10000
+```
+
+
 
