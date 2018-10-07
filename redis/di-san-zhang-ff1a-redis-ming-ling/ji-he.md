@@ -4,7 +4,7 @@ Redis的集合以无序的方式来存储多个各不相同的元素，用户可
 
 | 命令 | 用例 | 用例描述 |
 | :--- | :--- | :--- |
-| sadd | sadd key-name item \[item ...\] | 将一个或多个元素添加到集合里面， |
+| sadd | sadd key-name item \[item ...\] | 将一个或多个元素添加到集合里面，并返回被添加元素当中 |
 | srem | srem key-name item \[item ...\] |  |
 | sismember | sismember key-name item |  |
 | scard | scard key-name |  |
