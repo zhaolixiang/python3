@@ -27,7 +27,38 @@
 下面代码展示了对字符串执行自增和自减操作的一些例子：
 
 ```
+import redis #导入redis包包
 
+#与本地redis进行链接，地址为：localhost，端口号为6379
+r=redis.StrictRedis(host='localhost',port=6379)
+
+r.delete('key')
+#尝试获取一个不存在的键将得到一个None值。
+print(r.get('key'))
+
+#对不存在的键执行自增操作
+print(r.incr('key'))
+print(r.incr('key',15))
+
+#执行自减操作
+print(r.decr('key',5))
+
+print(r.get('key'))
+
+print(r.set('key',99))
+print(r.incr('key'))
+```
+
+运行结果：
+
+```
+None
+1
+16
+11
+b'11'
+True
+100
 ```
 
 
