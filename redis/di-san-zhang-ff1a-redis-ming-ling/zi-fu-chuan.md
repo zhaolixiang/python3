@@ -82,8 +82,58 @@ True
 ##### Redis的子串操作和二进制位操作实例
 
 ```
+import redis #导入redis包包
 
+#与本地redis进行链接，地址为：localhost，端口号为6379
+r=redis.StrictRedis(host='localhost',port=6379)
+
+r.delete('new-string-key')
+r.delete('another-key')
+
+#将字符串'hello'追加到目前并不存在的'new-string-key'键里。
+print(r.append('new-string-key','hello'))
+
+print(r.append('new-string-key','-world!'))
+
+#获取字串
+print(r.substr('new-string-key',3,7))
+
+#对字符串执行范围设置操作,setrange会返回字符串的当前长度
+print(r.setrange('new-string-key',0,'H'))
+print(r.setrange('new-string-key',6,'W'))
+
+print(r.get('new-string-key'))
+
+#移除了!号并在后面添加了新的字符：--how are you?
+print(r.setrange('new-string-key',11,'--how are you?'))
+
+print(r.get('new-string-key'))
+
+#setbit命令会返回二进制位被设置之前的值
+#对超出字符串长度的二进制位进行设置时，超出部分会被填充为空字节
+print(r.setbit('another-key',2,1))
+print(r.setbit('another-key',7,1))
+#通过将第2个二进制位以及第7个二进制位的值设置位1，键的值将变为'!'，也就是便秘为33的字符。
+print(r.get('another-key'))
 ```
 
+运行结果：
 
+```
+5
+12
+b'lo-wo'
+12
+12
+b'Hello-World!'
+25
+b'Hello-World--how are you?'
+0
+0
+b'!'
+```
+
+很多键值数据库只能讲数据存储为普通的字符串，并且不提供任何字符串处理操作，有一些键值数据库运行用户将字节追加到字符串的前面后者后面，但是却没有办法像Redis一样对字符串的子串进行读写。从很多方面来讲，即使Redis只支持字符串结构，并且只支持本节列出的字符串处理命令，Redis也比很多别的数据库要强大的多；通过使用子串操作或二进制位操作，配合watch命令、multi命令和exec命令，用户甚至可以手动去构建任何他们想要的数据结构。后面我们会介绍如何使用字符串去存储一种简单的映射，这种映射可以在某些情况下节省大量内存。
+
+只要花些心思，我们甚至可以将字符串当作列表来使用，但这种做法能够执行的列表操作并不多，更好的方法时直接使用下面我们将要介绍的列表结构，Redis为这种结构提供了丰富的列表操作命令。
 
