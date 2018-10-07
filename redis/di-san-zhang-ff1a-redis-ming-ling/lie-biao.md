@@ -14,5 +14,13 @@
 | lrange | lrange key-name start end | 返回列表从start偏移量到end偏移量范围内的所有元素，其中偏移量为start和偏移量为end的元素也会包含在被返回的元素之内。 |
 | ltrim | ltrim key-name start end | 对列表进行修剪，只保留从strat偏移量到end偏移量范围内的元素，其中偏移量为start何偏移量为end的元素也会被保留。 |
 
+之前已经对列表的几个推入和弹出操作进行了简单的介绍，所以我们应该不会对上面的命令陌生。
+
+### 列表推入、弹出操作实例
+
+```
+
+```
+
 
 
