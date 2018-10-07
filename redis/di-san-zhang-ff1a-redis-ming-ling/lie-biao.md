@@ -105,11 +105,45 @@ print(r.lrange('list-key2',0,-1))
 print(r.blpop(['list-key1','list-key2'],1))
 print(r.blpop(['list-key1','list-key2'],1))
 print(r.blpop(['list-key1','list-key2'],1))
-
-
 ```
 
 运行结果：
 
 ![](/assets/使用brpoplpush移动列表元素、使用blpop从列表中弹出多个元素的实例.gif)
+
+对于阻塞弹出命令和弹出并推入命令，最常见的用例就是消息传递【messaging】和任务队列【task queue】，这将在后面讲解。
+
+列表的一个主要优点在于它可以包含多个字符串值，这使得用户可以将数据集中在同一个地方。Redis的集合也提供了与列表类似的特性，但集合中能保存各不相同的元素。接下来的一节中就让我妈来看看不能保存相同元素的集合都能做些什么？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
