@@ -66,5 +66,16 @@ True
 [b'a', b'new last']
 ```
 
+这个实例里面第一次使用到了ltrim命令，聚合使用ltrim和lrange可以构建出一个在功能上类似于lpop或rpop，但是却能够一次返回并弹出多个元素的操作。本章稍后将会介绍【原子地】执行多个命令的方法，而更高级的Redis事务特性则会在下一章介绍。
+
+有几个列表命令可以将元素从一个列表移动到另一个列表，或者阻塞【block】执行命令的客户端直到有其他客户端给列表添加元素为止，这些命令之前都没有介绍过，下表列出了这些阻塞弹出命令和元素移动命令：
+
+| 命令 | 用例 | 用例描述 |
+| :--- | :--- | :--- |
+| blpop | blpop key-name \[key-name ...\] timeout |  |
+| brpop | brpop key-name \[key-name ...\] timeout |  |
+| rpoplpush | rpoplpush source-key dest-key |  |
+| brpoplpush | brpoplpush source-key dest-key timeout |  |
+
 
 
