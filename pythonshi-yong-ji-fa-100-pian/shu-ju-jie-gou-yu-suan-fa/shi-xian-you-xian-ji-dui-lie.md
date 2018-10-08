@@ -38,6 +38,7 @@ if __name__ == '__main__':
 
     print(q.pop())
     print(q.pop())
+    #具有相同优先级的两个元素，返回的顺序同它们插入到队列时的顺序相同
     print(q.pop())
     print(q.pop())
 
