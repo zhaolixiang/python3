@@ -53,5 +53,7 @@ print(expensive)
 [{'name': 'AAPL', 'shares': 50, 'price': 543.22}, {'name': 'IBM', 'shares': 100, 'price': 91.1}, {'name': 'HPQ', 'shares': 35, 'price': 31.75}]
 ```
 
+> 如果只是简单的查找最小或者最大的元素（N=1），那么使用min\(\)和max\(\)会更快。
+
 
 
