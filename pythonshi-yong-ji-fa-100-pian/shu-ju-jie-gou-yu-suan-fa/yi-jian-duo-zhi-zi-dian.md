@@ -29,6 +29,30 @@ d={
 为了能方便的创建这样的字典，可以利用collections模块中的defaultdict类。defaultdict的一个特点就是它会自动初始化第一个值，这样只需关注添加元素即可：
 
 ```
+from collections import defaultdict
+
+d=defaultdict(list)
+d['a'].append(1)
+d['a'].append(2)
+d['b'].append(4)
+
+print(d)
+
+
+d=defaultdict(set)
+d['a'].add(1)
+d['a'].add(2)
+d['b'].add(4)
+
+print(d)
+```
+
+结果：
 
 ```
+defaultdict(<class 'list'>, {'a': [1, 2], 'b': [4]})
+defaultdict(<class 'set'>, {'a': {1, 2}, 'b': {4}})
+```
+
+
 
