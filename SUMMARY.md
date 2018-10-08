@@ -58,6 +58,7 @@
 * [Python实用技法250篇](pythonshi-yong-ji-fa-100-pian.md)
   * [数据结构与算法](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa.md)
     * [可迭代对象分解为单独的变量](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/jiang-xu-lie-fen-jie-wei-dan-du-de-bian-liang.md)
+    * [使用deque保留最新的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-yong-deque-bao-liu-zui-xin-de-n-ge-yuan-su.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
