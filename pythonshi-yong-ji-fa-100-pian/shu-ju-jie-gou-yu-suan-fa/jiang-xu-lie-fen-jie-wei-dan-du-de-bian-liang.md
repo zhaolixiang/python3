@@ -130,12 +130,69 @@ middle:[1, 2, 3, 4, 5, 6, 7, 8]
 假如有一些用户记录，记录由姓名和电子邮件地址组成，后面跟着任意数量的电话号码：
 
 ```
+record=('mark','1782980833@qq.com','18321859453','18956245389')
+name,email,*phone_numbers=record
 
+print(name)
+print(email)
+print(phone_numbers)
 ```
 
 运行结果：
 
 ```
+mark
+1782980833@qq.com
+['18321859453', '18956245389']
+```
+
+# 6、\*表达式技巧
+
+### \*表达式在迭代一个变长的元组序列时尤其有用
+
+代码：
 
 ```
+records=[
+    ('foo',1,2),
+    ('bar','hello'),
+    ('foo',3,4),
+]
+
+def do_foo(x,y):
+    print('foo',x,y)
+
+def do_bar(s):
+    print('bar',s)
+
+for tag,*args in records:
+    if tag=='foo':
+        do_foo(*args)
+    elif tag=='bar':
+        do_bar(*args)
+```
+
+结果：
+
+```
+foo 1 2
+bar hello
+foo 3 4
+```
+
+### 当和某些特定的字符串处理操作（例如拆分操作）相结合时，也非常有用
+
+代码：
+
+```
+
+```
+
+结果：
+
+```
+
+```
+
+
 
