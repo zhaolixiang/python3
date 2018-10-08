@@ -3,13 +3,26 @@
 代码：
 
 ```
+from collections import deque
 
+q=deque(maxlen=3)
+
+q.append(1)
+q.append(2)
+q.append(3)
+print(q)
+q.append(4)
+print(q)
+q.append(5)
+print(q)
 ```
 
 结果：
 
 ```
-
+deque([1, 2, 3], maxlen=3)
+deque([2, 3, 4], maxlen=3)
+deque([3, 4, 5], maxlen=3)
 ```
 
 如果不指定队列的大小，也就得到了一个无界限的队列，可以在两端执行添加和弹出操作，
@@ -25,4 +38,6 @@
 ```
 
 ```
+
+
 
