@@ -52,7 +52,7 @@ Item('foo')
 Item('grok')
 ```
 
-> 上面的代码核心在于heapq模块的使用。函数heapq.heapqpush\(\)以及heapq.heapqpop\(\)分别实现将元素从列表\_queue中插入和移除，且保证列表中第一个元素的优先级最低。heappop\(\)方法总是返回【最小】的元素
+> 上面的代码核心在于heapq模块的使用。函数heapq.heapqpush\(\)以及heapq.heapqpop\(\)分别实现将元素从列表\_queue中插入和移除，且保证列表中第一个元素的优先级最低。heappop\(\)方法总是返回【最小】的元素，因此这就是让队列能弹出正确元素的关键，
 
 
 
