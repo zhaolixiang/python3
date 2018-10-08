@@ -41,8 +41,6 @@ if __name__ == '__main__':
     #具有相同优先级的两个元素，返回的顺序同它们插入到队列时的顺序相同
     print(q.pop())
     print(q.pop())
-
-
 ```
 
 运行结果：
@@ -53,6 +51,8 @@ Item('spam')
 Item('foo')
 Item('grok')
 ```
+
+> 上面的代码核心在于heapq模块的使用。函数heapq.heapqpush\(\)以及heapq.heapqpop\(\)分别实现将元素从列表\_queue中插入和移除，且保证列表中第一个元素的优先级最低。heappop\(\)方法总是返回【最小】的元素
 
 
 
