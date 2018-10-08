@@ -5,6 +5,53 @@
 代码：
 
 ```
+import tornado.web
+import tornado.ioloop
+import uuid  #UUID 生成库
+
+dict_sessions={}  #保存所有登录的Session
+
+class BaseHandler(tornado.web.RequestHandler):  #公共基类
+    #写入current_user的函数
+    def get_current_user(self):
+        session_id=self.get_secure_cookie("session_id")
+        return dict_sessions.get(session_id)
+
+class MainHandler(BaseHandler):
+    @tornado.web.authenticated    #需要身份认证才能访问的处理器
+    def get(self):
+        name=tornado.escape.xhtml_escape(self.current_user)
+        self.write("Hello,"+name)
+
+class LoginHandler(BaseHandler):
+    def get(self):   #登陆页面
+        self.write('<html><>body'
+                   '<form action="/login" method="post">'
+                   'Name:<input type="text" name="name">'
+                   '<input type="submit" value="Sign in">'
+                   '</form></body></html>')
+    def post(self):  #验证是否运行登陆
+        if len(self.get_argument("name"))<3:
+            self.redirect("/login")
+        session_id=str(uuid.uuid1())
+        dict_sessions[session_id]=self.get_argument("name")
+        self.set_secure_cookie("session_id",session_id)
+        self.redirect("/")
+setting={
+    "cookie_secret":"SECRET_DONT_LEAK", #Cookie加密秘钥
+    "login_url":"/login"  #定义登陆页面
+}
+application=tornado.web.Application([
+    (r"/",MainHandler),        #URL映射定义
+    (r"/login",LoginHandler)
+],**setting)
+
+def main():
+    application.listen(8888)
+    tornado.ioloop.IOLoop.current().start()     #挂起监听
+
+if __name__ == '__main__':
+    main()
 
 ```
 
@@ -19,6 +66,4 @@
 > 注意：加入身份认证的所有页面处理器需要继承自BaseHandler类，而不是直接继承原来的tornado.web.RequestHandler类。
 
 商用的身份认证还要完善更多的内容，比如加入密码验证机制、管理登陆超时、将用户信息保存到数据库等。
-
-
 
