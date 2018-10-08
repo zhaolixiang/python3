@@ -108,12 +108,23 @@ Python中的『\*表达式』可以满足上述需求。例如，有无数个成
 代码
 
 ```
+import numpy as np
+
+grades=list(range(10))#定义一个0-999的分数列表
+print("grades:"+str(grades))
+first,*middle,last=grades
+print("middle:"+str(middle))
+print("去掉第一个和最后一个分数后的平均值："+str(np.mean(middle)))
 
 ```
 
 结果
 
 ```
-
+grades:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+middle:[1, 2, 3, 4, 5, 6, 7, 8]
+去掉第一个和最后一个分数后的平均值：4.5
 ```
+
+
 
