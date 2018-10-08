@@ -1,4 +1,4 @@
-需要子类继承并定义具体行为的安徽神女湖再RequestHandler中被称为接入点函数\(Entry point\),上面的Hello World实例中的get\(\)函数就是典型的接入点函数。
+需要子类继承并定义具体行为的函数在RequestHandler中被称为接入点函数\(Entry point\),上面的Hello World实例中的get\(\)函数就是典型的接入点函数。
 
 ### 1、RequestHandler.initialize\(\)
 
@@ -64,6 +64,4 @@ on\_finish\(\)方法用于请求处理结束后的一些清理工作，通常用
 * RequestHandler.options\(\*args,\*\*kwargs\)
 
 每个处理函数都是HTTP Action的小写名字命名。
-
-
 
