@@ -185,13 +185,20 @@ foo 3 4
 代码：
 
 ```
+line='nobody:*:-2:-2:unp user:/var/empty:/user/nim/false'
 
+uname,*fileds,homedir,sh=line.split(':')
+print(uname)
+print(homedir)
+print(sh)
 ```
 
 结果：
 
 ```
-
+nobody
+/var/empty
+/user/nim/false
 ```
 
 
