@@ -62,6 +62,7 @@
     * [找到最大或最小的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zhao-dao-zui-da-huo-zui-xiao-de-n-ge-yuan-su.md)
     * [实现优先级队列](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-xian-you-xian-ji-dui-lie.md)
     * [一键多值字典](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/yi-jian-duo-zhi-zi-dian.md)
+    * [让字典保持有序](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/rang-zi-dian-bao-chi-you-xu.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
