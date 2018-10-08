@@ -60,6 +60,7 @@
     * [可迭代对象分解为单独的变量](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/jiang-xu-lie-fen-jie-wei-dan-du-de-bian-liang.md)
     * [使用deque保留最新的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-yong-deque-bao-liu-zui-xin-de-n-ge-yuan-su.md)
     * [找到最大或最小的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zhao-dao-zui-da-huo-zui-xiao-de-n-ge-yuan-su.md)
+    * [实现优先级队列](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-xian-you-xian-ji-dui-lie.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
