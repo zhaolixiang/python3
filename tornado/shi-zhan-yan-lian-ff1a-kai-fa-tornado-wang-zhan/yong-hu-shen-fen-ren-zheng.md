@@ -13,7 +13,12 @@
 * 用全局字典dict\_sessions保存已经登录的用户信息，为了简单些，本例只保存了【回话ID：用户名】的键值对。
 * 定义公共基类BaseHandler，该类继承自tornado.web.RequestHandler，用于定义本网站所有处理器的公共属性和行为。重载它的get\_current\_user\(\)函数，其在访问RequestHandler.current\_user属性时自动被Tornado调用。该函数首先用get\_secure\_cookie\(\)获得本次访问的回话ID,然后利用该ID从dict\_sessions中获得用户名并且返回。
 * MainHandler类是一个要求用户经过身份认证才能访问的处理器实例。该处理器中的处理函数get\(\)使用了装饰器tornado.web.authenticated，具有该装饰器的处理函数在执行之前根据current\_user是否已经被赋值来判断用户的身份认证情况，如果已经被赋值则可以进行正常逻辑，否则自动重定向到网站的登录页面。
-* LoginHandler类是登录页面处理器，其get\(\)函数用于渲染登录页面，post\(\)函数用于验证
+* LoginHandler类是登录页面处理器，其get\(\)函数用于渲染登录页面，post\(\)函数用于验证是否允许用户登陆。
+* 在tornado.web.Application的初始化函数中通过login\_url参数给出网站的登陆页面地址。该地址被用于tornado.web.authenticated装饰器在发现用户尚未验证时重定向到一个URL。
+
+> 注意：加入身份认证的所有页面处理器需要继承自BaseHandler类，而不是直接继承原来的tornado.web.RequestHandler类。
+
+商用的身份认证还要完善更多的内容，比如加入密码验证机制、管理登陆超时、将用户信息保存到数据库等。
 
 
 
