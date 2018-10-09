@@ -19,5 +19,43 @@
 
 # 2、用Tornado防范CSRF攻击
 
-为了防范CSRF攻击，要求每个请求包括一个参数值
+为了防范CSRF攻击，要求每个请求包括一个参数值作为令牌的匹配存储在Cookie中的对应值。
+
+Tornado应用可以通过一个Cookie头和一个隐藏的HTML表单元素向页面提供令牌。这样，当一个合法页面的表单被提交时，它将包括表单值和已存储的Cookie。如果两者匹配，则Tornado应用认可请求有效。
+
+开启Tornado的CSRF防范功能需要两个步骤。
+
+【1】在实例化tornado.web.Application时传入xsrf\_cookies=True参数，即：
+
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
