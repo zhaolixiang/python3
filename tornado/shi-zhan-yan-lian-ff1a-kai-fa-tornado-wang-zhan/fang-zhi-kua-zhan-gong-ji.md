@@ -28,7 +28,12 @@ Tornado应用可以通过一个Cookie头和一个隐藏的HTML表单元素向页
 ##### 【1】在实例化tornado.web.Application时传入xsrf\_cookies=True参数，即：
 
 ```
-
+application=tornado.web.Application([
+    (r'/',MainHandler),
+],
+cookie_secret='DONT_LEAK_SECRET',
+xsrf_cookies=True,
+)
 ```
 
 或者：
@@ -52,22 +57,4 @@ Tornado应用可以通过一个Cookie头和一个隐藏的HTML表单元素向页
 这里的`{% module xsrf_form_html() %}`起到了为表单添加隐藏元素以防止跨站请求的作用。
 
 Tornado的安全Cookie支持和XSRF防范框架减轻了应用开发者的很多负担，没有他们，开发者需要思考很多防范的细节措施，因此Tornado内建的安全功能也非常有用。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
