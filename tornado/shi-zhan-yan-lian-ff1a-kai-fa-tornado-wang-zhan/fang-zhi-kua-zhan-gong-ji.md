@@ -39,7 +39,14 @@ xsrf_cookies=True,
 或者：
 
 ```
+settings={
+    "cookie_secret":"DONT_LEAK_SECRET",
+    "xsrf_cookies":True
+}
 
+application=tornado.web.Application([
+    (r'/',MainHandler),
+],**settings)
 ```
 
 > 当tornado.web.Application需要初始化的参数过多时，可以像本例一样通过setting字典的形式传入命名参数
