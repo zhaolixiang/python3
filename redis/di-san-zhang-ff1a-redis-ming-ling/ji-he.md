@@ -4,14 +4,14 @@ Redis的集合以无序的方式来存储多个各不相同的元素，用户可
 
 | 命令 | 用例 | 用例描述 |
 | :--- | :--- | :--- |
-| sadd | sadd key-name item \[item ...\] | 将一个或多个元素添加到集合里面，并返回被添加元素当中原本并不存在于集合 |
-| srem | srem key-name item \[item ...\] |  |
-| sismember | sismember key-name item |  |
-| scard | scard key-name |  |
-| smembers | smembers key-name |  |
-| srandmember | srandmember key-name \[count\] |  |
-| spop | spop key-name |  |
-| smove | smove source-key dest-key item |  |
+| sadd | sadd key-name item \[item ...\] | 将一个或多个元素添加到集合里面，并返回被添加元素当中原本并不存在于集合里面的元素数量 |
+| srem | srem key-name item \[item ...\] | 从集合里面移除一个或多个元素，并返回被移除元素的数量 |
+| sismember | sismember key-name item | 检查元素item是否存在于集合key-name里 |
+| scard | scard key-name | 返回集合包含的元素的数量 |
+| smembers | smembers key-name | 返回集合包含的所有元素 |
+| srandmember | srandmember key-name \[count\] | 从集合里面随机地返回一个或多个元素。当count为正数时，命令返回的随机元素不会重复；当count为负数时，命令返回的随机元素可能会出现重复。 |
+| spop | spop key-name | 随机地移除集合中的一个元素，并返回被移除的元素。 |
+| smove | smove source-key dest-key item | 如果集合source-key包含元素item，那么从集合source-key里面移除元素item，并将元素item添加到集合dest-key中；如果item被成功移除，那么命令返回1，否则返回0 |
 
 
 
