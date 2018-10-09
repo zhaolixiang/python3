@@ -25,37 +25,29 @@ Tornado应用可以通过一个Cookie头和一个隐藏的HTML表单元素向页
 
 开启Tornado的CSRF防范功能需要两个步骤。
 
-【1】在实例化tornado.web.Application时传入xsrf\_cookies=True参数，即：
+##### 【1】在实例化tornado.web.Application时传入xsrf\_cookies=True参数，即：
 
 ```
 
 ```
 
+或者：
 
+```
 
+```
 
+> 当tornado.web.Application需要初始化的参数过多时，可以像本例一样通过setting字典的形式传入命名参数
 
+##### 【2】在每个具有HTML表达的模板文件中，为所有表单添加xsrf\_form\_html\(\)函数标签，比如：
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+<form action="/login" method="post">
+{% module xsrf_form_html() %}
+<input type="text" name="message"/>
+<input type="submit" value="Post"/>
+</form>
+```
 
 
 
