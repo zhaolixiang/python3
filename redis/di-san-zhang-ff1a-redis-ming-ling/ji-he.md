@@ -13,5 +13,9 @@ Redis的集合以无序的方式来存储多个各不相同的元素，用户可
 | spop | spop key-name | 随机地移除集合中的一个元素，并返回被移除的元素。 |
 | smove | smove source-key dest-key item | 如果集合source-key包含元素item，那么从集合source-key里面移除元素item，并将元素item添加到集合dest-key中；如果item被成功移除，那么命令返回1，否则返回0 |
 
+### Redis常用集合命令使用实例
+
+
+
 
 
