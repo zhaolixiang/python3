@@ -53,6 +53,12 @@ print(prices_sorted)
 > 注意，zip\(\)创建的迭代器只能被消费一次，例如下面
 >
 > ```
+> zip_price=zip(prices.values(),prices.keys())
+> min_price=min(zip_price)  #ok
+> min_price=min(zip_price)  #报错
+>
+>
+>
 >
 > ```
 
