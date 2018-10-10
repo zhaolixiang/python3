@@ -64,6 +64,7 @@
     * [一键多值字典](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/yi-jian-duo-zhi-zi-dian.md)
     * [让字典保持有序](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/rang-zi-dian-bao-chi-you-xu.md)
     * [字典上对数据执行计算：求最小值、最大值、排序](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zi-dian-shang-dui-shu-ju-zhi-xing-ji-suan-ff1a-qiu-zui-xiao-zhi-3001-zui-da-zhi-3001-pai-xu.md)
+    * [在两个字典中寻找相同点](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zai-liang-ge-zi-dian-zhong-xun-zhao-xiang-tong-dian.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
