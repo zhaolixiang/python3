@@ -21,6 +21,40 @@ prices={
 为了能对字典内容做些有用的计算，通常会利用zip\(\)函数将字典的键和值反转过来。
 
 ```
+prices={
+'ACME':45.23,
+'AAPL':612.78,
+'IBM':205.55,
+'HPQ':37.20,
+'FB':10.75
+}
+
+
+#找出价格最低放入股票
+min_price=min(zip(prices.values(),prices.keys()))
+print(min_price)
+
+
+#找出价格最高放入股票
+max_price=max(zip(prices.values(),prices.keys()))
+print(max_price)
+
+#同样，要对数据排序只要使用zip()再配合sorted()
+prices_sorted=sorted(zip(prices.values(),prices.keys()))
+print(prices_sorted)
+```
+
+运行结果：
 
 ```
+
+```
+
+> 注意，zip\(\)创建的迭代器只能被消费一次，例如下面
+>
+> ```
+>
+> ```
+
+
 
