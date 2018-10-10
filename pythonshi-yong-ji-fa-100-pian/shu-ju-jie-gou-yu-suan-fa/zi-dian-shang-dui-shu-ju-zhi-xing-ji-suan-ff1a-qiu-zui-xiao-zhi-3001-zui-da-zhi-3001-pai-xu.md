@@ -47,7 +47,9 @@ print(prices_sorted)
 运行结果：
 
 ```
-
+(10.75, 'FB')
+(612.78, 'AAPL')
+[(10.75, 'FB'), (37.2, 'HPQ'), (45.23, 'ACME'), (205.55, 'IBM'), (612.78, 'AAPL')]
 ```
 
 > 注意，zip\(\)创建的迭代器只能被消费一次，例如下面
@@ -56,10 +58,6 @@ print(prices_sorted)
 > zip_price=zip(prices.values(),prices.keys())
 > min_price=min(zip_price)  #ok
 > min_price=min(zip_price)  #报错
->
->
->
->
 > ```
 
 
