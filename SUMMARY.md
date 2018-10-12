@@ -66,6 +66,7 @@
     * [字典上对数据执行计算：求最小值、最大值、排序](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zi-dian-shang-dui-shu-ju-zhi-xing-ji-suan-ff1a-qiu-zui-xiao-zhi-3001-zui-da-zhi-3001-pai-xu.md)
     * [在两个字典中寻找相同点](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zai-liang-ge-zi-dian-zhong-xun-zhao-xiang-tong-dian.md)
     * [从序列中移除重复项且保持元素间顺序不变](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/cong-xu-lie-zhong-yi-chu-zhong-fu-xiang-qie-bao-chi-yuan-su-jian-shun-xu-bu-bian.md)
+    * [对切片命名](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/dui-qie-pian-ming-ming.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
