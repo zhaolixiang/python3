@@ -8,7 +8,13 @@ Tornado定义了tornado.websocket.WebSocketHandler类用于处理WebSocket链接
 
 * WebSocketHandler.write\_message\(message,binary=False\)函数：用于向与本链接相对于的客户端写入消息。
 
-* WebSocketHandler.close\(code=None,reason=None\)
+* WebSocketHandler.close\(code=None,reason=None\)函数：主动关闭WebSocket链接。其中的code和reason用于告诉客户端链接被关闭的原因。参数code必须是一个数值，而reason是一个字符串。
+
+下面是持续为客户端推送时间消息的Tornado WebSocket程序：
+
+```
+
+```
 
 
 
