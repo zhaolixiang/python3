@@ -19,5 +19,5 @@ WebSocket与普通的Socket通讯类似，它打破了原来HTTP的Request和Res
 
 WebSocket的通信原理是在客户端与服务器之间建立TCP持久链接，从而使得当服务器有消息需要推送给客户端时能够进行即时通信。
 
-
+虽然WebSocket不是HTTP，但由于在Internet上HTML本事是由HTTP封装并进行传输的，所以WebSocket仍然需要与HTTP进行协作。IETF在RFC6455中定义了基于HTTP链路建立WebSocket信道的标准流程。
 
