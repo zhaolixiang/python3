@@ -34,5 +34,28 @@ Upgrade:websocket
 Sec-WebSocket-Version:13
 ```
 
+读者可以发现其仍然是一个HTTP Request包，并对其中的内容非常熟悉。
 
+* HTTP请求方式：GET
+* 请求地址：/stock\_info
+* HTTP版本号：1.1
+* 服务器主机域名：echo.websocket.org
+* Cookie信息：\_\_token=ubcxx13
+
+但是在HTTP Header中出现了4个特色的字段，他们是：
+
+```
+Connection:Upgrade
+Sec-WebSocket-Key:uRovscZjNol/umbTt5uKmw==
+Upgrade:websocket
+Sec-WebSocket-Version:13
+```
+
+这就是WebSocket建立链路的核心，它告诉Web服务器：客户端希望建立一个WebSocket链接，客户端使用的WebSocket版本时13，密钥是uRovscZjNol/umbTt5uKmw==。
+
+服务器在收到该Request后，如果同意建立WebSocket链接则返回类似如下的Response：
+
+```
+
+```
 
