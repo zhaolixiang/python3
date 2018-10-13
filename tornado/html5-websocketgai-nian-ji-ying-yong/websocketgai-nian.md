@@ -21,3 +21,11 @@ WebSocket的通信原理是在客户端与服务器之间建立TCP持久链接�
 
 虽然WebSocket不是HTTP，但由于在Internet上HTML本事是由HTTP封装并进行传输的，所以WebSocket仍然需要与HTTP进行协作。IETF在RFC6455中定义了基于HTTP链路建立WebSocket信道的标准流程。
 
+客户端通过发送如下HTTP Request告诉服务器需要建立一个WebSocket长链接信道：
+
+```
+
+```
+
+
+
