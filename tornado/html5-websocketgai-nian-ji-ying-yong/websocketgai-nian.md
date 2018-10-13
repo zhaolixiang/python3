@@ -4,5 +4,5 @@ WebSocket protocol是HTML5定义的一种新的标准协议（RFC6455），它�
 
 传统的HTTP和HTML技术使用客户端主动向服务器发送请求并获取回复。但是随着即时通讯需求的增多，这样的通信模式有时并不能满足应用的需求。
 
-WebSocket与普通的Socket通讯类似，它打破了原来HTTP的Request和Response一对一的通信模型，同时打破了服务器只能被动地接受客户端请求的应用场景，
+WebSocket与普通的Socket通讯类似，它打破了原来HTTP的Request和Response一对一的通信模型，同时打破了服务器只能被动地接受客户端请求的应用场景。也许读者听说过Ajax、Long poll等基于传统HTTP的动态客户端技术，但这些技术无不采用轮询技术，耗费了大量的网络带宽和计算资源。
 
