@@ -77,5 +77,5 @@ Sec-WebSocket-Accept:rLHCKw/SKs09GAH/ZSFhBATDKrU=
 
 前面的两条数据告诉客户端：服务器已经将本连接转换为WebSocket链接。而Sec-WebSocket-Accept是将客服端发送的Sec-WebSocket-Key加密后产生的数据，以让客服端确认服务器能够正常工作。
 
-
+至此，在客户端与服务器之间已经建立了一个TCP持久链接，双发已经可以随时向对方发送消息。
 
