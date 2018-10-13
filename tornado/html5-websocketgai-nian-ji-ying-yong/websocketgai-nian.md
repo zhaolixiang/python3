@@ -15,5 +15,9 @@ WebSocket与普通的Socket通讯类似，它打破了原来HTTP的Request和Res
 * WebSocket仍然与HTTP完成Internet通信。
 * 因为是HTML5的标准协议，所以不受企业防火墙的拦截。
 
+# 2、WebSocket的通信原理
+
+WebSocket的通信原理是在客户端与服务器之间建立TCP持久链接，从而使得当服务器有消息需要推送给客户端时能够进行即时通信。
+
 
 
