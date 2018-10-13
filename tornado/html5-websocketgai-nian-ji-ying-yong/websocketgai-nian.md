@@ -56,6 +56,26 @@ Sec-WebSocket-Version:13
 服务器在收到该Request后，如果同意建立WebSocket链接则返回类似如下的Response：
 
 ```
+HTTP/1.1 101 WebSocket Protocol Handshake
+Date:Fri,10 Feb 2012 17:38:18 GMT
+Connection:Upgrade
+Server:Kaazing Gateway
+Upgrade:WebSocket
+Access-Control-Allow-Origin:http://websocket.org
+Access-Contril-Allow-Credentials:true
+Sec-WebSocket-Accept:rLHCKw/SKs09GAH/ZSFhBATDKrU=
+Access-Control-Allow-Headers:content-type
+```
+
+这依旧是一个标准的HTTP Response，其中与WebSocket相关的Header信息是：
 
 ```
+Connection:Upgrade
+Upgrade:WebSocket
+Sec-WebSocket-Accept:rLHCKw/SKs09GAH/ZSFhBATDKrU=
+```
+
+前面的两条数据告诉客户端：服务器已经将本连接转换为WebSocket链接。而Sec-WebSocket-Accept是将客服端发送的Sec-WebSocket-Key加密后产生的数据，以让客服端确认服务器能够正常工作。
+
+
 
