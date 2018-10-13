@@ -24,7 +24,14 @@ WebSocket的通信原理是在客户端与服务器之间建立TCP持久链接�
 客户端通过发送如下HTTP Request告诉服务器需要建立一个WebSocket长链接信道：
 
 ```
-
+GET /stock_info/?encoding=text HTTP/1.1
+Host:echo.websocket.org
+Origin:http://websocket.org
+Cookie:__token=ubcxx13
+Connection:Upgrade
+Sec-WebSocket-Key:uRovscZjNol/umbTt5uKmw==
+Upgrade:websocket
+Sec-WebSocket-Version:13
 ```
 
 
