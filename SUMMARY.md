@@ -82,6 +82,7 @@
     * [安全Cookie机制](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/an-quan-cookie-ji-zhi.md)
     * [用户身份认证](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/yong-hu-shen-fen-ren-zheng.md)
     * [防止跨站攻击](tornado/shi-zhan-yan-lian-ff1a-kai-fa-tornado-wang-zhan/fang-zhi-kua-zhan-gong-ji.md)
+  * [HTML5 WebSocket概念及应用](tornado/html5-websocketgai-nian-ji-ying-yong.md)
 * [redis实战](redis.md)
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
   * [第一章：初识Redis](redis/di-yi-zhang-ff1a-chu-shi-redis.md)
