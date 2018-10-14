@@ -41,7 +41,31 @@ def make_app():
 
 ### （2）StaticFileHandler配置
 
-如果除了http://mysite.com/static目录还有其他存放静态文件的URL，则可以用RequestHandler的子类StaticFileHandler进行配置，比如：
+如果除了[http://mysite.com/static目录还有其他存放静态文件的URL，则可以用RequestHandler的子类StaticFileHandler进行配置，比如：](http://mysite.com/static目录还有其他存放静态文件的URL，则可以用RequestHandler的子类StaticFileHandler进行配置，比如：)
+
+```
+def make_app():
+    return tornado.web.Application([
+        #此处写入映射
+
+        #这里配置了3个StaticFileHandler
+        (r'/css/(.*)',tornado.web.StaticFileHandler,{'path':'assets/css'}),
+        (r'/images/png/(.*)',tornado.web.StaticFileHandler,{'path':'assets/image'}),
+        (r'/js/(.*)',tornado.web.StaticFileHandler,{'path':'assets/js','default_filename':'templates/index.html'}),
+    ],
+        static_path=os.path.join(os.path.dirname(__file__),'static')
+    )
+```
+
+本例中除了static\_path，还用StaticFileHandler配置了另外3个静态文件目录。
+
+* 所有对http://mysite.com/css/\*的访问被映射到相对路径assets/css中。
+* 对http://mysite.com/images/png/\*的访问被映射到assets/images目录中。
+* 对http://mysite.com/js/\*的访问被映射到assets/js目录中；该条StaticFileHandler的参数中还被配置了default\_filename参数，即当用户访问了http://mysite.com/js目录本身时，将返回templates/index.html文件。
+
+# 2、优化静态文件访问
+
+优化静态文件访问的目的在于减少静态文件的重复传送，提高网络及服务器的利用效率，通过在模板文件中用static\_url方法修饰静态文件链接可以达到这个目的：
 
 ```
 
