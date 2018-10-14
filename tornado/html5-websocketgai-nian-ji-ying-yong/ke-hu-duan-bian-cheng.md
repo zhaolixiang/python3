@@ -69,7 +69,5 @@ var Socket=new WebSocket(url);
 
 运行效果如下：
 
-
-
-
+![](/assets/HTML5 WebSocke.gif)
 
