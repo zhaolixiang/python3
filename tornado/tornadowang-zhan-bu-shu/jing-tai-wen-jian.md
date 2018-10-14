@@ -20,7 +20,11 @@ def make_app():
     )
 ```
 
-这将使诸如http://mysite.com/static/favorite.png、http://mysite.com/static/css/main.cs这的文件的访问映射到C:\www\static中。
+这将使诸如[http://mysite.com/static/favorite.png、http://mysite.com/static/css/main.cs这的文件的访问映射到C:\www\static中。](http://mysite.com/static/favorite.png、http://mysite.com/static/css/main.cs这的文件的访问映射到C:\www\static中。)
 
+通常这些静态文件的目录与网站的代码文件有某种相对关联关系，可以通过下面这样的方法将该参数设置为相对路径：
 
+```
+
+```
 
