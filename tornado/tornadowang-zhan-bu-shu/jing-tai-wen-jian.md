@@ -25,6 +25,17 @@ def make_app():
 通常这些静态文件的目录与网站的代码文件有某种相对关联关系，可以通过下面这样的方法将该参数设置为相对路径：
 
 ```
+import os
+import tornado
 
+
+def make_app():
+    return tornado.web.Application([
+        #此处写入映射
+    ],
+        static_path=os.path.join(os.path.dirname(__file__),'static')
+    )
 ```
+
+
 
