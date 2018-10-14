@@ -35,5 +35,5 @@ proxy_pass http://backs;
 }
 ```
 
-
+除了一些标准配置，这个配置文件最重要的部分是upstram、listen和prox_pass指令。upstream backs{}定义了3个人后台Tornado服务的IP地址及各自的端口号；server{}中的listen定义了Nginx监听端口号80；proxy\_pass定义了所有对根目录的访问由之前定义的upstream backs中的服务器组提供服务，在默认情况下Nginx以循环方式分配到达的访问请求。_
 
