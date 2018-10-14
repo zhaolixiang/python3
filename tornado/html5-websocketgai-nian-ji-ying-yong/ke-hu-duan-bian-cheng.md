@@ -24,8 +24,52 @@ var Socket=new WebSocket(url);
 客户端WebSocket编程实例程序如下：index.html
 
 ```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket</title>
+</head>
+<body>
+<a href="javascript:WebSocketTest()">运行WebSocket</a>
+<div id="messages" style="height: 200px;background: black;color:white"></div>
 
+</body>
+<script type="text/javascript">
+    var messageContainer=document.getElementById("messages");
+    function WebSocketTest() {
+        if("WebSocket" in window){
+            messageContainer.innerHTML="浏览器支持WebSocket";
+            var ws=new WebSocket("ws://localhost:8888/websocket?Id=12345");
+            ws.onopen=function () {
+                ws.send("onopen")
+            };
+            ws.onmessage=function (evt) {
+                var received_msg=evt.data;
+                messageContainer.innerHTML=messageContainer.innerHTML+"<br/>收到的信息："+received_msg;
+            }
+            ws.onclose=function () {
+                messageContainer.innerHTML=messageContainer.innerHTML+"<br/> 连接关闭了";
+            }
+
+
+        }else{
+            messageContainer.innerHTML="浏览器不支持WebSocket"
+        }
+    }
+</script>
+</html>
 ```
+
+对上述代码解析如下：
+
+* 客户端页面主体是有两部分组成：一个Run WebSocket链接用于让用户启动WebSocket；另一个id=message的&lt;div&gt;标签用于显示服务器端的消息。
+* 使用JavaScript语句if\("WebSocket"  in  window\)可以判断当前浏览器是否支持WebSocket对象。
+* 如何浏览器支持WebSocket对象，则定义实例ws链接到服务器的WebSocket地址，并传入自己的标识符参数。然后通过js语法定义事件：onopen、onmessage、onclose的处理函数。除了在onopen事件中客户端向服务器用WebSocket.send\(\)函数发送了消息，其余事件均只将事件结果显示在页面&lt;div&gt;标签中。
+
+运行效果如下：
+
+
 
 
 
