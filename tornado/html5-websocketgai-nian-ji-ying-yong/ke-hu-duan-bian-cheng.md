@@ -6,7 +6,7 @@
 var Socket=new WebSocket(url);
 ```
 
-在代码中只需给WebSocket构造函数传入服务器的URL地址，比如http://mysite.com/point.
+在代码中只需给WebSocket构造函数传入服务器的URL地址，比如[http://mysite.com/point](http://mysite.com/point).
 
 可以为该对象的如下事件指定处理函数以相应它们：
 
@@ -16,7 +16,16 @@ var Socket=new WebSocket(url);
 
 * WebSocket.onclose：此事件发生在服务器的链接关闭时。
 
+除了这些事件处理函数，还可以通过WebSocket对象的两个方法进行主动操作：
 
+* WebSocket.send\(data\)：向服务器发送消息。
+* WebSocket.close\(\)：主动关闭现有链接。
+
+客户端WebSocket编程实例程序如下：index.html
+
+```
+
+```
 
 
 
