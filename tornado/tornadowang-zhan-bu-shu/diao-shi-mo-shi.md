@@ -44,8 +44,20 @@ def make_app():
 要响应Linux控制台的Ctrl+C命令，则可以在运行中捕获KeyboardInterrupt异常并调用IOLoop.stop\(\)函数：
 
 ```
+def main():
+    app=make_app()  #建立Application对象
+    app.listen(8888) #设置监听端口
+    try:
+        #启动IOLoop
+        tornado.ioloop.IOLoop.current().start()
+    except KeyboardInterrupt:
+        tornsfo.ioloop.IOLoop.current().stop()
+        #此处执行资源回收工作
+        print("Program exit!")
 
+if __name__ == '__main__':
+    main()
 ```
 
-
+这也在控制台发送了Ctrl+C请求后，程序可有机会回收系统的其它资源并退出执行
 
