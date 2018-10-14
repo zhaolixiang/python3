@@ -59,17 +59,23 @@ def make_app():
 
 本例中除了static\_path，还用StaticFileHandler配置了另外3个静态文件目录。
 
-* 所有对http://mysite.com/css/\*的访问被映射到相对路径assets/css中。
-* 对http://mysite.com/images/png/\*的访问被映射到assets/images目录中。
-* 对http://mysite.com/js/\*的访问被映射到assets/js目录中；该条StaticFileHandler的参数中还被配置了default\_filename参数，即当用户访问了http://mysite.com/js目录本身时，将返回templates/index.html文件。
+* 所有对[http://mysite.com/css/\*的访问被映射到相对路径assets/css中。](http://mysite.com/css/*的访问被映射到相对路径assets/css中。)
+* 对[http://mysite.com/images/png/\*的访问被映射到assets/images目录中。](http://mysite.com/images/png/*的访问被映射到assets/images目录中。)
+* 对[http://mysite.com/js/\*的访问被映射到assets/js目录中；该条StaticFileHandler的参数中还被配置了default\_filename参数，即当用户访问了http://mysite.com/js目录本身时，将返回templates/index.html文件。](http://mysite.com/js/*的访问被映射到assets/js目录中；该条StaticFileHandler的参数中还被配置了default_filename参数，即当用户访问了http://mysite.com/js目录本身时，将返回templates/index.html文件。)
 
 # 2、优化静态文件访问
 
 优化静态文件访问的目的在于减少静态文件的重复传送，提高网络及服务器的利用效率，通过在模板文件中用static\_url方法修饰静态文件链接可以达到这个目的：
 
 ```
-
+<html>
+<head>
+</head>
+<body>
+<div><img src="{{static_url('images/logo.png')}}"/><div>
+</body>
+</html>
 ```
 
-
+本例中的静态图像链接将被设置为类似/static/images/logo.png?v=5ad4e的形式，其中的v=5ad4e是logo.png文件内容的哈希值，当Tornado静态文件处理器发现该参数时，将通知浏览器该文件可以无限期缓存，因此避免了之后访问该文件时的反复传输。
 
