@@ -6,7 +6,7 @@
 
 ### （1）static目录配置
 
-在tornado.web.Application的构造函数中可以传入static\_path参数，用于配置对URL路径http://mysite.com/static中文件的本地路径，比如：
+在tornado.web.Application的构造函数中可以传入static\_path参数，用于配置对URL路径【http://mysite.com/static】中文件的本地路径，比如：
 
 ```
 
