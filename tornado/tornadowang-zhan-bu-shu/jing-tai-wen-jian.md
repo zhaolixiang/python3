@@ -6,7 +6,7 @@
 
 ### （1）static目录配置
 
-在tornado.web.Application的构造函数中可以传入static\_path参数，用于配置对URL路径http://mysite.com/static中文件的本地路径，比如：
+在tornado.web.Application的构造函数中可以传入static\_path参数，用于配置对URL路径[http://mysite.com/static中文件的本地路径，比如：](http://mysite.com/static中文件的本地路径，比如：)
 
 ```
 import tornado
@@ -19,6 +19,8 @@ def make_app():
         static_path="C:\\www\\static"
     )
 ```
+
+这将使诸如http://mysite.com/static/favorite.png、http://mysite.com/static/css/main.cs这的文件的访问映射到C:\www\static中。
 
 
 
