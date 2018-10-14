@@ -12,17 +12,122 @@ nohup python app.py >> log/app.log &
 
 使用nuhup可以后台运行一个进程，但是一旦网站出现错误，进程关闭，网站将会停止运行。这时候就需要supervisor来帮我们守护进程，自动重启网站。
 
-可在supervisor配置文件中添加：
+> Supervisord是用Python实现的一款非常实用的进程管理工具。
+
+* ### 安装 配置
 
 ```
-[program:tornado-8000]
-command=python /var/www/main.py --port=8000
-directory=/var/www
+sudo apt-get install supervisor
+创建配置文件
+echo_supervisord_conf > /etc/supervisord.conf
+```
+
+* ### Supervisor 配置文件 /etc/supervisor/conf.d：
+
+```
+
+# 为了方便管理，增加一个tornado组
+[group:tornados]
+programs=tornado-0,tornado-1,tornado-2
+ 
+# 分别定义三个tornado的进程配置
+[program:tornado-0]
+# 进程要执行的命令
+command=python /data/web/advance_python/tornado_asyn/hello.py --port=8020
+directory=/data/web/advance_python/tornado_asyn/
+user=www-data
+# 自动重启
+autorestart=true
+redirect_stderr=true
+# 日志路径
+stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado0.log
+loglevel=info
+ 
+[program:tornado-1]
+command=python /data/web/advance_python/tornado_asyn/hello.py --port=8021
+directory=/data/web/advance_python/tornado_asyn/
 user=www-data
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/var/log/tornado.log
+stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado1.log
 loglevel=info
+ 
+[program:tornado-2]
+command=python /data/web/advance_python/tornado_asyn/hello.py --port=8022
+directory=/data/web/advance_python/tornado_asyn/
+user=www-data
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado2.log
+```
+
+* ### 启动supervisor
+
+```
+使用默认的配置文件 /etc/supervisord.conf
+supervisord
+明确指定配置文件
+supervisord -c /etc/supervisord.conf
+使用 user 用户启动supervisord
+supervisord -u user
+```
+
+* ### 查看、操作进程状态
+
+```
+[/etc/supervisor/conf.d]$ sudo supervisorctl
+[sudo] password for lidongwei:
+tornados:tornado-0 RUNNING pid 10012, uptime 1:22:04
+tornados:tornado-1 RUNNING pid 10011, uptime 1:22:04
+tornados:tornado-2 RUNNING pid 10013, uptime 1:22:04
+
+# 停止运行tornado-1服务器进程
+supervisor> stop tornados:tornado-1
+tornados:tornado-1: stopped
+supervisor> status
+tornados:tornado-0 RUNNING pid 10012, uptime 1:23:19
+tornados:tornado-1 STOPPED Mar 12 06:46 PM
+tornados:tornado-2 RUNNING pid 10013, uptime 1:23:19
+
+# 停止运行整个tornado服务器进程组
+supervisor> stop tornados:
+tornado-0: stopped
+tornado-2: stopped
+supervisor> status
+tornados:tornado-0 STOPPED Mar 12 06:50 PM
+tornados:tornado-1 STOPPED Mar 12 06:46 PM
+tornados:tornado-2 STOPPED Mar 12 06:50 PM
+```
+
+* ### supervisorctl 命令介绍
+
+```
+supervisorctl stop program_name
+启动某个进程
+supervisorctl start program_name
+重启某个进程
+supervisorctl restart program_name
+结束所有属于名为 groupworker 这个分组的进程 (start，restart 同理)
+supervisorctl stop groupworker:
+结束 groupworker:name1 这个进程 (start，restart 同理)
+supervisorctl stop groupworker:name1
+停止全部进程，注：start、restart、stop 都不会载入最新的配置文件
+supervisorctl stop all
+载入最新的配置文件，停止原有进程并按新的配置启动、管理所有进程
+supervisorctl reload
+根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启
+supervisorctl update
+
+```
+
+* ### 总结
+
+```
+Supervisor和你系统的初始化进程一起工作，并且它应该在系统启动时自动注册守护进程。
+当supervisor启动后，程序组会自动在线。默认情况下，Supervisor会监控子进程，并在任何程序意外终止时重生
+。如果你想不管错误码，重启被管理的进程，你可以设置autorestart为true。
+Supervisor不只可以使管理多个Tornado实例更容易，还能让你在Tornado服务器遇到意外的服务中断后重新上线时泰然处之。
+三个tornado进程都正常运行，并且比逐个管理方便的多
 ```
 
 # 3、nginx代理多进程
