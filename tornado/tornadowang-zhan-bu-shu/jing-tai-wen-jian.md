@@ -39,3 +39,13 @@ def make_app():
 
 即指定静态目录为本程序文件所在目录的static子目录。
 
+### （2）StaticFileHandler配置
+
+如果除了http://mysite.com/static目录还有其他存放静态文件的URL，则可以用RequestHandler的子类StaticFileHandler进行配置，比如：
+
+```
+
+```
+
+
+
