@@ -5,6 +5,35 @@
 Nginx配置反向代理的方法非常简单，打开Nginx配置文件nginx.conf，进行类似如下配置，然后重启Nginx服务器即可：
 
 ```
+user nginx;
+worker_process 5;
 
+error_log /var/log/nginx/error.log
+
+pid /var/run/nginx.pid;
+
+events{
+use epoll;
+}
+
+proxy_next_upstream error;
+
+upstream backs{
+//配置3个后台Tornado服务
+server 192.168.0.1:8001;
+server 192.169.0.1:8002;
+server 192.168.0.2:8003;
+}
+
+server{
+listen 80; //监听80端口
+server_name www.mysite.com;
+}
+
+location / {
+proxy_pass http://backs;
+}
 ```
+
+
 
