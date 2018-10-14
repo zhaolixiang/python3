@@ -2,8 +2,11 @@
 
 一般调试过程中我们使用python app.py运行网站，方便我们在命令行中看运行状况。
 
-  
 但在生产环境下我们需要后台运行网站。我们可以使用linux的nohup命令。
+
+```
+nohup python app.py >> log/app.log &
+```
 
 # 2、supervisor守护进程
 
