@@ -4,5 +4,13 @@
 
 配置静态文件路径的目的在于为客户端提供静态文件的可访问性。Tornado提供了两种方式进行配置静态文件URL路径与服务器本地路径的关联关系。
 
+### （1）static目录配置
+
+在tornado.web.Application的构造函数中可以传入static\_path参数，用于配置对URL路径http://mysite.com/static中文件的本地路径，比如：
+
+```
+
+```
+
 
 
