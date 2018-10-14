@@ -86,6 +86,7 @@
     * [WebSocket概念](tornado/html5-websocketgai-nian-ji-ying-yong/websocketgai-nian.md)
     * [服务端编程](tornado/html5-websocketgai-nian-ji-ying-yong/fu-wu-duan-bian-cheng.md)
     * [客户端编程](tornado/html5-websocketgai-nian-ji-ying-yong/ke-hu-duan-bian-cheng.md)
+  * [Tornado网站部署](tornado/tornadowang-zhan-bu-shu.md)
 * [redis实战](redis.md)
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
   * [第一章：初识Redis](redis/di-yi-zhang-ff1a-chu-shi-redis.md)
