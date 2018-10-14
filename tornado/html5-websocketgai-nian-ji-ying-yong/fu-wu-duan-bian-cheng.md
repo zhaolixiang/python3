@@ -75,6 +75,8 @@ if __name__ == '__main__':
 * 定义了全局变量字典clients，用于保存所有与服务器建立WebSocket链接的客户端信息。字典的键是客户端id，值是一个由id与相应的WebSocketHandler实例构成的元组（Tuple）
 * IndexHandler是一个普通的页面处理器，用于向客户端渲染主页index.html。本页面中包含了WebSocket的客户端程序。
 * MyWebSocketHandler是本例的核心处理器，继承自tornado.web.WebSocketHandler。其中的open\(\)函数将所有客户端链接保存到clients字典中；on\__message\(\)用于显示客户端发来的消息；on_\_close\(\)用于将已经关闭的WebSocket链接从clients字典中移除。
+* 函数sendTime\(\)运行在单独的线程中，每隔1秒轮询clients中的所有客户端并通过MyWebSocketHandler.write\_message\(\)函数向客户端推送时间消息。
+* 本例的tornado.web.Application实例中只配置了两个路由，分别指向IndexHandler和MyWebSocketHandler，仍然由Tornado IOLoop启动并运行。
 
 
 
