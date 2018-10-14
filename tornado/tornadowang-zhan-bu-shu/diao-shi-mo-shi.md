@@ -59,5 +59,9 @@ if __name__ == '__main__':
     main()
 ```
 
-这也在控制台发送了Ctrl+C请求后，程序可有机会回收系统的其它资源并退出执行
+这也在控制台发送了Ctrl+C请求后，程序可有机会回收系统的其它资源并退出执行。
+
+> 注意：在Windows平台上，产生KeyboardInterrupt中断的方式是Ctrl+Pause
+
+
 
