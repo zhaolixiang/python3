@@ -89,6 +89,7 @@
   * [Tornado网站部署](tornado/tornadowang-zhan-bu-shu.md)
     * [调试模式](tornado/tornadowang-zhan-bu-shu/diao-shi-mo-shi.md)
     * [静态文件](tornado/tornadowang-zhan-bu-shu/jing-tai-wen-jian.md)
+    * [运营期配置](tornado/tornadowang-zhan-bu-shu/yun-ying-qi-pei-zhi.md)
 * [redis实战](redis.md)
   * [Mac brew安装redis](redis/mac-brewan-zhuang-redis.md)
   * [第一章：初识Redis](redis/di-yi-zhang-ff1a-chu-shi-redis.md)
