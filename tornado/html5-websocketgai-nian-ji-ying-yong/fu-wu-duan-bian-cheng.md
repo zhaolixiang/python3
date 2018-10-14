@@ -16,15 +16,17 @@ Tornado定义了tornado.websocket.WebSocketHandler类用于处理WebSocket链接
 import tornado.ioloop
 import tornado.web
 import tornado.websocket
+from tornado import gen
 from tornado.options import define,options,parse_command_line
-
-define("port",default=8888,help="run on the given post",type=int)
+import asyncio
 
 clients=dict()#客户端Session字典
 
 class IndexHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
+    @gen.coroutine
     def get(self):
+        print("123")
         self.render("index.html")
 
 class MyWebSocketHandler(tornado.websocket.WebSocketHandler):
@@ -51,23 +53,35 @@ app=tornado.web.Application([
 
 import threading
 import time
-#启动单独的线程运行此函数，每隔1秒向所有的客户端推送当前时间
-def sendTime():
-    import datetime
-    while True:
-        for key in clients.keys():
-            msg=str(datetime.datetime.now())
-            clients[key][object].write_mesage(msg)
-            print("write to client %s:%s"%(key,msg))
-        time.sleep(1)
+class SendThread(threading.Thread):
+    # 启动单独的线程运行此函数，每隔1秒向所有的客户端推送当前时间
+    def run(self):
+        # tornado 5 中引入asyncio.set_event_loop,不然会报错
+        asyncio.set_event_loop(asyncio.new_event_loop())
+        import datetime
+        while True:
+            for key in clients.keys():
+                msg = str(datetime.datetime.now())
+                clients[key]["object"].write_message(msg)
+                print("write to client %s:%s" % (key, msg))
+            time.sleep(1)
+
+
+
+
 
 if __name__ == '__main__':
     #启动推送时间线程
-    threading.Thread(target=sendTime()).start()
+    SendThread().start()
     parse_command_line()
-    app.listen(options.port)
+    app.listen(8888)
     #挂起运行
     tornado.ioloop.IOLoop.instance().start()
+
+
+
+
+
 ```
 
 解析上述代码如下：
