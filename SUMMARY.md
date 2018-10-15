@@ -127,4 +127,5 @@
     * [第一类对象](lei-xing-yu-dui-xiang/di-yi-lei-dui-xiang.md)
   * [运算符与表达式](yun-suan-fu-yu-biao-da-shi.md)
 * [SQLAlchemy数据库编程](sqlalchemyshu-ju-ku-bian-cheng.md)
+  * [SQLAlchemy入门](sqlalchemyshu-ju-ku-bian-cheng/sqlalchemyru-men.md)
 
