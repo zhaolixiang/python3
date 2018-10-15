@@ -55,6 +55,22 @@ print(a.step)
 此外，可以通过使用indices\(size\)方法将切片映射到特定大小的序列上。这会返回一个\(start,stop,step\)元组，所有的值都已经恰当地限制在边界以内（当做索引操作时可避免出现IndexError异常），例如：
 
 ```
+s='HelloWorld'
+a=slice(2,5)
+print(a.indices(len(s)))
+for i in range(*a.indices(len(s))):
+    print(str(i)+":"+s[i])
 
 ```
+
+结果：
+
+```
+(2, 5, 1)
+2:l
+3:l
+4:o
+```
+
+
 
