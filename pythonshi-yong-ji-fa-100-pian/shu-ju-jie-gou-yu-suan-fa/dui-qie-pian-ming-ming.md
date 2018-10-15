@@ -9,7 +9,13 @@
 内置的slice\(\)函数会创建一个切片对象，可以用在任何运行进行切片操作的地方。
 
 ```
+items=[0,1,2,3,4,5,6]
+a=slice(2,4)
+print(items[2:4])
+print(items[a])
 
+items[1]=[10,11,12,13]
+print(items)
 ```
 
 
