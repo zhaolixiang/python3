@@ -35,7 +35,21 @@ print(items)
 如果有一个slice对象的实例s。可以分别通过s.start、s.stop以及s.step属性得到关于该对象的信息。例如：
 
 ```
+items=[0,1,2,3,4,5,6]
+a=slice(2,8,3)
+print(items[a])
+print(a.start)
+print(a.stop)
+print(a.step)
+```
 
+结果：
+
+```
+[2, 5]
+2
+8
+3
 ```
 
 
