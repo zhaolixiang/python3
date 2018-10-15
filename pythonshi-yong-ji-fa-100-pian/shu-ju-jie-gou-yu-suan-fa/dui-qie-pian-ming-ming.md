@@ -14,8 +14,22 @@ a=slice(2,4)
 print(items[2:4])
 print(items[a])
 
-items[1]=[10,11,12,13]
+items[a]=[10,11,12,13]
 print(items)
+
+del items[a]
+print(items[a])
+print(items)
+```
+
+运行结果：
+
+```
+[2, 3]
+[2, 3]
+[0, 1, 10, 11, 12, 13, 4, 5, 6]
+[12, 13]
+[0, 1, 12, 13, 4, 5, 6]
 ```
 
 
