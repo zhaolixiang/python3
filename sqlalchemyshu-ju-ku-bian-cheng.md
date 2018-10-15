@@ -1,2 +1,4 @@
-SQLAlchemy是Python编程语言下的一款开源软件。提供了SQL工具包及对象关系映射（ORM）工具，SQLAlchemy
+SQLAlchemy是Python编程语言下的一款开源软件。提供了SQL工具包及对象关系映射（ORM）工具，SQLAlchemy使用MIT许可证发行。它采用简单的Python语音，为高效和高性能的数据库访问设计，实现了完整的企业级持久模型。SQLAlchemy非常关注数据库的量级和性能。
+
+
 
