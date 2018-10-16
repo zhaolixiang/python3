@@ -34,7 +34,9 @@ files = /etc/supervisor/conf.d/.conf
 ```
 # 为了方便管理，增加一个tornado组
 [group:tornados]
-programs=tornado-0,tornado-1,tornado-2
+programs=tornado-0,tornado-1,tornado-2,tornado-3,tornado-4,tornado-5,tornado-6,tornado-7
+
+
 
 # 分别定义三个tornado的进程配置
 [program:tornado-0]
