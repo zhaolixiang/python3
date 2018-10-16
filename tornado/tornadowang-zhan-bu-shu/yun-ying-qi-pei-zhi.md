@@ -20,11 +20,17 @@ nohup python app.py >> log/app.log &
 
 ```
 sudo apt-get install supervisor
-修改配置文/etc/supervisord.conf
-只需要将最后一行改为下面的形式就可以了：
+安装好supervisor之后，默认是没有生成配置文件的。可以通过以下命令生成配置文件
+
+echo_supervisord_conf > /etc/supervisord.conf
+我们通常是把配置文件放到/etc/下面，当然也可以放到任意路径下面。
+
+vim 打开编辑supervisord.conf文件，修改
 [include]
-files = /etc/supervisor/conf.d/.conf
-默认好像是以“/.ini”结尾的配置文件
+files = relative/directory/*.ini
+为
+[include]
+files = /etc/supervisor/*.conf
 ```
 
 * ### Supervisor 配置文件 /etc/supervisor/conf.d/：
