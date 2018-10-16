@@ -40,7 +40,7 @@ programs=tornado-0,tornado-1,tornado-2
 # 分别定义三个tornado的进程配置
 [program:tornado-0]
 # 进程要执行的命令
-command=python /data/web/advance_python/tornado_asyn/hello.py --port=8020
+command=python /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8020
 directory=/data/web/advance_python/tornado_asyn/
 user=www-data
 # 自动重启
@@ -51,7 +51,7 @@ stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado0.log
 loglevel=info
 
 [program:tornado-1]
-command=python /data/web/advance_python/tornado_asyn/hello.py --port=8021
+command=python /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8021
 directory=/data/web/advance_python/tornado_asyn/
 user=www-data
 autorestart=true
@@ -60,7 +60,7 @@ stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado1.log
 loglevel=info
 
 [program:tornado-2]
-command=python /data/web/advance_python/tornado_asyn/hello.py --port=8022
+command=python /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8022
 directory=/data/web/advance_python/tornado_asyn/
 user=www-data
 autorestart=true
