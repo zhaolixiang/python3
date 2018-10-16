@@ -48,7 +48,6 @@ programs=tornado-0,tornado-1,tornado-2,tornado-3,tornado-4,tornado-5,tornado-6,t
 [program:tornado-0]
 # 进程要执行的命令
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8000
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 # 自动重启
 autorestart=true
@@ -59,7 +58,6 @@ loglevel=info
 
 [program:tornado-1]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8001
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
@@ -68,7 +66,6 @@ loglevel=info
 
 [program:tornado-2]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8002
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
@@ -80,7 +77,6 @@ loglevel=info
 
 [program:tornado-3]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8003
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
@@ -91,7 +87,6 @@ loglevel=info
 
 [program:tornado-4]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8004
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
@@ -102,7 +97,6 @@ loglevel=info
 
 [program:tornado-5]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8005
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
@@ -113,7 +107,6 @@ loglevel=info
 
 [program:tornado-6]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8006
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
@@ -124,7 +117,6 @@ loglevel=info
 
 [program:tornado-7]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8007
-directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
