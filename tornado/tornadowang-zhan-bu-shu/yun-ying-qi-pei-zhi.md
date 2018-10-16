@@ -20,8 +20,7 @@ nohup python app.py >> log/app.log &
 
 ```
 sudo apt-get install supervisor
-创建配置文件
-echo_supervisord_conf > /etc/supervisord.conf
+修改配置文/etc/supervisord.conf
 只需要将最后一行改为下面的形式就可以了：
 [include]
 files = /etc/supervisor/conf.d/.conf
@@ -60,6 +59,15 @@ stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado1.log
 loglevel=info
 
 [program:tornado-2]
+command=python /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8022
+directory=/data/web/advance_python/tornado_asyn/
+user=www-data
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado2.log
+
+
+[program:tornado-3]
 command=python /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8022
 directory=/data/web/advance_python/tornado_asyn/
 user=www-data
