@@ -13,6 +13,8 @@ nohup python app.py >> log/app.log &
 使用nuhup可以后台运行一个进程，但是一旦网站出现错误，进程关闭，网站将会停止运行。这时候就需要supervisor来帮我们守护进程，自动重启网站。
 
 > Supervisord是用Python实现的一款非常实用的进程管理工具。
+>
+> 使用pip3安装时会出现说supervisor只适合python2的情况而不能成功安装，但其实用python3写的tornado也能用supervisor部署
 
 * ### 安装 配置
 
@@ -25,11 +27,10 @@ echo_supervisord_conf > /etc/supervisord.conf
 * ### Supervisor 配置文件 /etc/supervisor/conf.d：
 
 ```
-
 # 为了方便管理，增加一个tornado组
 [group:tornados]
 programs=tornado-0,tornado-1,tornado-2
- 
+
 # 分别定义三个tornado的进程配置
 [program:tornado-0]
 # 进程要执行的命令
@@ -42,7 +43,7 @@ redirect_stderr=true
 # 日志路径
 stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado0.log
 loglevel=info
- 
+
 [program:tornado-1]
 command=python /data/web/advance_python/tornado_asyn/hello.py --port=8021
 directory=/data/web/advance_python/tornado_asyn/
@@ -51,7 +52,7 @@ autorestart=true
 redirect_stderr=true
 stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado1.log
 loglevel=info
- 
+
 [program:tornado-2]
 command=python /data/web/advance_python/tornado_asyn/hello.py --port=8022
 directory=/data/web/advance_python/tornado_asyn/
@@ -117,7 +118,6 @@ supervisorctl stop all
 supervisorctl reload
 根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启
 supervisorctl update
-
 ```
 
 * ### 总结
