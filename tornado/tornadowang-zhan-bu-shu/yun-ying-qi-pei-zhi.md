@@ -22,9 +22,15 @@ nohup python app.py >> log/app.log &
 sudo apt-get install supervisor
 创建配置文件
 echo_supervisord_conf > /etc/supervisord.conf
+只需要将最后一行改为下面的形式就可以了：
+[include]
+files = /etc/supervisor/conf.d/.conf
+默认好像是以“/.ini”结尾的配置文件
 ```
 
 * ### Supervisor 配置文件 /etc/supervisor/conf.d：
+
+在/etc/supervisor/conf.d下创建文件：tornado.conf
 
 ```
 # 为了方便管理，增加一个tornado组
