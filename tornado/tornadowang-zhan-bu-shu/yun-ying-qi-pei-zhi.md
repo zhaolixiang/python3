@@ -28,9 +28,9 @@ files = /etc/supervisor/conf.d/.conf
 默认好像是以“/.ini”结尾的配置文件
 ```
 
-* ### Supervisor 配置文件 /etc/supervisor/conf.d：
+* ### Supervisor 配置文件 /etc/supervisor/conf.d/：
 
-在/etc/supervisor/conf.d下创建文件：tornado.conf
+在/etc/supervisor/conf.d/下创建文件：tornado.conf
 
 ```
 # 为了方便管理，增加一个tornado组
