@@ -130,8 +130,6 @@ autorestart=true
 redirect_stderr=true
 stdout_logfile=/usr/local/tornado_log/tornado7.log
 loglevel=info
-
-
 ```
 
 * ### 启动supervisor
