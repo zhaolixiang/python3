@@ -54,7 +54,7 @@ user=root
 autorestart=true
 redirect_stderr=true
 # 日志路径
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado0.log
+stdout_logfile=/usr/local/tornado_log/tornado0.log
 loglevel=info
 
 [program:tornado-1]
@@ -63,7 +63,7 @@ directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado1.log
+stdout_logfile=/usr/local/tornado_log/tornado1.log
 loglevel=info
 
 [program:tornado-2]
@@ -72,7 +72,10 @@ directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado2.log
+stdout_logfile=/usr/local/tornado_log/tornado2.log
+loglevel=info
+
+
 
 
 [program:tornado-3]
@@ -81,7 +84,10 @@ directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado3.log
+stdout_logfile=/usr/local/tornado_log/tornado3.log
+loglevel=info
+
+
 
 [program:tornado-4]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8004
@@ -89,7 +95,10 @@ directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado4.log
+stdout_logfile=/usr/local/tornado_log/tornado4.log
+loglevel=info
+
+
 
 [program:tornado-5]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8005
@@ -97,7 +106,10 @@ directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado5.log
+stdout_logfile=/usr/local/tornado_log/tornado5.log
+loglevel=info
+
+
 
 [program:tornado-6]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8006
@@ -105,7 +117,10 @@ directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado6.log
+stdout_logfile=/usr/local/tornado_log/tornado6.log
+loglevel=info
+
+
 
 [program:tornado-7]
 command=python3 /usr/local/9siliao_python/TornadoControl/MainEntrance.py --port=8007
@@ -113,7 +128,10 @@ directory=/data/web/advance_python/tornado_asyn/
 user=root
 autorestart=true
 redirect_stderr=true
-stdout_logfile=/home/lidongwei/log/supervisor/tornado/tornado7.log
+stdout_logfile=/usr/local/tornado_log/tornado7.log
+loglevel=info
+
+
 ```
 
 * ### 启动supervisor
