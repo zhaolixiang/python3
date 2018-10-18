@@ -39,6 +39,10 @@ class Accout(Base):
 解析定义表的代码如下：
 
 * SQLAlchemy表之前必须必须引入sqlalchemy.ext.declarative\_base，并定义一个它的实例Base。所有表必须继承自Base。本例中定义了一个账户表类Account。
+* 通过\_\__tablename_\_\_属性定义了表在数据库中实际的名称account。
+* 引入sqlalchemy包中的Column、Integer、String类型，因为需要用它们定义表中的列。本例在Account表中定义了5个列，分别是整型id和salary，以及字符串类型的user\_name、password、title。
+* 在定义列时可以通过给Column传送参数定义约束。本例中通过primary_key参数将id列定义主键，通过nullable参数将user_\_name和password定义非空。
+* 在表中还可以自定义其他函数。本例中定义了用户验证时常用的几个函数：is\__activite\(\)、get\__id\(\)、is_\_authenticate\(\)和is\_anonymous\(\)._
 
 
 
