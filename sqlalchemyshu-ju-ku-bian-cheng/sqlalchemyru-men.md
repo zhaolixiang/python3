@@ -34,8 +34,11 @@ class Accout(Base):
     def is_anonymous(self):
         #具有登陆名和密码的账号不是匿名用户
         return False
-
 ```
+
+解析定义表的代码如下：
+
+* SQLAlchemy表之前必须必须引入sqlalchemy.ext.declarative\_base，并定义一个它的实例Base。所有表必须继承自Base。本例中定义了一个账户表类Account。
 
 
 
