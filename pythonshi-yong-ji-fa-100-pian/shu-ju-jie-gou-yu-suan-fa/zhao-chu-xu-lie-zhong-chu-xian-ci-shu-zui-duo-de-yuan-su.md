@@ -58,8 +58,44 @@ print(words_counts['f'])
 * Counter对象另一个不为人知的特性，那就是他们可以轻松地同各种数学运算操作结合起来使用。
 
 ```
+from collections import Counter
+words1=[
+    'a','b','c','d','e','f',
+    'a','b','c','d','e','f',
+    'a','b','c',
+    'a','b',
+    'a'
+]
+
+words2=[
+    'a','b','c','d','e','f',
+    'a','b','c',
+    'a','b',
+    'a'
+]
+one=Counter(words1)
+two=Counter(words2)
+print(one)
+print(two)
+
+three=one+two
+print(three)
+
+four=one-two
+print(four)
 
 ```
+
+运行结果：
+
+```
+Counter({'a': 5, 'b': 4, 'c': 3, 'd': 2, 'e': 2, 'f': 2})
+Counter({'a': 4, 'b': 3, 'c': 2, 'd': 1, 'e': 1, 'f': 1})
+Counter({'a': 9, 'b': 7, 'c': 5, 'd': 3, 'e': 3, 'f': 3})
+Counter({'a': 1, 'b': 1, 'c': 1, 'd': 1, 'e': 1, 'f': 1})
+```
+
+
 
 
 
