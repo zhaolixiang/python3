@@ -45,6 +45,10 @@ print(rows_by_name_age)
 有时候会用lambda表达式取代itemgetter\(\)的功能，例如：
 
 ```
+rows_by_uid=sorted(rows,key=lambda r:r['uid'])
+rows_by_name_age=sorted(rows,key=lambda r:(r['name','age']))
 
 ```
+
+
 
