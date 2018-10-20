@@ -25,14 +25,14 @@ print(sorted(users,key=lambda u:u.userId))
 
 #方法2
 print(sorted(users,key=attrgetter('userId')))
-
-
 ```
 
 运行结果：
 
 ```
-
+[User(40), User(20), User(30)]
+[User(20), User(30), User(40)]
+[User(20), User(30), User(40)]
 ```
 
 
