@@ -35,5 +35,7 @@ print(sorted(users,key=attrgetter('userId')))
 [User(20), User(30), User(40)]
 ```
 
+> attrgetter通常会更快一点。上面计数同样适用min\(\)和max\(\)函数。
+
 
 
