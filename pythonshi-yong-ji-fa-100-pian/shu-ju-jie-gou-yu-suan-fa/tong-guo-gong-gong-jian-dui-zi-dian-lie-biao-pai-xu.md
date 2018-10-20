@@ -47,8 +47,9 @@ print(rows_by_name_age)
 ```
 rows_by_uid=sorted(rows,key=lambda r:r['uid'])
 rows_by_name_age=sorted(rows,key=lambda r:(r['name','age']))
-
 ```
+
+这种解决方案通常也能正常工作。但是用itemgetter\(\)通常会运行的更快一些。因此如果需要考虑性能问题的话，应该使用itemgetter\(\).
 
 
 
