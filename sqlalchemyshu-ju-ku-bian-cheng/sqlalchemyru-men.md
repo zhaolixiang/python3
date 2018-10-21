@@ -95,19 +95,19 @@ def InsertAccount(user,passwd,title,salary): #新增操作
     with session_scope() as session:
         account=orm.Account(user_name=user,passwd=passwd,title=title,salary=salary)
         session.add(account)
-        
+
 def GetAccount(id=None,user_name=None): #查询操作
     with session_scope() as session:
         return session.query(orm.Account).filter(
             or_(orm.Account.id==id,orm.Account.user_name=user_name)
         ).first()
-        
+
 def DeleteAccount(user_name): #删除操作
     with session_scope() as session:
         account=GetAccount(user_name=user_name)
         if account:
             session.delete(account)
-            
+
 def UpdateAccount(id,user_name,password,title,salary):  #更新操作
     with session_scope() as session:
         account=session.query(orm.Account).filter(orm.Account.id==id).first()
@@ -123,8 +123,17 @@ InsertAccount("帅哥","456","Boss",2000)  #调用新增操作
 GetAccount(2) #调用查询操作
 DeleteAccount("Mark")
 UpdateAccount(1,"admin","none","System admin",2500)
-
 ```
+
+本例演示了数据库中最常用的4种基于记录的操作：新增、查找、删除、更新。对此部分代码的解析如下：
+
+* 用import语句引入数据表\(Account\)所在的包orm。引入多条件查询时使用or\_。
+* 每个函数中都通过with语句启用上下文函数session\_scope\(\)，通过它获取到session对象，并自动开启新事物。
+* 在InsertAccount中，通过新建一个表Account实例，并通过session.add将其添加到数据库中。由于上下文函数退出时会自动提交事务，所以无需显示的调用session.commit\(\)使新增生效。
+* 在GetAccount中通过query语句进行查询，查询条件由filter设置，多个查询条件可以用or\__或and_\_连接。
+* 在DeleteAccount中通过GetAccount查询该对象，如果查询到了，则直接调用session.delete\(\)将该对象删除。
+* 在InsertAccount\(\)中通过query根据id查询记录，如果查询到了，则通过设置对象的属性实现对记录的修改。
+* 查询语句的结果是一个对象集合。查询语句后面的first\(\)函数用于提取该集合中的第一个对象，如果用all\(\)函数替换first\(\)函数，查询则会返回该集合。
 
 
 
