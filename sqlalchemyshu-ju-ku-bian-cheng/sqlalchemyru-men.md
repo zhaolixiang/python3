@@ -60,7 +60,7 @@ ssl_args={
         'ca':'/home/shouse/ssl/ca-cert.pem'
     }
 }
-engine=create_engine(db_connect_string,db_connect_string)
+engine=create_engine(db_connect_string,connect_args=ssl_args)
 SessionType=scoped_session(sessionmaker(bind=engine,expire_on_commit=False))
 def GetSession():
     return SessionType()
@@ -76,6 +76,8 @@ def session_scope():
         raise
     finally:
         session.close()
+
+
 ```
 
 解析此连接数据部分的代码如下：
