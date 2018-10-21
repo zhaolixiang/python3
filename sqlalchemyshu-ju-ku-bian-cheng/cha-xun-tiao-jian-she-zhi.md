@@ -26,5 +26,17 @@ session.query(Account).filter(Account.salary >=2000)       #大于等于过滤�
 
 模糊查询适用于只知道被查询字符串的一部分内容时，通过设置通配符的位置，可以查询出不同的结果。通配符用百分号%表示。
 
+假设表中的数据为：
 
+| id | user\_name | title | salary |
+| :--- | :--- | :--- | :--- |
+| 1 | David Li | System Manager | 3000 |
+| 2 | Debeca Li | Accountant | 3000 |
+| 3 | David Backer | Engineer | 3000 |
+| 4 | Siemon Bond | Enfineer | 4000 |
+| 5 | Van Berg | General Manager | NULL |
+
+```
+
+```
 
