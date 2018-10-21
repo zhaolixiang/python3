@@ -2,7 +2,7 @@
 
 使用SQLAlchemy至少需要3部分代码，它们分别是定义表、定义数据库连接、进行增、删、改、查等逻辑操作。
 
-# 实例：
+# 定义表的实例：
 
 ```
 from sqlalchemy.ext.declarative import declarative_base
@@ -44,7 +44,7 @@ class Accout(Base):
 * 在定义列时可以通过给Column传送参数定义约束。本例中通过primary_key参数将id列定义主键，通过nullable参数将user_\_name和password定义非空。
 * 在表中还可以自定义其他函数。本例中定义了用户验证时常用的几个函数：is\__activite\(\)、get\_\_id\(\)、is\_\_authenticate\(\)和is\_anonymous\(\)。
 
-定义数据库连接的示例代码如下：
+# 定义数据库连接的示例代码如下：
 
 ```
 from sqlalchemy import create_engine
@@ -86,4 +86,12 @@ def session_scope():
 * 用scoped\_session\(sessionmaker\(bind=engine\)\)建立会话类型SessionType，并定义函数GetSession\(\)用以创建SessionType的实例。
 
 至此，已经可以用GetSession\(\)函数创建数据库会话并进行数据库操作了。但为了使之后的数据库操作的代码能够自动进行事务处理，本例中定义了上下文函数session\_scope\(\)。在Python中定义上下文函数的方法是为其加入contextlib包中的contextmanager装饰器。在上下文函数中执行如下逻辑：在函数开始时建立数据库会话，此时会自动建立一个数据库事务：当发生异常时回滚（rollback）事务；当退出时关闭（close）连接。在关闭连接时会自动进行事务提交（commit）操作。
+
+# 进行数据库操作的代码：
+
+```
+
+```
+
+
 
