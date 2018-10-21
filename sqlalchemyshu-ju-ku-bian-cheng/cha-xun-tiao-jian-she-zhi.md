@@ -47,5 +47,7 @@ session.query(Account).filter(Account.title.like('%Manager'))
 session.query(Account).filter(Account.user_name.like('Da%'))
 ```
 
+> 注意：模糊查询只适用于查询字符串类型，不适用于数值类型。
+
 
 
