@@ -85,5 +85,5 @@ def session_scope():
 * 用create\_engine建立数据库引擎，如果数据库开启了SSL链路，则在此处需要传入ssl客户端证书的文件路径。
 * 用scoped\_session\(sessionmaker\(bind=engine\)\)建立会话类型SessionType，并定义函数GetSession\(\)用以创建SessionType的实例。
 
-
+至此，已经可以用GetSession\(\)函数创建数据库会话并进行数据库操作了。但为了使之后的数据库操作的代码能够自动进行事务处理，本例中定义了上下文函数session\_scope\(\)。在Python中定义上下文函数的方法是为其加入contextlib包中的contextmanager装饰器。在上下文函数中
 
