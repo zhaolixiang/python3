@@ -37,6 +37,15 @@ session.query(Account).filter(Account.salary >=2000)       #大于等于过滤�
 | 5 | Van Berg | General Manager | NULL |
 
 ```
+#查询所有名字包含字母i的用户，结果包括id为1、2、3、4的4条记录
+session.query(Account).filter(Account.user_name.like('%i%'))
 
+#查询所有title中以Manager结尾的用户，结果包括id为1、5的两条记录
+session.query(Account).filter(Account.title.like('%Manager'))
+
+#查询所有名字中以Da开头的用户，结果包括id为1、3的两条记录
+session.query(Account).filter(Account.user_name.like('Da%'))
 ```
+
+
 
