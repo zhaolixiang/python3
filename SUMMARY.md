@@ -133,4 +133,5 @@
 * [SQLAlchemy数据库编程](sqlalchemyshu-ju-ku-bian-cheng.md)
   * [SQLAlchemy入门](sqlalchemyshu-ju-ku-bian-cheng/sqlalchemyru-men.md)
   * [主流数据库的连接方式](sqlalchemyshu-ju-ku-bian-cheng/zhu-liu-shu-ju-ku-de-lian-jie-fang-shi.md)
+  * [查询条件设置](sqlalchemyshu-ju-ku-bian-cheng/cha-xun-tiao-jian-she-zhi.md)
 
