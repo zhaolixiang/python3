@@ -76,9 +76,14 @@ def session_scope():
         raise
     finally:
         session.close()
-
-
 ```
+
+解析此连接数据部分的代码如下：
+
+* 引入数据库和会话引擎：sqlalchemy.create\__engine、sqlalchemy.orm.scoped_\_session、sqlalchemy.orm.sessionmaker。
+* 定义连接数据库需要用到的数据库字符串。本例连接MySQL数据库，字符串格式为\[databse\__type\]://\[user_\_name\]:\[password\]@\[domain\]:\[port\]/\[database\]?\[parameters\]。本例中除了必须的连接信息，还传入了charset参数，指定用utf-8编码方式解码数据库中的字符串。
+* 用create\_engine建立数据库引擎，如果数据库开启了SSL链路，则在此处需要传入ssl客户端证书的文件路径。
+* 用scoped\_session\(sessionmaker\(bind=engine\)\)建立会话类型SessionType，并定义函数GetSession\(\)用以创建SessionType的实例。
 
 
 
