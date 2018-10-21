@@ -22,5 +22,9 @@ session.query(Account).filter(Account.salary <=2000)       #小于等于过滤�
 session.query(Account).filter(Account.salary >=2000)       #大于等于过滤器
 ```
 
+# 3、模糊查询（like）
+
+模糊查询适用于只知道被查询字符串的一部分内容时，通过设置通配符的位置，可以查询出不同的结果。通配符用百分号%表示。
+
 
 
