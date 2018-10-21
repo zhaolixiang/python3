@@ -47,6 +47,36 @@ class Accout(Base):
 定义数据库连接的示例代码如下：
 
 ```
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session,sessionmaker
+from contextlib import contextmanager
+
+db_connect_string='mysql://v_user:v_pase@localhost:3306/test_database?charset=utf8'
+
+ssl_args={
+    'ssl':{
+        'cert':'/home/ssl/client-cert.pem',
+        'key':'/home/shouse/ssl/client-key.pem',
+        'ca':'/home/shouse/ssl/ca-cert.pem'
+    }
+}
+engine=create_engine(db_connect_string,db_connect_string)
+SessionType=scoped_session(sessionmaker(bind=engine,expire_on_commit=False))
+def GetSession():
+    return SessionType()
+
+@contextmanager
+def session_scope():
+    session=GetSession()
+    try:
+        yield session
+        session.commit()
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
 
 ```
 
