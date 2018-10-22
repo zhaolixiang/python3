@@ -78,5 +78,20 @@ session.query(Account).filter(Account.salary!=None)
 session.query(Account).filter(Account.salary.isnot(None))
 ```
 
+# 6、非逻辑（~）
+
+当需要查询不满足某条件的记录时可以使用非逻辑。
+
+```
+#查询id不为1、3、5的记录，结果包含id为2、4的两条记录
+session.query(Account).filter(~Account.id.in_([1,3,5]))
+
+#查询工资不为2000、3000、4000的记录，结果包含id为5的1条记录
+session.query(Account).filter(~Account.id.in_([2000,3000,4000]))
+
+#查询所有title不为Engineer和Accountant的记录，结果包括id为1、5的2条记录。
+session.query(Account).filter(~Account.title.in(['Accountant','Engineer']))
+```
+
 
 
