@@ -61,7 +61,7 @@
     * [使用deque保留最新的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-yong-deque-bao-liu-zui-xin-de-n-ge-yuan-su.md)
     * [找到最大或最小的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zhao-dao-zui-da-huo-zui-xiao-de-n-ge-yuan-su.md)
     * [实现优先级队列](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-xian-you-xian-ji-dui-lie.md)
-    * [一键多值字典](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/yi-jian-duo-zhi-zi-dian.md)
+    * [一键多值字典：defaultdict](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/yi-jian-duo-zhi-zi-dian.md)
     * [让字典保持有序](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/rang-zi-dian-bao-chi-you-xu.md)
     * [字典上对数据执行计算：求最小值、最大值、排序](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zi-dian-shang-dui-shu-ju-zhi-xing-ji-suan-ff1a-qiu-zui-xiao-zhi-3001-zui-da-zhi-3001-pai-xu.md)
     * [在两个字典中寻找相同点](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zai-liang-ge-zi-dian-zhong-xun-zhao-xiang-tong-dian.md)
