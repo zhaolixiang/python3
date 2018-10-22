@@ -97,8 +97,18 @@ session.query(Account).filter(~Account.title.in(['Accountant','Engineer']))
 
 当需要查询同时满足多个条件的记录时，需要用到与逻辑。在SQLAlchemy中与逻辑可以有3种表达方式。
 
-```
+以下3条语句查询结果相同，都是id为3的记录。
 
+```
+#直接在filter中添加多个条件即表示与逻辑
+session.query(Account).filter(Account.title=='Engineer',Account.salary=3000)
+
+#用关机子and_进行逻辑查询
+from sqlalchemy import and_
+session.query(Account).filter(and_(Account.title=='Engineer',Account.salary=3000))
+
+#通过多个filter的链接表示与逻辑
+session.query(Account).filter(Account.title=='Engineer').filter(Account.salary=3000)
 ```
 
 
