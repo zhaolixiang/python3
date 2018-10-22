@@ -107,5 +107,36 @@ WHERE class.leve=?
 (3,)
 ```
 
+如果需要将被连接表的内心同样打印出来，则可以在query中指定多个表对象。
 
+下面的语句在打印出所有三年级学生姓名的同时，打印出其所在班级的名字。
+
+```
+for student,class_ in session.query(Student,Class).join(Class).filter(Class.level==3).all():
+    print(student.name,class_.name)
+```
+
+上述查询函数会自动把外键关系作为连接条件，该查询被SQLAlchemy自动翻译为如下SQL语句并执行：
+
+```
+SELECT student.student_id AS student_student_id,
+       student.name AS student.name,
+       student.age AS student.age,
+       student.gender AS student.gender,
+       student.address AS student.address,
+       student.class_id AS student_class_id,
+       class.class_id AS class_class_id,
+       class.name AS class_name,
+       class.level AS class_level,
+       class.address AS class_location
+FROM student JOIN class ON student.class_id=class.class_id
+WHERE class.leve=?
+(3,)
+```
+
+如果需要用除外键外的其他字段作为连接条件，则需要开发者在join中自行设置。下面打印出所有班级的address与学生的address相同的学生的姓名：
+
+```
+
+```
 
