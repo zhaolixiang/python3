@@ -64,7 +64,19 @@ students=relationship("Student",backref="calss")
 * 一对多关系的使用：以后可以直接通过该students属性获得相关班级中所有学生的信息。如下代码可以打印班级【三年二班】的所有学生信息。
 
 ```
+class=session.query(Class).filter(Clss.name=="三年二班").first()
 
+for student in class_.students:
+     print(student)
+```
+
+* 多对多关系的使用：通过关联模型ClassTeacher实现，在其中分别设置模型Class和Teacher的外键，并且在父模型中设置相应的relationship实现。多对多关系也可以想象成一个关联表，分别对两个父表实现了多对一的关系。班级与老师之间为多对多的关系，如下代码可以打印班级【三年二班】中所有老师的信息
+
+```
+class=session.query(Class).filter(Class.name=="三年二班").first()
+for class_teacher in class_.class_teachers:
+     teacher=class_teacher.teacher
+     print(teacher)
 ```
 
 
