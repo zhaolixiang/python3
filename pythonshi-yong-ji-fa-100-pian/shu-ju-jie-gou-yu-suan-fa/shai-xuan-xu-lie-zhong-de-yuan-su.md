@@ -43,6 +43,23 @@ for x in pos:
 有时候筛选的标准没法简单地表示在列表推导式或生成器表达式中。比如：假设筛选过程涉及异常处理或者其他一些复杂的细节。基于从，可以将处理筛选逻辑的代码放到单独的函数中，然后使用内建的filter\(\)函数处理，示例如下：
 
 ```
+values=['1','2','-3','-','4','N/A','5']
+def is_int(val):
+    try:
+        x=int(val)
+        return True
+    except ValueError:
+        return False
+
+ivals=list(filter(is_int,values))
+print(ivals)
+```
+
+结果：
 
 ```
+['1', '2', '-3', '4', '5']
+```
+
+
 
