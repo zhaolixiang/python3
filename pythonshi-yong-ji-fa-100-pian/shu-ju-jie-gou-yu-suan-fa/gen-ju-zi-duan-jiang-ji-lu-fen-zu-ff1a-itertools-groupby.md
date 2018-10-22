@@ -41,6 +41,8 @@ for age,items in groupby(rows,key=itemgetter('age')):
 
 # 3、分析
 
+> 一键多值字典：defaultdict
+
 函数groupby\(\)通过扫描序列找出拥有相同值（或是由参数key指定的函数所返回的值）的序列项，并将它们分组。groupby\(\)创建了一个迭代器，而在每次迭代时都会返回一个值（value）和一个子迭代器（sub\_iterator），这个迭代器可以产生所有在该分组内具有该值得项。
 
 在这里重要的是首先要根据age对数据进行排序。因为groupby\(\)不会排序。
