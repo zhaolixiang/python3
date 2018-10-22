@@ -93,5 +93,13 @@ session.query(Account).filter(~Account.id.in_([2000,3000,4000]))
 session.query(Account).filter(~Account.title.in(['Accountant','Engineer']))
 ```
 
+# 7、与逻辑（and\_）
+
+当需要查询同时满足多个条件的记录时，需要用到与逻辑。在SQLAlchemy中与逻辑可以有3种表达方式。
+
+```
+
+```
+
 
 
