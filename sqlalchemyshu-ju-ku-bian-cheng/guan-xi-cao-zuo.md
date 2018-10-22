@@ -96,6 +96,16 @@ for student in students:
 上述查询函数会自动把外键关系作为连接条件，该查询被SQLAlchemy自动翻译为如下SQL语句并执行：
 
 ```
-
+SELECT student.student_id AS student_student_id,
+       student.name AS student.name,
+       student.age AS student.age,
+       student.gender AS student.gender,
+       student.address AS student.address,
+       student.class_id AS student_class_id
+FROM student JOIN class ON student.class_id=class.class_id
+WHERE class.leve=?
+(3,)
 ```
+
+
 
