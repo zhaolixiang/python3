@@ -119,7 +119,8 @@ session.query(Account).filter(Account.title=='Engineer').filter(Account.salary=3
 #引入或逻辑关键字or_
 from sqlalchemy import or_
 
-#查询title是Engineer或者salary为3000的记录，返回
+#查询title是Engineer或者salary为3000的记录，返回结果为id为1、2、3、4的记录
+session.query(Account).filter(or_(Account.title=='Engineer',Account.salary=3000))
 ```
 
 
