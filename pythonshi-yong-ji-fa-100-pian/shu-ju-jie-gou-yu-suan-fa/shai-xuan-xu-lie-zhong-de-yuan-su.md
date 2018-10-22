@@ -99,6 +99,29 @@ print([n if n<0 else 0 for n in myList])
 例如：
 
 ```
+from itertools import compress
+address=[
+    '5412 N CLARK1',
+    '5148 N CLARK2',
+    '5800 E CLARK3',
+    '2122 N CLARK4',
+    '5645 M CLARK5',
+    '1060 W CLARK6',
+]
+counts=[0,3,10,4,1,7]
+#构建一个列表，它相应的count值要大于5
+more5=[n>5 for n in counts]
+print(more5)
+
+print(list(compress(address,more5)))
+```
+
+结果：
 
 ```
+[False, False, True, False, False, True]
+['5800 E CLARK3', '1060 W CLARK6']
+```
+
+
 
