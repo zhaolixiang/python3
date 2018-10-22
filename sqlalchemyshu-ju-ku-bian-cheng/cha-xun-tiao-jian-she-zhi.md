@@ -111,5 +111,16 @@ session.query(Account).filter(and_(Account.title=='Engineer',Account.salary=3000
 session.query(Account).filter(Account.title=='Engineer').filter(Account.salary=3000)
 ```
 
+# 8、或逻辑（or\_）
+
+当需要查询多个条件但只需其中一个条件满足时，需要用到或逻辑。
+
+```
+#引入或逻辑关键字or_
+from sqlalchemy import or_
+
+#查询title是Engineer或者salary为3000的记录，返回
+```
+
 
 
