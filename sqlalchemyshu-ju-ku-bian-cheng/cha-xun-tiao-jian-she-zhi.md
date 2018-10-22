@@ -49,5 +49,26 @@ session.query(Account).filter(Account.user_name.like('Da%'))
 
 > 注意：模糊查询只适用于查询字符串类型，不适用于数值类型。
 
+# 4、包括过滤器（in\_）
+
+当确切的知道要查询记录的字段内容，但是一个字段有多个内容要查询时，可以用包含过滤器。
+
+```
+#查询id不为1，3，5的记录，结果包含id为2，4的两条记录
+session.query(Account).filter(~Account.id.in_([1,3,5]))
+#查询工资不为2000、3000、4000的记录，结果包含id为5的1条记录
+session.query(Account).filter(~Account.id.in_([2000,3000,4000]))
+#查询所有title不为Engineer和Accountant记录，结果包括id为1、5的两条记录
+session.query(Account).filter(~Account.title.in_(['Accountant','Engineer']))
+```
+
+# 5、判断是否为空（is NULL、is not NULL）
+
+空值NULL是数据库字段中比较特殊的值。在SQLAlchemy中支持对字段是否为空进行判断。判断时可以用等值、不等值过滤器筛选，也可以用is、isnot进行筛选。
+
+```
+
+```
+
 
 
