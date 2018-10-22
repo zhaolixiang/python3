@@ -45,5 +45,27 @@ class ClassTeacher(Base):
     class_id=Column(Integer,ForeignKey("class.id"),primary_key=True)
 ```
 
+代码中用了4个SQLAlchemy模型对4个表进行了定义，其中与关系定义相关的部分如下：
+
+* 外键设置：在列的定义中，为Column传入ForeignKey进行外键设置。
+
+```
+class_id=Column(Integer,ForeignKey('class.id'))
+```
+
+* 关系设置：通过relationship关键字在父模型中建立对字表的引用，例如Class模型中的关系设置如下：
+
+```
+students=relationship("Student",backref="calss")
+```
+
+其中的backref参数为可选参数，如果设置backref，则此语句同时设置了 从父表对子表的引用。
+
+* 一对多关系的使用：以后可以直接通过该students属性获得相关班级中所有学生的信息。如下代码可以打印班级【三年二班】的所有学生信息。
+
+```
+
+```
+
 
 
