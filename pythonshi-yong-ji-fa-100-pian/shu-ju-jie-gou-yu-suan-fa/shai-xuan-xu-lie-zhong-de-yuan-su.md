@@ -85,7 +85,6 @@ print([math.sqrt(n) for n in myList if n>0])
 myList=[1,4,-5,10,-7,2,3,-1]
 print([n if n>0 else 0 for n in myList])
 print([n if n<0 else 0 for n in myList])
-
 ```
 
 结果：
@@ -95,5 +94,11 @@ print([n if n<0 else 0 for n in myList])
 [0, 0, -5, 0, -7, 0, 0, -1]
 ```
 
+另一个值得一提的筛选工具是itertools.compress\(\)，它接受一个可迭代对象以及一个布尔选择器序列作为输入。输出时，它会给出所有在相应的布尔选择器中为True的可迭代对象元素。如果想把对一个序列的筛选结果施加到另一个相关的序列上时，这就会非常有用。
 
+例如：
+
+```
+
+```
 
