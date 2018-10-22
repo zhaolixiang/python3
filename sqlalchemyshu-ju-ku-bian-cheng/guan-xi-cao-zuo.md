@@ -79,5 +79,7 @@ for class_teacher in class_.class_teachers:
      print(teacher)
 ```
 
+> 上述代码中class\_teacher.teacher是在模型teacher中针对ClassTeacher定义的反向引用。
+
 
 
