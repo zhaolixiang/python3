@@ -50,13 +50,32 @@ for age,items in groupby(rows,key=itemgetter('age')):
 如果只是简单的根据日期将数据分组到一起，放进一个大的数据结构中以允许进行随机访问，那么利用defaultdict\(\)构建一个一键多值字典可能会更好：
 
 ```
+from operator import itemgetter
+from itertools import groupby
+from collections import defaultdict
+
+rows=[
+    {'name':'mark','age':18,'uid':'110'},
+    {'name':'miaomiao','age':28,'uid':'160'},
+    {'name':'miaomiao2','age':28,'uid':'150'},
+    {'name':'xiaohei','age':38,'uid':'130'},
+]
+
+rows_by_age=defaultdict(list)
+for row in rows:
+    rows_by_age[row['age']].append(row)
+for a in rows_by_age[28]:
+    print(a)
+
+
 
 ```
 
 结果：
 
 ```
-
+{'name': 'miaomiao', 'age': 28, 'uid': '160'}
+{'name': 'miaomiao2', 'age': 28, 'uid': '150'}
 ```
 
 不考虑排序的话，defaultdict方法一般比groupby快。
