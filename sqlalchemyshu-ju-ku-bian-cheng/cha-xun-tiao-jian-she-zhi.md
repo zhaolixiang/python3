@@ -67,7 +67,15 @@ session.query(Account).filter(~Account.title.in_(['Accountant','Engineer']))
 空值NULL是数据库字段中比较特殊的值。在SQLAlchemy中支持对字段是否为空进行判断。判断时可以用等值、不等值过滤器筛选，也可以用is、isnot进行筛选。
 
 ```
+#查询salary为空值的记录，结果包含id为5的记录
+#下面两方式效果相同
+session.query(Account).filter(Account.salary==None)
+session.query(Account).filter(Account,salary.is_(None))
 
+#查询salary不为空值的记录，结果包含id为1、2、3、4的记录
+#下面两方式效果相同
+session.query(Account).filter(Account.salary!=None)
+session.query(Account).filter(Account.salary.isnot(None))
 ```
 
 
