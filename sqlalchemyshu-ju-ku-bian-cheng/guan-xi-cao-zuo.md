@@ -137,6 +137,15 @@ WHERE class.leve=?
 如果需要用除外键外的其他字段作为连接条件，则需要开发者在join中自行设置。下面打印出所有班级的address与学生的address相同的学生的姓名：
 
 ```
+for student_name, in session.query(Student.name).join(Class,Class.address==Student.address).filter(Class.level==3).all():
+    print(student_name)
+```
+
+上述查询函数根据开发者指定的语句作为连接条件，并且因为直接指定了被查询的字段，所以减少了实际SQL中的被查询字段，提高了性能。该查询被SQLAlchemy自动翻译为如下SQL语句执行：
 
 ```
+SELECT student.name AS student_name, FROM student JOIN class ON student.address=class.address
+```
+
+
 
