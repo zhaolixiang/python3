@@ -81,5 +81,21 @@ for class_teacher in class_.class_teachers:
 
 > 上述代码中class\_teacher.teacher是在模型teacher中针对ClassTeacher定义的反向引用。
 
+# 2、连接查询
 
+在实际开发中，有了关系就必不可少地会有多表连接查询的需求。下面通过实际例子演示如果进行多表连接查询。
+
+在查询语句中可以使用join关键字进行连接查询，打印出所有三年级学生的姓名：
+
+```
+students=session.query(Student).join(Class).filter(Class.level==3).all()
+for student in students:
+    print(student.namr)
+```
+
+上述查询函数会自动把外键关系作为连接条件，该查询被SQLAlchemy自动翻译为如下SQL语句并执行：
+
+```
+
+```
 
