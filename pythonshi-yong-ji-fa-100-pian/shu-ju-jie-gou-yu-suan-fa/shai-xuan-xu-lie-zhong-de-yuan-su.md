@@ -123,5 +123,7 @@ print(list(compress(address,more5)))
 ['5800 E CLARK3', '1060 W CLARK6']
 ```
 
+这里的关键在于首先创建一个布尔序列，用来表示哪个元素可满足我们的条件，然后compress\(\)函数挑选出满足布尔值为True的相应元素。
 
+同filter\(\)函数一样，正常情况下，compress\(\)会返回一个迭代器。因此，如果需要的话，得使用list\(\)将结果转为列表。
 
