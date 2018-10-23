@@ -73,6 +73,7 @@
     * [根据字段将记录分组：itertools.groupby\(\)](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/gen-ju-zi-duan-jiang-ji-lu-fen-zu-ff1a-itertools-groupby.md)
     * [筛选序列中的元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shai-xuan-xu-lie-zhong-de-yuan-su.md)
     * [从字典中提取子集](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/cong-zi-dian-zhong-ti-qu-zi-ji.md)
+    * [将名称映射到序列的元素中](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/jiang-ming-cheng-ying-she-dao-xu-lie-de-yuan-su-zhong.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
