@@ -39,7 +39,11 @@ Subsciber(addr='1782980833@qq.com', joined='2018-10-23')
 为了说明这个问题，下面有一些使用普通元组的代码：
 
 ```
-
+def compute_cost(records):
+    total=0.0
+    for rec in records:
+        total+=rec[1]*rec[2]
+    return total
 ```
 
 通过位置来引用元素常常使得代码的表达力不够强，而且也很依赖于记录的具体结构。
