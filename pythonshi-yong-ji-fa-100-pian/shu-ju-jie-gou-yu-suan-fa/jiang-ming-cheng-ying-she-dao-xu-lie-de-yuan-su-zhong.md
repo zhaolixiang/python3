@@ -51,7 +51,14 @@ def compute_cost(records):
 下面是使用命名元组的版本：
 
 ```
-
+from collections import namedtuple
+Stock=namedtuple('Stock',['name','shares','price'])
+def compute_cost(records):
+    total=0.0
+    for rec in records:
+        s=Stock(*rec)
+        total+=s.shares*s.price
+    return total
 ```
 
 # 3、分析😈
