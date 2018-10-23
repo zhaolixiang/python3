@@ -105,7 +105,6 @@ print(a)
 b={"addr":"111111@qq.com","joined":"1111-11-11"}
 b=dict_to_stock(b)
 print(b)
-
 ```
 
 结果：
@@ -115,5 +114,5 @@ Subsciber(addr='111111@qq.com', joined='1111-11-11', age=11)
 Subsciber(addr='111111@qq.com', joined='1111-11-11', age=0)
 ```
 
-
+最后，也是相当重要的是，应该要注意如果我们的目标是定义一个高效的数据结构，而且将来会修改各种实例属性，那么使用namedtuple并不是最佳选择，相反，可以考虑顶一个使用了\_\__slots_\_\_
 
