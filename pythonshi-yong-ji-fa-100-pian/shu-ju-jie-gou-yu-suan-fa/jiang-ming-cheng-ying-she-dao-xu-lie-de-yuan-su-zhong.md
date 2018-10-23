@@ -71,6 +71,22 @@ namedtuple的一种可能用法是作为字典的替代，后者需要更多的�
 如果需要修改任何属性，可以通过使用namedtuple实例\_replace\(\)方法来实现。该方法会创建一个全新的命名元组，并对相应的值做替换。
 
 ```
+from collections import namedtuple
+Subscriber=namedtuple('Subsciber',['addr','joined'])
+sub=Subscriber("1782980833@qq.com","2018-10-23")
+
+print(sub)
+
+sub=sub._replace(joined="2018-10-24")
+print(sub)
+```
+
+结果：
 
 ```
+Subsciber(addr='1782980833@qq.com', joined='2018-10-23')
+Subsciber(addr='1782980833@qq.com', joined='2018-10-24')
+```
+
+
 
