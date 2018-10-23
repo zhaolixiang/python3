@@ -91,6 +91,29 @@ Subsciber(addr='1782980833@qq.com', joined='2018-10-24')
 \__replace\(\)方法有一个微妙的用途，那就是它可以作为一种简单的方法填充具有可选或缺失字段的命名元组。要做到这点，首先创建一个包含默认值得原型数组，然后使用_\_replace\(\)方法创建一个新的实例，把相应的值替换掉。
 
 ```
+from collections import namedtuple
+Subscriber=namedtuple('Subsciber',['addr','joined','age'])
+sub=Subscriber("",None,0)
+
+def dict_to_stock(s):
+    return sub._replace(**s)
+
+a={"addr":"111111@qq.com","joined":"1111-11-11","age":11}
+a=dict_to_stock(a)
+print(a)
+
+b={"addr":"111111@qq.com","joined":"1111-11-11"}
+b=dict_to_stock(b)
+print(b)
 
 ```
+
+结果：
+
+```
+Subsciber(addr='111111@qq.com', joined='1111-11-11', age=11)
+Subsciber(addr='111111@qq.com', joined='1111-11-11', age=0)
+```
+
+
 
