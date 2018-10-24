@@ -58,8 +58,21 @@ class Student(Base):
     address=Column(String(50))
     class_id=Column(Integer,ForeignKey('class.class_id'))
     class_=relationship("Class",backref="students",cascade="all")
-
 ```
+
+上述代码没有在父表Class中设置relationship和cascade，而是在子表中设置了。
+
+SQLAlchemy中可选的cascade取值范围如下表所示：
+
+| 可选值 |  |
+| :--- | :--- |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
 
 
 
