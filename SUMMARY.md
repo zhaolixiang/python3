@@ -146,4 +146,5 @@
   * [使用文本数据](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju.md)
     * [处理HTML文件](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-html-wen-jian.md)
     * [处理CSV文件](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-csv-wen-jian.md)
+    * [读取JSON文件](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/du-qu-json-wen-jian.md)
 
