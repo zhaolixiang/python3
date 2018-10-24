@@ -141,4 +141,5 @@
 * [Python数据科学入门](pythonshu-ju-ke-xue-ru-men.md)
   * [什么是数据科学](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue.md)
     * [数据分析步骤](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue/shu-ju-fen-xi-bu-zou.md)
+    * [数据获取途径](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue/shu-ju-huo-qu-tu-jing.md)
 
