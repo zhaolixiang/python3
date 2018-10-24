@@ -91,5 +91,7 @@ BeautifulSoup对标签之间的垂直和水平关系使用统一的实现方法�
 
 任何标签t都有一个名称t.name，一个字符串值（t.string表示原始内容，t.stripped\_strings表示删除空白后的列表）、父标签t.parent、下一个标签t.next和前一个标签t.prev，以及零个或多个子标签t.children\(标签中的标准\)。
 
+BeautifulSoup通过Python字典接口实现对HTML标签属性的访问。如果标签对象t表示超链接（例如&lt;a href="index.html"&gt;），则超链接目标的字符串值为t\["href"\].string。
 
+> Html标签是不区别大小写的，这点应引起注意
 
