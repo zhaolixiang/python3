@@ -36,7 +36,7 @@ object=XXXX
 #将对象保存到文件
 with open("data.json","w") as out_json:
     json.dump(object,out_json,indent=None,sort_keys=False)
-    
+
 #将文件载入对象
 with open("data.json") as in_json:
     object1=json.load(in_json)
