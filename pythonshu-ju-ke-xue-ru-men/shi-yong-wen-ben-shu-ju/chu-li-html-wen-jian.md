@@ -40,7 +40,49 @@ soup准备就绪后，可以使用函数soup.prettify\(\)完美地打印出原�
 函数soup.get\_text\(\)返回标记文档中除了所有标签的文本部分。当我们感兴趣的内容是纯文本时，就可以使用这个函数实现标记文本向纯文本的转换。
 
 ```
+from bs4 import BeautifulSoup
+htmlString="""
+<html>
+<head><title>My Document</title></head>
+<body>
+main text
+</body>
+</html>
+"""
 
+soup=BeautifulSoup(htmlString,features="html.parser")
+print("#"*20)
+print(soup.get_text())
+print("#"*20)
+print(soup.prettify())
+print("#"*20)
+```
+
+结果：
+
+```
+####################
+
+
+My Document
+
+main text
+
+
+
+####################
+<html>
+ <head>
+  <title>
+   My Document
+  </title>
+ </head>
+ <body>
+  main text
+ </body>
+</html>
+
+####################
 ```
 
 
