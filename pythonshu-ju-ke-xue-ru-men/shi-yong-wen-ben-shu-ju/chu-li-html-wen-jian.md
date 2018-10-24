@@ -95,3 +95,34 @@ BeautifulSoup通过Python字典接口实现对HTML标签属性的访问。如果
 
 > Html标签是不区别大小写的，这点应引起注意
 
+BeautifulSoup最有用的函数应该就是find\(\)和find\_all\(\)了，二者分别用于找到某个标签的第一个实例和所有实例。
+
+* 标签&lt;h2&gt;的所有实例：
+
+```
+soup.find_all("h2")
+```
+
+* 所有粗体或斜体格式：
+
+```
+soup.find_all(["i","b","em","strong"])
+```
+
+* 具有某个属性（例如id="link3"）的所有标签：
+
+```
+soup.find(id="limk3")
+```
+
+* 使用字典符号或tag.get\(\)函数，找出所有超链接已经第一个链接的目标网址：
+
+```
+links=soup.find_all("a")
+firstLink=links[0]["href"]
+#或者
+firstLink=links[0].get("href")
+```
+
+
+
