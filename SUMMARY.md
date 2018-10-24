@@ -138,4 +138,6 @@
   * [主流数据库的连接方式](sqlalchemyshu-ju-ku-bian-cheng/zhu-liu-shu-ju-ku-de-lian-jie-fang-shi.md)
   * [查询条件设置](sqlalchemyshu-ju-ku-bian-cheng/cha-xun-tiao-jian-she-zhi.md)
   * [关系操作](sqlalchemyshu-ju-ku-bian-cheng/guan-xi-cao-zuo.md)
+* [Python数据科学入门](pythonshu-ju-ke-xue-ru-men.md)
+  * [什么是数据科学](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue.md)
 
