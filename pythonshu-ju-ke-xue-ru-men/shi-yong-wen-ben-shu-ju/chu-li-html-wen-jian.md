@@ -85,5 +85,11 @@ main text
 ####################
 ```
 
+标签通常用于定位某些文件片段。例如，我们所感兴趣的部分可能是第一个表的第一行这样具体的片段。使用标签可以实现诸如此类的定位功能，尤其是当标签具有class或id属性时，而使用纯文本时不可能实现这个功能的。
+
+BeautifulSoup对标签之间的垂直和水平关系使用统一的实现方法。类似于文件系统的层次结构，这种位置关系被表示为标签对象的属性。例如：soup的标题soup.title就是soup的对象属性。标题父元素的name对象的值是soup.title.parent.name.string，而第一个表第一行中的第一个单元格大概能表示为：soup.body.table.tr.td。
+
+任何标签t都有一个名称t.name，一个字符串值（t.string表示原始内容，t.stripped\_strings表示删除空白后的列表）、父标签t.parent、下一个标签t.next和前一个标签t.prev，以及零个或多个子标签t.children\(标签中的标准\)。
+
 
 
