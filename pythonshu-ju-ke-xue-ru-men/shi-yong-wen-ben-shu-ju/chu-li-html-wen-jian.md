@@ -127,6 +127,11 @@ firstLink=links[0].get("href")
 顺便提一下，如果标签不具备所查询的属性，则上面示例中的两种表打死都无法使用。鉴于可能遇到这样的情况，必须先使用tag.has\_attr\(\)函数检查属性是否存在，然后才能提取它。一下示例结合了BeautifulSoup和列表推导功能，来提取所有链接及其各自的网址和标签（这在用递归的方式抓取网页时非常有用）：
 
 ```
+with urlopen("http://ww.xxx.com/") as doc:
+    soup=BeautifulSoup(doc)
 
+links=[(link,string,link["href"])  for link in soup.find_all("a") if link.has_attr("href")]
 ```
+
+HTML、XML之所以强大，是因为它多样化的功能，但这种多功能也未尝不是它的魔咒，尤其是涉及表格数据处理时。
 
