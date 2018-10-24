@@ -29,8 +29,19 @@ soup3=BeautifulSoup(urlopen("http://www.networksciencelab.com/"))
 
 BeautifulSoup对象构造函数的第二个可选参数是标记解析器：负责提取HTML标签和实体的Python组件。BeautifulSoup附带四个预先安装好的解析器：
 
-* “html.parser”
-* "lxml"
-* 
+* “html.parser”：默认的解析器，解析速度非常快，但是规则较为严格、对用于简单的html文档。
+* "lxml"：解析速度非常快，规则较宽松
+* "xml"：仅适用于XML文件
+
+* "html5lib"：解析速度非常慢，规则也非常宽松，用于处理具有复杂结构的HTML文档，而如果不考虑解析速度，可用于所有HTML文档。
+
+soup准备就绪后，可以使用函数soup.prettify\(\)完美地打印出原始标记文档。
+
+函数soup.get\_text\(\)返回标记文档中除了所有标签的文本部分。当我们感兴趣的内容是纯文本时，就可以使用这个函数实现标记文本向纯文本的转换。
+
+```
+
+```
+
 
 
