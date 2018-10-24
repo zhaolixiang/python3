@@ -24,8 +24,21 @@ CV写入器提供writerow\(\)和writerows\(\)两个函数。writerow\(\)将一�
 首先，打开文件并读取数据：
 
 ```
-with open("test.csv",newline='') as infile
+with open("test.csv",newline='') as infile：
+    data=list(csv.reader(infile))
 ```
 
+检查文件中的第一个记录data\[0\]，它必须包含感兴趣的列标题：
 
+```
+
+```
+
+最后，访问剩余记录中感兴趣的字段，并计算和显示统计数据：
+
+```
+
+```
+
+csv和statistics模块是底层的、快速而粗糙的工具。后面我们将介绍在更为复杂的项目中使用pandas的数据frame，比现在使用方式检索csv 要高端的多。
 
