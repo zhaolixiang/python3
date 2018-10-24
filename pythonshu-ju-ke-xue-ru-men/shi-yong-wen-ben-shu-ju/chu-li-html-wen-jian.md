@@ -13,8 +13,24 @@ XML标签依赖于所使用的应用程序。只要遵循一些简单的规则�
 BeautifulSoup模块用于解析、访问以及修改HTML和XML文档。可以使用一个标记字符串、一个标记文件或一个标记文档的网址，来构建一个BeautifulSoup对象：
 
 ```
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
 
+#使用字符串构建soup
+soup1=BeautifulSoup("<HTML><HEAD></HEAD><body></body></HTML>")
+
+#使用本地文件构建soup
+soup2=BeautifulSoup(open("myDoc.html"))
+
+#使用web文档构建soup
+#记住urlopen()不会添加"http://"!
+soup3=BeautifulSoup(urlopen("http://www.networksciencelab.com/"))
 ```
 
+BeautifulSoup对象构造函数的第二个可选参数是标记解析器：负责提取HTML标签和实体的Python组件。BeautifulSoup附带四个预先安装好的解析器：
+
+* “html.parser”
+* "lxml"
+* 
 
 
