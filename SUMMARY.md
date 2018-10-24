@@ -144,4 +144,5 @@
     * [数据获取途径](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue/shu-ju-huo-qu-tu-jing.md)
     * [报告的结构](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue/bao-gao-de-jie-gou.md)
   * [使用文本数据](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju.md)
+    * [处理HTML文件](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-html-wen-jian.md)
 
