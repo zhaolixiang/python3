@@ -124,3 +124,7 @@ if student1 in session:
 
 # 3、delete级联
 
+顾名思义，delete级联是指当父对象被从session中，
+
+
+
