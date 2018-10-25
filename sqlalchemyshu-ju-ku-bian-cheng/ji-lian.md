@@ -110,6 +110,11 @@ if student1 in session:
 即使父对象已经被新增到session中，新关联的子对象仍然可以被添加：
 
 ```
+class_=Class()
+session.add(class_)
+students3=Student()
+if student3 in session:
+    print("The student3 is added before append to the class_!")
 
 ```
 
