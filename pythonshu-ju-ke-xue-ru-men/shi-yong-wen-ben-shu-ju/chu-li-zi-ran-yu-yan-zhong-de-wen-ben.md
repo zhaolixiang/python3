@@ -9,7 +9,7 @@ Python的nltk模块（自然语言功能工具包）中实现了很多NLP的功�
 * gutenberg：包含来自古登堡计划的十八个英语文本，例如《白鲸》和《圣经》
 * names：8000名男性和女性名字的列表。
 * words：235000个最常用的英语单词和表单的列表。
-* stopwords：
+* stopwords：以
 
 
 
