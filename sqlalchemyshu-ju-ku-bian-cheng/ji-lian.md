@@ -122,3 +122,5 @@ if student1 in session:
 
 这段代码打印”The student3 is added after append to the class\_!“
 
+# 3、delete级联
+
