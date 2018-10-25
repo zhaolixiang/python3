@@ -115,8 +115,10 @@ session.add(class_)
 students3=Student()
 if student3 in session:
     print("The student3 is added before append to the class_!")
-
+class_.students.append(students)
+if student1 in session:
+    print("The student3 is added after append to the class_!")
 ```
 
-
+这段代码打印”“
 
