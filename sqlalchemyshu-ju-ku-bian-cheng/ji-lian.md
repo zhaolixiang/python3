@@ -105,7 +105,7 @@ if student1 in session:
 
 上面代码将会打印："The student1 has been added too!"
 
-> 技巧：”in“语句可以判断某对象
+> 技巧：”in“语句可以判断某对象是否被关联到了session中。已被关联的对象在session被commit时会被写入到视频库中。
 
 
 
