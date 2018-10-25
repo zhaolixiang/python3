@@ -105,7 +105,7 @@ if student1 in session:
 
 上面代码将会打印："The student1 has been added too!"
 
-> 技巧：”in“语句可以判断某
+> 技巧：”in“语句可以判断某对象
 
 
 
