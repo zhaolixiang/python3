@@ -120,5 +120,5 @@ if student1 in session:
     print("The student3 is added after append to the class_!")
 ```
 
-这段代码打印”“
+这段代码打印”The student3 is added after append to the class\_!“
 
