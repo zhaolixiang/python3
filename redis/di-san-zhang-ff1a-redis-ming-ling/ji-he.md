@@ -70,5 +70,17 @@ False
 | sunion | sunion key-name \[key-name ...\] | 返回那些至少存在于一个集合中的元素（数学上的并集计算） |
 | sunionstore | sunionstore dest-key key-name \[key-name ...\] | 将那些至少存在于一个集合中的元素（数学上的并集计算）存储到dest-key键里面 |
 
+这些命令分别是并集运算、交集运算和差集运算这3个基本集合操作的”返回结果“版本和”存储结果“版本。
 
+示例：
+
+```
+
+```
+
+运行结果：
+
+```
+
+```
 
