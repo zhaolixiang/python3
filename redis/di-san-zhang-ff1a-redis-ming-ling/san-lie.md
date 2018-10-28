@@ -63,12 +63,36 @@ hincrby和hincrbyfloat可能会让读者回想起用于处理字符串的incrby�
 实例：
 
 ```
+import redis  # 导入redis包包
+
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+
+r.delete('hash-key2')
+
+print(r.hmset('hash-key2',{'short:':'hello','long':1000*'1'}))
+
+print(r.hkeys('hash-key2'))
+
+print(r.hexists('hash-key2','num'))
+
+#和字符串一样，对散列中一个尚未存在的键执行自增操作时，Redis会将键的值当作0来处理。
+print(r.hincrby('hash-key2','num'))
+
+print(r.hexists('hash-key2','num'))
 
 ```
 
 结果：
 
 ```
-
+True
+[b'short:', b'long']
+False
+1
+True
 ```
+
+
 
