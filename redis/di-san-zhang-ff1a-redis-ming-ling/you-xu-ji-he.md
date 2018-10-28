@@ -76,5 +76,5 @@ print(r.zrange('zset-key',0,-1,withscores=True))
 | zinterstore | zinterstore dest-key key-count key \[key ...\] | 对给定的有序集合执行类似于集合的交集运算。 |
 | zunionstore | zunionstore dest-key key-count key \[key ...\] \[weights weight \[weight ...\]\]\[aggregate sum\|min\|max\] | 对给定的有序集合执行类似于集合的并集运算。 |
 
-
+上表展示的命令里面，有几个是之前没介绍过的新命令。除了使用逆序来处理有序集合之外，zrev\*命令的工作方式和相对应的非逆序命令的工作方式完全一样（逆序就是指元素按照从大到小地排列）。
 
