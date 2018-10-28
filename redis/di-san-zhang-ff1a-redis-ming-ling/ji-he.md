@@ -44,9 +44,22 @@ print(r.smove('set-key','set-key2','a'))
 
 
 print(r.smembers('set-key2'))
+```
 
+运行结果：
 
 ```
+3
+1
+0
+2
+{b'a', b'b'}
+True
+False
+{b'a'}
+```
+
+
 
 
 
