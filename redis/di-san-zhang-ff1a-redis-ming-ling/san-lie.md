@@ -7,7 +7,7 @@
 | hmget | hmget key-name key \[key ...\] | 从散列里面获取一个或多个键的值 |
 | hmset | hmset key-name key value \[key value ...\] | 为散列里面的一个或多个键设置值 |
 | hdel | hdel key-name key \[key ...\] | 删除散列里面的一个或多个键值对，返回成功找到并删除的键值对数量。 |
-| hlen | hlen key-name |  |
+| hlen | hlen key-name | 返回散列包含的键值对数量。 |
 
 
 
