@@ -180,7 +180,7 @@ print(r.zrange('zset-key-u2',0,-1,withscores=True))
 
 | a | b | c | d |
 | :--- | :--- | :--- | :--- |
-| 1 | 2 | 1 | 0 |
+| 1 | 2\(取小的那个\) | 1（取小的那个） | 0 |
 
 > 执行r.zunionstore\('zset-key-u',\['zset-key1','zset-key2'\],aggregate='min'\)，会将存在于zset-key1或者zset-key2里面的元素通过min函数组合到zset-key-u里面。
 
