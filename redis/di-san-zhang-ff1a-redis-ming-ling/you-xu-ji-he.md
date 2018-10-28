@@ -17,5 +17,15 @@
 | zscore | zsore key-name member | 返回成员member的分值 |
 | zrange | zrange key-name start stop \[WITHSCORES\] | 返回有序集合中排名介于start和stop之间的成员，如果给定了可选的WITHSCORES选项，那么命令会将成员的分值也一并返回。 |
 
+实例：
 
+```
+
+```
+
+结果：
+
+```
+
+```
 
