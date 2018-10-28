@@ -14,12 +14,35 @@ hdel命令已经在第一章中介绍过了，而hlen命令以及用于一次读
 示例：
 
 ```
+import redis  # 导入redis包包
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+
+
+values = {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}
+#使用hmset命令可以一次将多个键值对添加多散列里面
+print(r.hmset('hash-key', values))
+
+keys = ['k2', 'k3']
+#使用hmset命令可以一次获取多个键的值
+print(r.hmget('hash-key', keys))
+
+
+print(r.hlen('hash-key'))
+
+print(r.hdel('hash-key','k1','k3'))
 
 ```
 
 结果：
 
 ```
-
+True
+[b'v2', b'v3']
+4
+2
 ```
+
+
 
