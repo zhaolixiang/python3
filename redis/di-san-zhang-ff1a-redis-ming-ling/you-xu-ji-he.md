@@ -44,8 +44,6 @@ print(r.zcount('zset-key',0,3))
 print(r.zrem('zset-key','b'))
 
 print(r.zrange('zset-key',0,-1,withscores=True))
-
-
 ```
 
 结果：
@@ -60,6 +58,23 @@ print(r.zrange('zset-key',0,-1,withscores=True))
 1
 [(b'a', 3.0), (b'c', 4.0)]
 ```
+
+因为zadd、zrem、zincrby、zscore和zrange都已经在第一章和第二章介绍过了，所以读者应该不会对它们感到陌生。zcount命令和其他命令不太相同，它主要拥挤计算分值在给定范围内的成员数量。
+
+下表展示了另外一些非常有用的有序集合命令：
+
+有序集合的范围型数据获取命令和范围型数据删除命令，以及并集命令和交集命令：
+
+| 命令 | 用例 | 用例描述 |
+| :--- | :--- | :--- |
+| zrevrank | zrevrank key-name merber | 返回有序集合里面成员member的排名，成员按照分值从大到小排列 |
+| zrevrange | zrevrange key-name start stop \[WITHSCORES\] | 返回有序集合给定排名范围内的成员，成员按照分值从大到小排列 |
+| zrangebysocre | zrangebyscore by min max \[WITHSCORES\] \[LIMIT offset count\] | 返回有序集合中，分值介于min和max之间的所有成员。 |
+| zrevrangebyscore | zrevrangebyscore key max min \[WITHSCORES\] \[LIMIT offset count\] | 获取有序集合中分值介于min和max之间的所有成员，并按照分值从大到小的顺序来返回它们。 |
+| zremrangebyrank | zremrangebyrank key-name start stop | 移除有序集合中排名介于start和stop之间的所有成员。 |
+| zremrangebyscore | zremrangebyscore key-name min max | 移除有序集合中分值介于min和max之间的所有成员。 |
+| zinterstore | zinterstore dest-key key-count key \[key ...\] | 对给定的有序集合执行类似于集合的交集运算。 |
+| zunionstore | zunionstore dest-key key-count key \[key ...\] \[weights weight \[weight ...\]\]\[aggregate sum\|min\|max\] | 对给定的有序集合执行类似于集合的并集运算。 |
 
 
 
