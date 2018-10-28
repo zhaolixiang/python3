@@ -81,12 +81,57 @@ print(r.zrange('zset-key',0,-1,withscores=True))
 实例：
 
 ```
+import redis  # 导入redis包包
 
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+
+r.delete('zset-key1')
+r.delete('zset-key2')
+r.delete('zset-key-i')
+r.delete('zset-key-u')
+r.delete('zset-key-u2')
+r.delete('set-1')
+
+#首先创建两个有序集合
+#a  b   c   d
+#1  2   3
+#   4   1   0
+print(r.zadd('zset-key1',1,'a',2,'b',3,'c'))
+print(r.zadd('zset-key2',4,'b',1,'c',0,'d'))
+
+
+#zinterstore和zunionstore默认使用的聚合函数为sum，这个函数会把各个有序集合的成员的分值都加起来
+print(r.zinterstore('zset-key-i',['zset-key1','zset-key2']))
+
+print(r.zrange('zset-key-i',0,-1,withscores=True))
+
+#用户可以在执行并集运算和交集运算的时候传入不同的聚合函数，共有sum、min、max三个聚合函数可选。
+print(r.zunionstore('zset-key-u',['zset-key1','zset-key2'],aggregate='min'))
+
+print(r.zrange('zset-key-u',0,-1,withscores=True))
+
+print(r.sadd('set-1','a','d'))
+
+print(r.zunionstore('zset-key-u2',['zset-key1','zset-key2','set-1']))
+
+print(r.zrange('zset-key-u2',0,-1,withscores=True))
 ```
 
 结果：
 
 ```
-
+3
+3
+2
+[(b'c', 4.0), (b'b', 6.0)]
+4
+[(b'd', 0.0), (b'a', 1.0), (b'c', 1.0), (b'b', 2.0)]
+2
+4
+[(b'd', 1.0), (b'a', 2.0), (b'c', 4.0), (b'b', 6.0)]
 ```
+
+
 
