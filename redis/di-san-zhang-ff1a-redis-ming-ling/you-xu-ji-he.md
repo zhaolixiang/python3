@@ -114,6 +114,7 @@ print(r.zrange('zset-key-u',0,-1,withscores=True))
 
 print(r.sadd('set-1','a','d'))
 
+#用户可以把集合作为输入传给zinterstore和zunionstore，命令会将集合看作是成员分值全为1的有序集合来处理。
 print(r.zunionstore('zset-key-u2',['zset-key1','zset-key2','set-1']))
 
 print(r.zrange('zset-key-u2',0,-1,withscores=True))
