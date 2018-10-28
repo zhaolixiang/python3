@@ -32,7 +32,6 @@ print(r.hmget('hash-key', keys))
 print(r.hlen('hash-key'))
 
 print(r.hdel('hash-key','k1','k3'))
-
 ```
 
 结果：
@@ -44,5 +43,5 @@ True
 2
 ```
 
-
+第一章介绍的hget命令和hset命令分别是
 
