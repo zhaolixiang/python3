@@ -20,12 +20,46 @@
 实例：
 
 ```
+import redis  # 导入redis包包
+
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+
+r.delete('zset-key')
+
+print(r.zadd('zset-key',3,'a',2,'b',1,'c'))
+
+print(r.zcard('zset-key'))
+
+print(r.zincrby('zset-key','c',3))
+
+print(r.zscore('zset-key','b'))
+
+print(r.zrank('zset-key','c'))
+
+#返回介于0-3之间的成员数量
+print(r.zcount('zset-key',0,3))
+
+print(r.zrem('zset-key','b'))
+
+print(r.zrange('zset-key',0,-1,withscores=True))
+
 
 ```
 
 结果：
 
 ```
-
+3
+3
+4.0
+2.0
+2
+2
+1
+[(b'a', 3.0), (b'c', 4.0)]
 ```
+
+
 
