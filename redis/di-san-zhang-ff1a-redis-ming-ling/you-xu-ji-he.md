@@ -184,5 +184,35 @@ print(r.zrange('zset-key-u2',0,-1,withscores=True))
 
 > 执行r.zunionstore\('zset-key-u',\['zset-key1','zset-key2'\],aggregate='min'\)，会将存在于zset-key1或者zset-key2里面的元素通过min函数组合到zset-key-u里面。
 
+### 使用zunionstore命令来将两个有序集合和一个集合组合成一个有序集合
 
+* zset-key1
+
+| a | b | c | d |
+| :--- | :--- | :--- | :--- |
+| 1 | 2 | 3 |  |
+
+* zset-key2
+
+| a | b | c | d |
+| :--- | :--- | :--- | :--- |
+|  | 4 | 1 | 0 |
+
+* set-1
+
+| a |  |  | d |
+| :--- | :--- | :--- | :--- |
+
+
+* zset-key-u2
+
+| a | b | c | d |
+| :--- | :--- | :--- | :--- |
+| 2 | 6 | 4 | 1 |
+
+> 执行r.zunionstore\('zset-key-u2',\['zset-key1','zset-key2','set-1'\]\)，将使得所有存在于zset-key1、zset-key2或者set-1里面的元素都被添加到zset-key-u2里面
+
+后面讲使用zinterstore和zunionstore来构建几个不同类型的搜索系统，并说明如果通过可选的weights参数来以几种不同的防暑组合有序集合的分值，从而使得集合和有序集合可以用于解决更多问题。
+
+读者在开发应用的过程中，也许曾经听说过发布与订阅（publish、subscribe）模式，又称pub/sub模式，Redis也实现了这种模式，接下来的一节将对其进行介绍。
 
