@@ -75,12 +75,41 @@ False
 示例：
 
 ```
+import redis #导入redis包包
+
+#与本地redis进行链接，地址为：localhost，端口号为6379
+r=redis.StrictRedis(host='localhost',port=6379)
+
+r.delete('set-key1')
+r.delete('set-key2')
+
+#首先将这一些元素添加到两个集合里面
+print(r.sadd('set-key1','a','b','c','d'))
+print(r.sadd('set-key2','c','d','e','f'))
+
+#计算出从第一个集合里面移除第二个集合包含的所有元素的结果
+print(r.sdiff('set-key1','set-key2'))
+
+#计算出同时存在于两个集合里面的所有元素
+print(r.sinter('set-key1','set-key2'))
+
+#计算出两个集合包含的所有元素
+print(r.sunion('set-key1','set-key2'))
+
 
 ```
 
 运行结果：
 
 ```
-
+4
+4
+{b'b', b'a'}
+{b'c', b'd'}
+{b'c', b'e', b'd', b'f', b'a', b'b'}
 ```
+
+和Python的集合相比，Redis的集合除了可以被多个客户端远程地进行访问以外，其他的语义和功能基本都是相同的。
+
+接下来的一节将对Redis的散列处理命令进行介绍，这些命令允许用户将多个相关的键值对存储在一起，以便执行获取操作和更新操作。
 
