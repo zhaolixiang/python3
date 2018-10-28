@@ -139,6 +139,7 @@
   * [查询条件设置](sqlalchemyshu-ju-ku-bian-cheng/cha-xun-tiao-jian-she-zhi.md)
   * [关系操作](sqlalchemyshu-ju-ku-bian-cheng/guan-xi-cao-zuo.md)
   * [级联](sqlalchemyshu-ju-ku-bian-cheng/ji-lian.md)
+    * [级联定义](sqlalchemyshu-ju-ku-bian-cheng/ji-lian/ji-lian-ding-yi.md)
 * [Python数据科学入门](pythonshu-ju-ke-xue-ru-men.md)
   * [什么是数据科学](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue.md)
     * [数据分析步骤](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue/shu-ju-fen-xi-bu-zou.md)
