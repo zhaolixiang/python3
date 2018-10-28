@@ -61,5 +61,14 @@ False
 
 通过使用上面展示的命令，我们可以将各不相同的元素添加到集合里面，但集合真正厉害的地方在于组合和关联多个集合，下表展示了相关的命令：
 
+| 命令 | 用例 | 用例描述 |
+| :--- | :--- | :--- |
+| sdiff | sdiff key-name \[key-name ...\] | 返回那些存在于第一个集合、但不存在于其它集合中的元素（数学上的差集运算） |
+| sdiffstore | sdiffstore dest-key key-name \[key-name ...\] | 将那些存在于第一个集合但不存在于其他集合中的元素（数学上的差集运算）存储到dest-key键里面 |
+| sinter | sinter key-name \[key-name ...\] | 返回那些同时存在于所有集合中的元素（数学上的交集运算） |
+| sinterstore | sinterstore dest-key key-name \[key-name ...\] | 将那些同时存在于所有集合的元素（数学上的交集运算）存储到dest-key键里面 |
+| sunion | sunion key-name \[key-name ...\] | 返回那些至少存在于一个集合中的元素（数学上的并集计算） |
+| sunionstore | sunionstore dest-key key-name \[key-name ...\] | 将那些至少存在于一个集合中的元素（数学上的并集计算）存储到dest-key键里面 |
+
 
 
