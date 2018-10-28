@@ -142,6 +142,7 @@
     * [级联定义](sqlalchemyshu-ju-ku-bian-cheng/ji-lian/ji-lian-ding-yi.md)
     * [save-update级联](sqlalchemyshu-ju-ku-bian-cheng/ji-lian/save-updateji-lian.md)
     * [delete级联](sqlalchemyshu-ju-ku-bian-cheng/ji-lian/deleteji-lian.md)
+    * [delete-orphan级联](sqlalchemyshu-ju-ku-bian-cheng/ji-lian/delete-orphanji-lian.md)
 * [Python数据科学入门](pythonshu-ju-ke-xue-ru-men.md)
   * [什么是数据科学](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue.md)
     * [数据分析步骤](pythonshu-ju-ke-xue-ru-men/shi-yao-shi-shu-ju-ke-xue/shu-ju-fen-xi-bu-zou.md)
