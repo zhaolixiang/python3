@@ -81,7 +81,6 @@ print(r.hexists('hash-key2','num'))
 print(r.hincrby('hash-key2','num'))
 
 print(r.hexists('hash-key2','num'))
-
 ```
 
 结果：
@@ -94,5 +93,7 @@ False
 True
 ```
 
+正如前面所说，在对散列进行处理的时候，如果键值对的值的体积非常庞大，那么用户可以先使用hkeys获取散列的所有键，然后通过只获取必要的值来减少需要传输的数据量。除此之外，用户还可以像使用sismemeber检查一个元素是否存在于集合里面一样，使用hexists检查一个键是否存在于散列中。
 
+在接下来的一节中，我们要了解的是之后的章节会经常用到的有序集合结构。
 
