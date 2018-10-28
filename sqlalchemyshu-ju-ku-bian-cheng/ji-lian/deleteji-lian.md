@@ -52,9 +52,9 @@ student表：
 
 | student\_id | class\_id | name | age | gender | address | contactor |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | 1 | 理想 | 10 | 男 | 静安区 | Null |
-| 2 | 1 | mark | 10 | 女 | 静安区 | Null |
-| 3 | 1 | 小马哥 | 9 | 女 | 闸口区 | 张三 |
+| 1 | NULL | 理想 | 10 | 男 | 静安区 | Null |
+| 2 | NULL | mark | 10 | 女 | 静安区 | Null |
+| 3 | NULL | 小马哥 | 9 | 女 | 闸口区 | 张三 |
 | 4 | 2 | 张苗 | 10 | 男 | 宝山区 | NULL |
 | 5 | 2 | 小黑 | 12 | 女 | 静安区 | 李四 |
 | 6 | 2 | 喵喵 | 11 | 男 | 闸北区 | NULL |
@@ -74,6 +74,33 @@ students=relationship("Student",backref="class",cascade="delete")
 class_=session.query(Class).filter(name="五年一班").first()  #五年一班的class_id为2
 session.delete(class_)          #删除class_id为2的班级
 ```
+
+当cascade包含“delete”时，上述代码中的delete语句相当于执行了如下SQL语句：
+
+```
+DELETE FROM student WHERE class=2;
+DELETE FROM class WHERE class=2;
+COMMIT;
+```
+
+执行后数据库表class和student的内容变化如下表所示：
+
+class表：
+
+| class\_id | name | level | address |
+| :--- | :--- | :--- | :--- |
+| 3 | 五年二班 | 5 | 理想路520号3楼 |
+
+student表：
+
+| student\_id | class\_id | name | age | gender | address | contactor |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | NULL | 理想 | 10 | 男 | 静安区 | Null |
+| 2 | NULL | mark | 10 | 女 | 静安区 | Null |
+| 3 | NULL | 小马哥 | 9 | 女 | 闸口区 | 张三 |
+| 7 | NULL | 韩永跃 | 10 | 男 | 静安区 | NULL |
+| 8 | 3 | 小镜镜 | 12 | 男 | 闸北区 | NULL |
+| 9 | 3 | 小镜子 | 12 | 女 | 宝山区 | NULL |
 
 
 
