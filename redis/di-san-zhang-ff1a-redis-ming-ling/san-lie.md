@@ -43,5 +43,32 @@ True
 2
 ```
 
-第一章介绍的hget命令和hset命令分别是
+第一章介绍的hget命令和hset命令分别是hmget命令和hmset命令的单参数版本，这里的命令的唯一区别在于单参数版本每次执行只能处理一个键值对，而多参数版本的每次执行可以处理多个键值对。
+
+下表列出了散列的其他几个批量操作命令，以及一些和字符串操作类似的散列命令。
+
+| 命令 | 用例 | 用例描述 |
+| :--- | :--- | :--- |
+| hexists | hexists key-name key | 检查给定键是否存在于散列中 |
+| hkeys | hkeys key-name | 获取散列包含的所有键 |
+| hvals | hvals key-name | 获取散列包含的所有值 |
+| hgetall | hgetall key-name | 获取散列包含的所有键值对 |
+| hincrby | hincrby key-name key increment | 将键key存储的值加上整数increment |
+| hincrbyfloat | hincrbyfloat key-name key increment | 将键key存储的值加上浮点数increment |
+
+尽管有hgetall存在，但hkeys和hvals也是非常有用的：如果散列包含的值非常大，那么用户可以先使用hkeys取出散列包含的所有键，然后再使用hget一个接一个地取出键的值，从而避免因为一次获取多个大体积的值而导致服务器阻塞。
+
+hincrby和hincrbyfloat可能会让读者回想起用于处理字符串的incrby和incrbyfloat，这两个命令拥有相同的语义，他们的不同在于hincrby和hincrbyfloat处理的是散列，而不是字符串。
+
+实例：
+
+```
+
+```
+
+结果：
+
+```
+
+```
 
