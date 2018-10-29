@@ -4,3 +4,13 @@
 
 下表展示了Redis提供的5个发布与订阅命令：
 
+| 命令 | 用例 | 用例描述 |
+| :--- | :--- | :--- |
+| subscribe | subscribe channel \[channel ...\] | 订阅给定的一个或多个频道 |
+| unsubscribe | unsubscribe \[channnel channel ...\] | 退订给定的一个或多个频道，如果执行时没有给定任何频道，那么退订所有频道 |
+| publish | publish channel message | 向给定频道发送消息 |
+| psubscribe | psubscribe pattern \[pattern ...\] | 订阅与给定模式相匹配的所有频道 |
+| punsunscribe | punsunscribe \[pattern \[pattern ...\]\] | 退订给定的模式，如果执行时没有给定任何模式，那么退订所有模式。 |
+
+
+
