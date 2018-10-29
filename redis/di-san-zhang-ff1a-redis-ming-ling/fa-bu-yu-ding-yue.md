@@ -12,5 +12,9 @@
 | psubscribe | psubscribe pattern \[pattern ...\] | 订阅与给定模式相匹配的所有频道 |
 | punsunscribe | punsunscribe \[pattern \[pattern ...\]\] | 退订给定的模式，如果执行时没有给定任何模式，那么退订所有模式。 |
 
-考虑到publish命令和subscribe命令在Python客户端的实现方式，一个比较简单的演示发布与订阅的方法，就像下面代码清单那样使用辅助线程（helper thread）来执行publish
+考虑到publish命令和subscribe命令在Python客户端的实现方式，一个比较简单的演示发布与订阅的方法，就像下面代码清单那样使用辅助线程（helper thread）来执行publish命令：
+
+```
+
+```
 
