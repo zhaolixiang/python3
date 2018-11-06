@@ -4,7 +4,7 @@ Redis的排序操作和其他编程语言的排序操作一样，都可以根据
 
 | 命令 | 用例 | 用例描述 |
 | :--- | :--- | :--- |
-| soft | soft source-key  \[by pattern\]  \[limit offset count\] \[get pattern \[get pattern ...\]\] \[asc\|desc\] \[alpha\] \[store dest-key\] |  |
+| soft | soft source-key  \[by pattern\]  \[limit offset count\] \[get pattern \[get pattern ...\]\] \[asc\|desc\] \[alpha\] \[store dest-key\] | 根据给定的选项，对输入列表、集合或者有序集合进行排序，然后返回或者存储排序的结果。 |
 
 
 
