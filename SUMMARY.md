@@ -126,6 +126,7 @@
     * [发布于订阅](redis/di-san-zhang-ff1a-redis-ming-ling/fa-bu-yu-ding-yue.md)
     * [其他命令](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling.md)
       * [排序](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling/pai-xu.md)
+      * [基本的Redis事务](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling/ji-ben-de-redis-shi-wu.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
