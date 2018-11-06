@@ -125,6 +125,7 @@
     * [有序集合](redis/di-san-zhang-ff1a-redis-ming-ling/you-xu-ji-he.md)
     * [发布于订阅](redis/di-san-zhang-ff1a-redis-ming-ling/fa-bu-yu-ding-yue.md)
     * [其他命令](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling.md)
+      * [排序](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling/pai-xu.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
