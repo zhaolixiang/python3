@@ -15,7 +15,45 @@ Redis的排序操作和其他编程语言的排序操作一样，都可以根据
 ### 实例
 
 ```
+import redis  # 导入redis包包
 
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+r.delete('sort-input')
+
+#首先将一些元素添加到列表里面
+print(r.rpush('sort-input',23,15,110,7))
+#根据数字大小对元素进行排序
+print(r.sort('sort-input'))
+#根据字母顺序对元素进行排序
+print(r.sort('sort-input',alpha=True))
+
+#添加一些用于执行排序操作和获取操作的附加数据
+print(r.hset('d-7','field',5))
+print(r.hset('d-15','field',1))
+print(r.hset('d-23','field',9))
+print(r.hset('d-110','field',3))
+
+#将散列的域（field）用作权重，对sort-input列表进行排序
+print(r.sort('sort-input',by='d-*->field'))
+
+#获取外部数据，并将它们用作命令的返回值，而不是返回被排序的数据
+print(r.sort('sort-input',by='d-*->field',get='d-*->field'))
+```
+
+运行结果：
+
+```
+4
+[b'7', b'15', b'23', b'110']
+[b'110', b'15', b'23', b'7']
+0
+0
+0
+0
+[b'15', b'110', b'7', b'23']
+[b'1', b'3', b'5', b'9']
 ```
 
 > 最开头的几行代码设置了一些初始数据，然后对这些数据进行了数值排序和字符串排序，最后的代码演示了如果通过sort命令的特殊语法来将散列存储的数据作为权重进行排序，以及怎样获取并返回散列存储的数据。
