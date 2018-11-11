@@ -6,9 +6,13 @@ Redis提供了两种不同的持久化方法来将数据存储到硬盘里面。
 
 ```
 #快照持久化选项
+#多久执行一次自动快照操作
 save 60 1000
+#创建快照失败后是否仍然继续执行写命令
 stop-writes-on-bgsave-error no
+#是否对快照文件进行压缩
 rdbcompression yes
+#命名硬盘上的快照文件
 dbfilename dump.rdb
 
 #AOF持久化选项
@@ -21,6 +25,10 @@ auto-aof-rewrite-min-size 64mb
 #共享选项，这个选项决定了快照文件和AOF文件的保存位置。
 dir ./
 ```
+
+接下来的一节将介绍如何使用快照来保存数据安全。
+
+
 
 
 
