@@ -15,8 +15,46 @@ Redis的基本事务需要用到multi命令和exec命令，这种事务可以让
 下面代码展示了在没有使用事务的情况下，执行并行（parallel）自增操作的结果：
 
 ```
+import redis  # 导入redis包包
+import time,threading
+
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+r.delete('sort-input')
+
+def notrans():
+    #对'notrans:'计数器执行自增操作并打印操作的执行结果
+    print(r.incr('notrans:'))
+    #等待100毫秒
+    time.sleep(.1)
+    #对'notrans:'计数器执行自减操作。
+    r.incr('notrans:',-1)
+
+
+if __name__ == '__main__':
+    if 1:
+        #启动3个线程来执行没有被事务包裹的自增、休眠和自减操作
+        for i in range(3):
+            threading.Thread(target=notrans).start()
+        #等待500毫秒，让操作有足够的时间完成
+        time.sleep(.5)
 
 ```
 
+结果：
 
+```
+1
+2
+3
+```
+
+因为没有使用事务，所以三个线程都可以在执行自减操作之前，对notrans：计数器执行自增操作。虽然代码里面通过休眠100毫秒放大了潜在问题，但如果我们确实需要在不受其它命令干扰的情况下，对计数器执行自增操作和自减操作，那么我们就不得不解决这个潜在问题。
+
+下面代码使用事务来执行相同的操作：
+
+```
+
+```
 
