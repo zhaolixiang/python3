@@ -33,12 +33,11 @@ def notrans():
 
 
 if __name__ == '__main__':
-    if 1:
-        #启动3个线程来执行没有被事务包裹的自增、休眠和自减操作
-        for i in range(3):
-            threading.Thread(target=notrans).start()
-        #等待500毫秒，让操作有足够的时间完成
-        time.sleep(.5)
+    # 启动3个线程来执行没有被事务包裹的自增、休眠和自减操作
+    for i in range(3):
+        threading.Thread(target=notrans).start()
+    # 等待500毫秒，让操作有足够的时间完成
+    time.sleep(.5)
 
 ```
 
@@ -57,4 +56,6 @@ if __name__ == '__main__':
 ```
 
 ```
+
+
 
