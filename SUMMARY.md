@@ -130,6 +130,7 @@
       * [键的过期时间](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling/jian-de-guo-qi-shi-jian.md)
   * [数据安全与性能保障](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang.md)
     * [持久化选项](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang.md)
+      * [快照持久化](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/kuai-zhao-chi-jiu-hua.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
