@@ -127,6 +127,7 @@
     * [其他命令](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling.md)
       * [排序](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling/pai-xu.md)
       * [基本的Redis事务](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling/ji-ben-de-redis-shi-wu.md)
+      * [键的过期时间](redis/di-san-zhang-ff1a-redis-ming-ling/qi-ta-ming-ling/jian-de-guo-qi-shi-jian.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
