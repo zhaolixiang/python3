@@ -38,7 +38,6 @@ if __name__ == '__main__':
         threading.Thread(target=notrans).start()
     # 等待500毫秒，让操作有足够的时间完成
     time.sleep(.5)
-
 ```
 
 结果：
@@ -54,7 +53,42 @@ if __name__ == '__main__':
 下面代码使用事务来执行相同的操作：
 
 ```
+import redis  # 导入redis包包
+import time,threading
 
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+r.delete('trans:')
+
+def notrans():
+    #创建一个事务型（transactional）流水线对象
+    pipeline=r.pipeline()
+    #把针对'trans：'计数器的自增操作放入队列
+    pipeline.incr('trans:')
+    #等待100毫秒
+    time.sleep(.1)
+    #把针对'trans:'计数器的自减操作放入队列
+    pipeline.incr('trans:',-1)
+    #执行被事务包裹的命令，并打印自增操作的执行结果
+    print(pipeline.execute()[0])
+
+
+if __name__ == '__main__':
+    # 启动3个线程来执行没有被事务包裹的自增、休眠和自减操作
+    for i in range(3):
+        threading.Thread(target=notrans).start()
+    # 等待500毫秒，让操作有足够的时间完成
+    time.sleep(.5)
+
+```
+
+结果：
+
+```
+1
+1
+1
 ```
 
 
