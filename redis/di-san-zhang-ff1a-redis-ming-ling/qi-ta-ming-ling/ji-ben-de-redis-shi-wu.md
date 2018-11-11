@@ -21,7 +21,7 @@ import time,threading
 
 # 与本地redis进行链接，地址为：localhost，端口号为6379
 r = redis.StrictRedis(host='localhost', port=6379)
-r.delete('sort-input')
+r.delete('notrans:')
 
 def notrans():
     #对'notrans:'计数器执行自增操作并打印操作的执行结果
