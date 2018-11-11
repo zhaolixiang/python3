@@ -19,6 +19,40 @@
 下面代码展示了几个对键执行过期时间操作的例子：
 
 ```
+import redis  # 导入redis包包
+import time
+
+
+# 与本地redis进行链接，地址为：localhost，端口号为6379
+r = redis.StrictRedis(host='localhost', port=6379)
+r.delete('trans:')
+
+#设置一个简单的字符串值作为过期时间的设置对象
+print(r.set('key','value'))
+print(r.get('key'))
+print(r.expire('key',2))
+
+time.sleep(1)
+
+#查看键距离过期还有多长时间
+print(r.ttl('key'))
+
+time.sleep(1)
+
+#此时键已经过期，并被删除
+print(r.get('key'))
 
 ```
+
+运行结果：
+
+```
+True
+b'value'
+True
+1
+None
+```
+
+
 
