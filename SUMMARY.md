@@ -168,4 +168,5 @@
       * [规范化](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-zi-ran-yu-yan-zhong-de-wen-ben/gui-fan-hua.md)
       * [其他文本处理程序](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-zi-ran-yu-yan-zhong-de-wen-ben/qi-ta-wen-ben-chu-li-cheng-xu.md)
   * [使用表格形式的数值数据](pythonshu-ju-ke-xue-ru-men/shi-yong-biao-ge-xing-shi-de-shu-zhi-shu-ju.md)
+    * [创建数组](pythonshu-ju-ke-xue-ru-men/shi-yong-biao-ge-xing-shi-de-shu-zhi-shu-ju/chuang-jian-shu-zu.md)
 
