@@ -165,4 +165,5 @@
     * [处理自然语言中的文本](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-zi-ran-yu-yan-zhong-de-wen-ben.md)
       * [NLTK语料库](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-zi-ran-yu-yan-zhong-de-wen-ben/nltkyu-liao-ku.md)
       * [通过PlaintextCorpusReader创建自己的语料库](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-zi-ran-yu-yan-zhong-de-wen-ben/tong-guo-plaintextcorpusreader-chuang-jian-zi-ji-de-yu-liao-ku.md)
+      * [规范化](pythonshu-ju-ke-xue-ru-men/shi-yong-wen-ben-shu-ju/chu-li-zi-ran-yu-yan-zhong-de-wen-ben/gui-fan-hua.md)
 
