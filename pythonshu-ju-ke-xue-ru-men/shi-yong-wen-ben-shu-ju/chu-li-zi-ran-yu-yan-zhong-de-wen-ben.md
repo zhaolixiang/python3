@@ -156,42 +156,21 @@ print(nltk.word_tokenize(text))
 > 对于英文而言，所谓的词干化处理主要包括把名词的复数形式变成单数，将其他时态变成基本形态等类似的处理。
 
 ```
+import nltk
 
+pstemmer=nltk.PorterStemmer()
+lstemmer=nltk.LancasterStemmer()
+print(pstemmer.stem("wonderful"))
+print(lstemmer.stem("wonderful"))
 ```
 
+结果：
 
+```
+wonder
+wond
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 
 
