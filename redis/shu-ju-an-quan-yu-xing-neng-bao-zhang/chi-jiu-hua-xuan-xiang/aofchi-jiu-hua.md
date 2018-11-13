@@ -4,3 +4,11 @@
 
 下表展示了appendfsync 配置选项对AOF文件的同步频率的影响。
 
+| 选项 | 同步频率 |
+| :--- | :--- |
+| always | 每个Redis |
+| everysec |  |
+| no |  |
+
+
+
