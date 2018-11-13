@@ -173,25 +173,20 @@ wond
 
 两个词干分析器的特点在于：仅将词干分析应用于单个单词，而不是完整短语。
 
+### 5、词形还原：一种速度更慢也更保守的词干分析机制。WordNetLemmatizer查找WordNet中算出的词干，仅接受单词或表格形式的词干。要使用lemmatizer，需要访问互联网，函数lemmatize\(word\)返回work表示的词的词元：
 
+```
+import nltk
 
+lemmatizer=nltk.WordNetLemmatizer()
+print(lemmatizer.lemmatize("wonderful"))
+```
 
+结果：
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+wonderful
+```
 
 
 
