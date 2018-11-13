@@ -130,7 +130,21 @@ NLTK提供了两个简单的和两个较为高级的分词器。句子切分器�
 根据分词器的质量和句子的标点结构，有些【词】可以包含非字母的字符。对于严重依赖于标点符号的分析人物（例如通过表情符号的情感分析），需要用到更为高级的wordPunctcTokenizer。下面是WorkPuncTokenizer.tokenize\(\)和word\_token\(\)对相同文本解析的结果的对比：
 
 ```
+from nltk.tokenize import WordPunctTokenizer
+import nltk
+word_punct=WordPunctTokenizer()
+text="}Help! :))) :[ ..... :D{"
+result=word_punct.tokenize(text)
+print(result)
 
+print(nltk.word_tokenize(text))
+```
+
+结果：
+
+```
+['}', 'Help', '!', ':)))', ':[', '.....', ':', 'D', '{']
+['}', 'Help', '!', ':', ')', ')', ')', ':', '[', '...', '..', ':', 'D', '{']
 ```
 
 
