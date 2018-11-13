@@ -133,6 +133,7 @@
       * [快照持久化](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/kuai-zhao-chi-jiu-hua.md)
         * [个人开发](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/kuai-zhao-chi-jiu-hua/ge-ren-kai-fa.md)
         * [对日志进行聚合计算](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/kuai-zhao-chi-jiu-hua/dui-ri-zhi-jin-xing-ju-he-ji-suan.md)
+        * [大数据](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/kuai-zhao-chi-jiu-hua/da-shu-ju.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
