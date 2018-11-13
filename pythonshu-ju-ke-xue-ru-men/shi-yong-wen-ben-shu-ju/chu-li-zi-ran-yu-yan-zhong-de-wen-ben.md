@@ -20,7 +20,7 @@ wn=nltk.corpus.wordnet
 print(wn.synsets("cat"))
 ```
 
-结果
+结果：
 
 ```
 [Synset('cat.n.01'), Synset('guy.n.01'), Synset('cat.n.03'), Synset('kat.n.01'), Synset('cat-o'-nine-tails.n.01'), Synset('caterpillar.n.02'), Synset('big_cat.n.01'), Synset('computerized_tomography.n.01'), Synset('cat.v.01'), Synset('vomit.v.01')]
@@ -37,7 +37,7 @@ print("*"*20)
 print(wn.synset("cat.n.02").definition())
 ```
 
-结果
+结果：
 
 ```
 feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats
@@ -48,13 +48,37 @@ an informal term for a youth or man
 同义词可以具有以上义词（含义较为抽象的同义词）和下义词（含义较为具体的同义词），这些功能使得同义词看起来像具有子类和超类的面向对象（OOP）类。
 
 ```
+import nltk
 
+wn=nltk.corpus.wordnet
+print(wn.synset("cat.n.01").hypernyms())
+print("*"*20)
+print(wn.synset("cat.n.01").hyponyms())
+```
+
+结果：
+
+```
+[Synset('feline.n.01')]
+********************
+[Synset('domestic_cat.n.01'), Synset('wildcat.n.03')]
 ```
 
 最后，可以使用WordNet来计算两个同义词组之间的语义相似性。相似度是范围【0...1】中的双精度数。如果相似性为0，则同义词是无关性的；如果相似性为1，则同义词是完全同义词。
 
 ```
+from nltk.corpus import  wordnet as wn
 
+x=wn.synset("cat.n.01")
+y=wn.synset("lynx.n.01")
+
+print(x.path_similarity(y))
+```
+
+结果：
+
+```
+0.04
 ```
 
 上面提到的是两个词之间的相似性，那么任意两个词之间的相似性如何分析呢？让我们来看看【dog】和【cat】的所有同义词，并找到语义最接近的定义：
