@@ -9,13 +9,17 @@ numpy数组比原生的Python列表更为紧凑和高效，尤其是在多维的
 接下来，我们来创建第一个数组：前10个正整数组成的简单数组：
 
 ```
-
+import numpy as np
+numbers=np.array(range(1,11),copy=True)
+print(type(numbers))
+print(numbers)
 ```
 
 结果：
 
 ```
-
+<class 'numpy.ndarray'>
+[ 1  2  3  4  5  6  7  8  9 10]
 ```
 
 
