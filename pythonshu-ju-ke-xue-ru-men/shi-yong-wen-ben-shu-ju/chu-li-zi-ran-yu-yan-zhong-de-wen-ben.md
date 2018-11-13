@@ -15,13 +15,34 @@ Python的nltk模块（自然语言功能工具包）中实现了很多NLP的功�
 nltk.corpus.wordnet对象是另一个语料库的接口：一个在线语义词网络WorldNet（需要访问网络）。该网络是用词性和序列号标记的同义词集合：
 
 ```
+import nltk
+wn=nltk.corpus.wordnet
+print(wn.synsets("cat"))
+```
 
+结果
+
+```
+[Synset('cat.n.01'), Synset('guy.n.01'), Synset('cat.n.03'), Synset('kat.n.01'), Synset('cat-o'-nine-tails.n.01'), Synset('caterpillar.n.02'), Synset('big_cat.n.01'), Synset('computerized_tomography.n.01'), Synset('cat.v.01'), Synset('vomit.v.01')]
 ```
 
 可以查找每个同义词的定义，这可能是一个意想不到的功能：
 
 ```
+import nltk
 
+wn=nltk.corpus.wordnet
+print(wn.synset("cat.n.01").definition())
+print("*"*20)
+print(wn.synset("cat.n.02").definition())
+```
+
+结果
+
+```
+feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats
+********************
+an informal term for a youth or man
 ```
 
 同义词可以具有以上义词（含义较为抽象的同义词）和下义词（含义较为具体的同义词），这些功能使得同义词看起来像具有子类和超类的面向对象（OOP）类。
