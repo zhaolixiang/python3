@@ -84,7 +84,23 @@ print(x.path_similarity(y))
 上面提到的是两个词之间的相似性，那么任意两个词之间的相似性如何分析呢？让我们来看看【dog】和【cat】的所有同义词，并找到语义最接近的定义：
 
 ```
+import nltk
 
+wn=nltk.corpus.wordnet
+result=[simxy.definition() for simxy in
+        max((x.path_similarity(y),x,y)
+            for x in wn.synsets('cat')
+            for y in wn.synsets('dog')
+            if x.path_similarity(y) #确保synsets是相关的
+            )[1:]]
+
+print(result)
+```
+
+结果：
+
+```
+['an informal term for a youth or man', 'informal term for a man']
 ```
 
 真是太神奇了！
