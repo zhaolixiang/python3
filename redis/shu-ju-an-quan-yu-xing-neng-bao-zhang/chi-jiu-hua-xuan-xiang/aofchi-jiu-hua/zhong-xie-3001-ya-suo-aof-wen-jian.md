@@ -6,5 +6,5 @@ AOF持久化既可以将丢失数据的时间区间降低至1秒（甚至不丢�
 
 跟快照持久化可以通过设置save选项来自动执行bgsave一样，AOF持久化也可以通过设置auto-aof-rewrite-percentage选项和auto-aof-rewrite-min-size选项来自动执行bgrewriteaof。举个例子，假设用户对Redis设置了配置选项auto-aof-rewrite-percentage 100和auto-aof-rewrite-min-size 64mb，并且启用了AOF持久化，那么当AOF文件的体积大于64MB，并且AOF文件的体积比上一次重写之后的体积大了至少一倍（100%）的时候，Redis将执行bgrewriteaof命令。如果aof重写执行得过于频繁地话，那么用户可以考虑将auto-aof-rewrite-percentage选项的值设置为100以上，这种做法可以让Redis在AOF文件的体积变得更大之后才执行重写操作，不过也会让Redis在启动时还原数据集所需的时间变得更长。
 
-
+无论是使用AOF持久化还是快照持久化，将数据持久化到硬盘上都是非常有必要的，但除了进行持续化之外，用户还必须对持久化所得的文件进行备份（最好是备份到不同的地方），这样才能尽量避免数据丢失事故发生。如果条件允许的话，最好能够将快照文件和最新重写的AOF文件备份到不同的服务器上面。
 
