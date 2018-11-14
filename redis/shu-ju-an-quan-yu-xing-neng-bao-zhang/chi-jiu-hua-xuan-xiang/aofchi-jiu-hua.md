@@ -12,9 +12,11 @@
 
 如果用户使用appendfsync always 选项的话，那么每个Redis写命令都会被写入硬盘，从而将发生系统崩溃时出现的数据丢失减到最少。不过遗憾的是，因为这种同步策略需要对硬盘进行大量写入，所以Redis处理命令的速度会受到硬盘性能的限制：转盘式硬盘（spinning disk）在这种同步频率下每秒只能处理大约200个写命令，而固态硬盘\(solid-state drive,SSD\)每秒大概也只能处理几万个写命令。
 
-> 警告：固态硬盘和appendfsync always  
+> 警告：固态硬盘和appendfsync always
 >
 > 使用固态硬盘的用户请谨慎使用appendfsync always选项，因为这个选项让Redis每次只写入一个命令，而不是像其他appendfsync选项那样一次写入多个命令，这种不断地写入少量数据的做法有可能会引发严重的写入放大（write amplification）问题，在某些环境下甚至会将固态硬盘的寿命从原来的几年降低为几个月。
+
+为了兼顾数据安全和写入性能，用户可以考虑使用appendfsync everysec选项，让Redis以每秒一次的频率对AOF文件进行同步。Redis每秒同步一次AOF文件时的性能和不使用任何
 
 
 
