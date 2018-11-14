@@ -135,6 +135,7 @@
         * [对日志进行聚合计算](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/kuai-zhao-chi-jiu-hua/dui-ri-zhi-jin-xing-ju-he-ji-suan.md)
         * [大数据](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/kuai-zhao-chi-jiu-hua/da-shu-ju.md)
       * [AOF持久化](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/aofchi-jiu-hua.md)
+        * [重写、压缩AOF文件](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/aofchi-jiu-hua/zhong-xie-3001-ya-suo-aof-wen-jian.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
