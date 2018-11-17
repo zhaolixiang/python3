@@ -138,6 +138,7 @@
         * [重写、压缩AOF文件](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chi-jiu-hua-xuan-xiang/aofchi-jiu-hua/zhong-xie-3001-ya-suo-aof-wen-jian.md)
     * [复制](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/fu-zhi.md)
       * [对Redis的复制相关选项进行配置](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/fu-zhi/dui-redis-de-fu-zhi-xiang-guan-xuan-xiang-jin-xing-pei-zhi.md)
+      * [Redis复制的启动过程](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/fu-zhi/redisfu-zhi-de-qi-dong-guo-cheng.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
