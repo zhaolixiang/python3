@@ -143,6 +143,7 @@
       * [检查硬盘写入](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/fu-zhi/jian-cha-ying-pan-xie-ru.md)
     * [处理系统故障](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chu-li-xi-tong-gu-zhang.md)
       * [验证快照文件和AOF文件](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chu-li-xi-tong-gu-zhang/yan-zheng-kuai-zhao-wen-jian-he-aof-wen-jian.md)
+      * [更换故障主服务器](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chu-li-xi-tong-gu-zhang/geng-huan-gu-zhang-zhu-fu-wu-qi.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
