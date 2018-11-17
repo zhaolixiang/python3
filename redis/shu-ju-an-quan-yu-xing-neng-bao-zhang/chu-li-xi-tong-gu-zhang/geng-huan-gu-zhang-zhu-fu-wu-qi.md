@@ -7,6 +7,35 @@
 更换服务器的计划非常简单，首先向服务器B发送一个save命令，让它创建一个新的快照文件，接着将这个快照文件发送给机器C，并在机器C上面启动Redis，最后，让机器B成为机器C的从服务器。下面代码展示了更换服务器时用到的各个命令：
 
 ```
+通过VPN网络连接机器B
+user@vpm-master ~:$ssh root@machine-b.vpn
+Last Login:wed Mar 28 15:21:06 2012 from ...
+
+#启动命令行Redis客户端来执行几个简单的操作
+root@machine-b ~:$redis-cli
+#执行save命令，并在命令完成之后，使用quit命令退出客户端
+redis 127.0.0.1:6379> save
+OK
+redis 127.0.0.1:6379> quit
+
+#将快照文件发送至新的主服务器：机器C
+root@machine-b ~:$scp \ 
+> /var/local/redis/dump.rdb machine-c.vpn:/var/local/redis/dump.rdb
+
+#连接新的主服务器并启动Redis
+root@machine-b ~:$ssh machine-c.vpn
+Last login:True Mar 27 12:42:31 2012 from ...
+root@machine-c ~:$sudo /etc/init.d/redis-server start
+Starting Redis server...
+root@machine-c ~:$ exit
+root@machine-b ~:$redis-cli
+
+#告知机器B的Redis，让它将机器C用作新的主服务器
+redis 127.0.0.1:6379>slaveof machine-c.vpn 6379
+OK
+redis 127.0.0.1:6379>quit
+root@machine-b ~:$exit
+user@vpm-master ~:$
 
 ```
 
