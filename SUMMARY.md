@@ -142,6 +142,7 @@
       * [主从链](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/fu-zhi/zhu-cong-jian.md)
       * [检查硬盘写入](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/fu-zhi/jian-cha-ying-pan-xie-ru.md)
     * [处理系统故障](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chu-li-xi-tong-gu-zhang.md)
+      * [验证快照文件和AOF文件](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chu-li-xi-tong-gu-zhang/yan-zheng-kuai-zhao-wen-jian-he-aof-wen-jian.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
