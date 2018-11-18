@@ -54,5 +54,43 @@ def list_item(conn,itemid,sellerid,price):
 | ItemM |
 | ItemN |
 
+| sismermber\('inventory:17','ItemM'\) \#确保被销售的物品仍然存在于Frank的包裹里面 |
+| :--- |
+| 键名：inventory:17  类型：set |
+| ItemL |
+| ItemM |
+| ItemN |
+
+| 键名：market  类型：zset |
+| :--- |
+| ItemA.4:35 |
+| ItemC.7:48 |
+| ItemE.2:60 |
+| ItemG.3:73 |
+
+```
+#因为没有一个Redis命令可以在移除集合元素的同时，将被移除的元素改名并添加到有序集合里面
+#所以这里使用了zadd和srem两个命令来实现这一操作
+zadd('market','ItemM.17',97）
+srem('inventory:17','ItemM')
+```
+
+| 键名：inventory:17  类型：set |
+| :--- |
+| ItemL |
+| ItemN |
+
+| 键名：market  类型：zset |
+| :--- |
+| ItemA.4:35 |
+| ItemC.7:48 |
+| ItemE.2:60 |
+| ItemG.3:73 |
+| ItemM.17:97 |
+
+```
+
+```
+
 
 
