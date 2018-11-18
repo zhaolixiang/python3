@@ -62,6 +62,25 @@ def update_token_pipeline(conn,token,user,item=None):
 为了回答这个问题，我们将对update\_token\(\)函数和update\_token\_pipeline\(\)函数进行一些简单的测试。我们将分别通过快速低延迟网络和慢速高延迟网络来访问同一台机器，并测试运行在机器上面的Redis每秒可以处理的请求数量。下面代码展示了性能测试函数，这个函数会在给定的时限内重复执行update\_token\(\)函数或者update\_token\_pipeline\(\)函数，然后计算被测试的函数每秒执行了多少次。
 
 ```
+import time
 
+
+def benchmark_update_token(conn,duration):
+    #测试会分别执行update_token函数和update_token_pipeline函数
+    for function in (update_token,update_token_pipeline):
+        #设置计数器以及测试结束的条件
+        count=0
+        start=time.time()
+        end=start+duration
+        while time.time()<end:
+            count+=1
+            #调用两个函数的其中一个
+            function(conn,'token','user','item')
+            #计算函数的执行时长
+        delta=time.time()-start
+        #打印测试结果
+        print(function.__name__+":"+str(count)+","+str(delta)+","+str(count/delta))
 ```
+
+
 
