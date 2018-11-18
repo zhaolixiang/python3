@@ -47,5 +47,12 @@ def list_item(conn,itemid,sellerid,price):
 
 下表展示了当Frank（用户ID为17）尝试以97块钱的价格销售ItemM时，list\_item\(\)函数执行的过程：
 
+| watch\('inventory:17'\)    \#监视包裹发生的任何变化 |
+| :--- |
+| 键名：inventory:17   类型：set |
+| ItemL |
+| ItemM |
+| ItemN |
+
 
 
