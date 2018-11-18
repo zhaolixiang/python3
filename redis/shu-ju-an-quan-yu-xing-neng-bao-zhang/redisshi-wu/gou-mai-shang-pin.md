@@ -48,5 +48,13 @@ def purchase_item(conn,buyerid,itemid,sellerid,lprice):
 
 在观察了市场上展示的商品之后，Bill（用户ID为27）决定购买Frank在市场上销售的ItemM，下图展示了购买操作执行期间，数据结构的变化：
 
+```
+watch('market:'.'users:27') #对物品买卖市场以及Bill的个人信息进行监视
+```
+
+| 键 |
+| :--- |
+|  |
+
 
 
