@@ -13,19 +13,16 @@
 | ItemM |
 | ItemN |
 
-
-
-
-| 键名：user:17 | 存储类型：hash |
+| 键名：user:27 | 存储类型：hash |
 | :--- | :--- |
-| name | Frank |
-| funds | 43 |
+| name | Bill |
+| funds | 125 |
 
-| 键名：inventory:17    存储类型：set |
+| 键名：inventory:27    存储类型：set |
 | :--- |
-| ItemL |
-| ItemM |
-| ItemN |
+| ItemO |
+| ItemP |
+| ItemQ |
 
 
 
