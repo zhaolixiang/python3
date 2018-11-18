@@ -13,6 +13,24 @@ pipe=conn.pipeline()
 前面章节曾经编写并更新过一个名为update\_token\(\)函数，它负责记录用户最近浏览过的商品以及用户最近访问过的页面，并更新用户的登录cookie。下面代码是之前展示过得更新版update\_token\(\)函数，这个函数每次执行都会调用2个或者5个Redis命令，使得客户端和Redis之间产生2次或5次通信往返。
 
 ```
+import time
 
+
+def update_token(conn,token,user,item=None):
+    #获取时间戳
+    timestamp=time.time()
+    #创建令牌和已登陆用户之间的映射
+    conn.hset('login:',token,user)
+    #记录令牌最后一次出现的时间
+    conn.zadd('recent:',token,timestamp)
+    if item:
+        #把用户浏览过的商品记录起来
+        conn.zadd('viewed:'+token,item,timestamp)
+        #移除旧商品，只记录最新浏览的25件商品
+        conn.zremrangebyrank('viewed:'+token,0,-26)
+        #更新给定商品的被浏览慈善
+        conn.zincrby('viewed:',item,-1)
 ```
+
+
 
