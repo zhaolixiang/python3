@@ -82,5 +82,5 @@ def benchmark_update_token(conn,duration):
         print(function.__name__+":"+str(count)+","+str(delta)+","+str(count/delta))
 ```
 
-
+下面展示了在不同宽带以及不同延迟值的网络上执行性能测试函数所得到的数据。
 
