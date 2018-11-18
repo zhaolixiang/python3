@@ -146,6 +146,7 @@
       * [更换故障主服务器](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/chu-li-xi-tong-gu-zhang/geng-huan-gu-zhang-zhu-fu-wu-qi.md)
     * [Redis事务](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/redisshi-wu.md)
       * [定义用户信息和用户包裹](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/redisshi-wu/ding-yi-yong-hu-xin-xi-he-yong-hu-bao-guo.md)
+      * [将商品放到市场上销售](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/redisshi-wu/jiang-shang-pin-fang-dao-shi-chang-shang-xiao-shou.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
