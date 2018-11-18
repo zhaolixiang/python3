@@ -150,6 +150,7 @@
       * [购买商品](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/redisshi-wu/gou-mai-shang-pin.md)
     * [非事务型流水线](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/fei-shi-wu-xing-liu-shui-xian.md)
     * [关于性能方面的注意事项](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/guan-yu-xing-neng-fang-mian-de-zhu-yi-shi-xiang.md)
+  * [使用Redis构建支持程序](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
