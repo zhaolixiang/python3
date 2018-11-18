@@ -57,5 +57,11 @@ def update_token_pipeline(conn,token,user,item=None):
     pipe.execute()
 ```
 
-通过将标准的Redis连接替换成流水线连接，程序可以将通信往返的次数减少至原来的1/2到1/5，并将update\_token\_pipeline\(\)函数的预期执行时间降低1~2毫秒。按照这个速度来计算的话，如果一个Web服务器只需要执行update\_token\_pipeline\(\)来
+通过将标准的Redis连接替换成流水线连接，程序可以将通信往返的次数减少至原来的1/2到1/5，并将update\_token\_pipeline\(\)函数的预期执行时间降低1~2毫秒。按照这个速度来计算的话，如果一个Web服务器只需要执行update\_token\_pipeline\(\)来更新商品的浏览信息，那么这个Web服务器每秒可以处理500~1000个请求。从理论上来看，update\_token\_pipeline\(\) 函数的效果非常棒，但是它的实际运行速度又是怎样的呢？
+
+为了回答这个问题，我们将对update\_token\(\)函数和update\_token\_pipeline\(\)函数进行一些简单的测试。我们将分别通过快速低延迟网络和慢速高延迟网络来访问同一台机器，并测试运行在机器上面的Redis每秒可以处理的请求数量。下面代码展示了性能测试函数，这个函数会在给定的时限内重复执行update\_token\(\)函数或者update\_token\_pipeline\(\)函数，然后计算被测试的函数每秒执行了多少次。
+
+```
+
+```
 
