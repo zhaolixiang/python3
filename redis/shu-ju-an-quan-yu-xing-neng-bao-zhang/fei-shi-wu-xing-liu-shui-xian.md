@@ -35,6 +35,27 @@ def update_token(conn,token,user,item=None):
 如果Redis和Web服务器通过局域网进行连接，那么他们之前的每次通信往返大概需要耗费一两毫秒，因此需要进行2次或者5次通信往返的update\__token\(\)函数大概需要花费2~10毫秒来执行，按照这个速度计算，单个Web服务器线程每秒可以处理100~500个请求，尽管这种速度已经非常可观了，但是我们还可以在这个速度的基础上更新一步：通过修改update\_token\(\)函数，让它创建一个非事务型流水线，然后使用这个流水线来发送所有请求，这样我们就的带了下面代码：_
 
 ```
+import time
 
+
+def update_token_pipeline(conn,token,user,item=None):
+    #获取时间戳
+    #设置流水线
+    pipe=conn.pipeline(False)
+    timestamp=time.time()
+    #创建令牌和已登陆用户之间的映射
+    conn.hset('login:',token,user)
+    #记录令牌最后一次出现的时间
+    conn.zadd('recent:',token,timestamp)
+    if item:
+        #把用户浏览过的商品记录起来
+        conn.zadd('viewed:'+token,item,timestamp)
+        #移除旧商品，只记录最新浏览的25件商品
+        conn.zremrangebyrank('viewed:'+token,0,-26)
+        #更新给定商品的被浏览慈善
+        conn.zincrby('viewed:',item,-1)
+    pipe.execute()
 ```
+
+
 
