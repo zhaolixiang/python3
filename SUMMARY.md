@@ -152,6 +152,7 @@
     * [关于性能方面的注意事项](redis/shu-ju-an-quan-yu-xing-neng-bao-zhang/guan-yu-xing-neng-fang-mian-de-zhu-yi-shi-xiang.md)
   * [使用Redis构建支持程序](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu.md)
     * [使用Redis来记录日志](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/shi-yong-redis-lai-ji-lu-ri-zhi.md)
+      * [最新日志](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/shi-yong-redis-lai-ji-lu-ri-zhi/zui-xin-ri-zhi.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
