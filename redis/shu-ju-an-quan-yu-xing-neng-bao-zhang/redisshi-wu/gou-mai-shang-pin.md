@@ -52,9 +52,55 @@ def purchase_item(conn,buyerid,itemid,sellerid,lprice):
 watch('market:'.'users:27') #对物品买卖市场以及Bill的个人信息进行监视
 ```
 
-| 键 |
+| 键名：market  类型：zset |
 | :--- |
-|  |
+| ItemA.4:35 |
+| ItemC.7:48 |
+| ItemE.2:60 |
+| ItemG.3:73 |
+| ItemM.17:97 |
+
+| 键名：users:27  类型：hash |
+| :--- |
+| name：Bill |
+| funds：125 |
+
+| 键名：users:17  类型：hash |
+| :--- |
+| name：Bill |
+| funds：43 |
+
+
+
+```
+#验证物品的售价是否并为改变
+#以及Bill是否有足够的钱来购买该物品
+price=pipe.zscore("market:","ItemM.17")
+funds=int(pipe.hget("users:27",'funds'))
+if price!=97 or price>funds:
+```
+
+```
+pipe.sadd("inventory:27","ItemM")
+pipe.zrem("market:","ItemM.17")
+```
+
+| 键名：market  类型：zset |
+| :--- |
+| ItemA.4:35 |
+| ItemC.7:48 |
+| ItemE.2:60 |
+| ItemG.3:73 |
+
+| 键名：users:27  类型：hash |
+| :--- |
+| name：Bill |
+| funds：28 |
+
+| 键名：users:17  类型：hash |
+| :--- |
+| name：Bill |
+| funds：140 |
 
 
 
