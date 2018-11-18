@@ -32,5 +32,5 @@ def update_token(conn,token,user,item=None):
         conn.zincrby('viewed:',item,-1)
 ```
 
-
+如果Redis和Web服务器通过局域网进行连接，那么他们之前的每次通信往返大概需要耗费一两毫秒，因此需要进行2次或者5次通信往返的update\_token\(\)函数大概需要花费2~10毫秒来执行，
 
