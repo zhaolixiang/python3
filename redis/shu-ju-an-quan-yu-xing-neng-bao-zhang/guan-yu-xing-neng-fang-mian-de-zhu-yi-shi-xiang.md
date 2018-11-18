@@ -24,5 +24,7 @@ LRANGE (first 450 elements):11061.95 request per second
 LRANGE (first 600 elements):9041.59 request per second
 ```
 
+redis-benchmark的运行结果展示了一些常用Redis命令在1秒内可以执行的此时。如果用户在不给定任何参数的情况下运行redis-benchmark，那么redis-benchmark将使用50个客户端来进行性能测试，但是为了在redis-benchmark和我们自己的客户端之间进行性能对比，让redis-benchmark只使用一个客户端要比使用多个客户端更方一些。
 
+在考察redis-benchmark的输出结果时
 
