@@ -5,7 +5,6 @@
 下面代码的log\_comon\(\)函数展示了记录并轮询最常见日志消息的方法：程序会将消息作为成员存储的有序集合里面，并将消息出现的频率设置为成员的分值。为了确保我们看见的常见消息都是最新的，程序会以每小时一次的频率对消息进行轮换，并在轮换日志的时候保留上一个小时记录的常见消息，从而防止没有任何消息存在的情况出现。
 
 ```
-
 def log_common(conn,name,message,severity=logging.INFO,timeout=5):
     # 尝试将日志的安全级别准还为简单的字符串
     severity = str(SEVERITY.get(severity, severity)).lower()
@@ -46,5 +45,7 @@ def log_common(conn,name,message,severity=logging.INFO,timeout=5):
             continue
 ```
 
+因为记录常见日志的函数需要小心地处理上一小时收集的日志，所以它比记录最新日志的函数要复杂的多：程序会在一个watch/multi/exec事务里面，对记录了上一小时的常见日志的有序集合进行改名，并对记录了当前所处小时数的键进行更新。除此之外，程序还会降流水线对象传递给log\_recent\(\)函数，以此来减少记录常见日志和记录最新日志时，客户端与Redis服务器之间的通信往返次数。
 
+通过最新日志和常见日志，我们现在已经知道怎样将系统的运行信息存储到Redis里面了，那么还有什么其他信息是适合存储在Redis里面的呢？
 
