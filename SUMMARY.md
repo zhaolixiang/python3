@@ -153,6 +153,7 @@
   * [使用Redis构建支持程序](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu.md)
     * [使用Redis来记录日志](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/shi-yong-redis-lai-ji-lu-ri-zhi.md)
       * [最新日志](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/shi-yong-redis-lai-ji-lu-ri-zhi/zui-xin-ri-zhi.md)
+      * [常见日志](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/shi-yong-redis-lai-ji-lu-ri-zhi/chang-jian-ri-zhi.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
