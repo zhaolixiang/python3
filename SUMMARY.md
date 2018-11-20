@@ -156,6 +156,7 @@
       * [常见日志](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/shi-yong-redis-lai-ji-lu-ri-zhi/chang-jian-ri-zhi.md)
     * [计数器和统计数据](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/ji-shu-qi-he-tong-ji-shu-ju.md)
       * [将计数器存储到Redis里面](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/ji-shu-qi-he-tong-ji-shu-ju/jiang-ji-shu-qi-cun-chu-dao-redis-li-mian.md)
+        * [对计数器进行更新](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/ji-shu-qi-he-tong-ji-shu-ju/jiang-ji-shu-qi-cun-chu-dao-redis-li-mian/dui-ji-shu-qi-jin-xing-geng-xin.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
