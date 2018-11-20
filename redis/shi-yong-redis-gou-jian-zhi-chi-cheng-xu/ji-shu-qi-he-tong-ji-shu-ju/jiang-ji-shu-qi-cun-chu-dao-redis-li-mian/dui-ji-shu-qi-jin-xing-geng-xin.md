@@ -49,7 +49,7 @@ def update_counter(conn,name,count=1,now=None):
 更新计数器信息的过程并不复杂，程序只需要为每种时间片精度执行zadd命令和hincrby命令就可以了。于此类似，从指定精度和名字的计数器里面获取计数数据也是一件非常容易地事情。下面代码展示了用于执行这一操作的代码：程序首先使用hgetall命令来获取整个散列，接着将命令返回的时间片和计数器的值从原来的字符串格式转换成数字格式，根据时间对数据进行排序，最后返回排序后的数据：
 
 ```
-def get_count(conn,name,precision):
+def get_counter(conn,name,precision):
     #取得存储计数器数据的键的名字
     hash='%s:%s'%(precision,name)
     #从Redis里面取出计数器数据
@@ -63,5 +63,7 @@ def get_count(conn,name,precision):
     return to_return
 ```
 
+get\_counter\(\)函数的工作方式就和之前描述的一样，它获取计数器数据并将其转换成整数，然后根据时间先后对转换后的数据进行排序。
 
+在弄懂了获取计数器存储的数据之后，接下来我们要考虑的是如何防止这些计数器存储过多的数据。
 
