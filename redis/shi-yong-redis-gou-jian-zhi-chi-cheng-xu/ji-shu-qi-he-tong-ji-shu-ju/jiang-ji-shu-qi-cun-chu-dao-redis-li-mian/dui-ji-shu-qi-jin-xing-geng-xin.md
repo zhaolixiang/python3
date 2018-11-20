@@ -21,3 +21,31 @@
 
 下面代码展示了程序更新计数器的方法，对于每种时间片精度，程序都会将计数器 的精度和名字作为引用信息添加都记录已有计数器的有序集合里面，并增加散列计数器在指定时间片内的计数值。
 
+```
+
+#以秒为单位的计数器精度，分别为1秒/5秒/1分钟/5分钟/1小时/5小时/1天
+#用户可以按需调整这些精度
+import time
+
+PRECISION=[1,5,60,300,3600,18000,86400]
+
+def update_counter(conn,name,count=1,now=None):
+    #通过获取当前时间来判断应该对哪个时间片执行自增操作。
+    now=now or time.time()
+    #为了保证之后的清理工作可以正确的执行，这里需要创建一个事务性流水线
+    pipe=conn.pipeline()
+    #为我们记录的每种精度都创建一个计数器
+    for prec in PRECISION:
+        #取得当前时间片的开始时间
+        pnow=int(now/prec)*prec
+        #创建负责存储计数信息的散列
+        hash='%s:%s'%(prec,name)
+        # 将计数器的引用信息添加到有序集合里面，并将其分值设为0，以便在之后执行清理操作
+        pipe.zadd('known:',hash,0)
+        #对给定名字和精度的计数器进行更新
+        pipe.hincrby('count:'+hash,pnow,count)
+    pipe.execute()
+```
+
+
+
