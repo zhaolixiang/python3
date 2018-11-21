@@ -33,19 +33,13 @@ m=hashlib.new('md5',b'cai')#选择md5加密函数加密字符串‘cai’
 m=hashlib.md5('cai'.encode('utf-8'))#加密的另一种写法
 ```
 
+##### 2、特性用法：当需要加密的字符串过大的时候，可以使用同一个hash对象分多次加密，update\(a\)+update\(b\)=update\(a+b\)
 
+举例：
 
-##### 2、
+```
 
-
-
-
-
-
-
-
-
-
+```
 
 
 
