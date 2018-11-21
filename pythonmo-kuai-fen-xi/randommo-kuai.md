@@ -145,13 +145,24 @@ getstate\(\)函数用来记录随机数生成器的状态，setstate\(state\)函
 实例：
 
 ```
+import random
+
+tuple1=random.getstate()#记录生成器的状态
+for i in range(20):
+    print(random.randint(0,10),end=' ')
+print()
+random.setstate(tuple1)#传入参数回复之间的状态
+for i in range(20):
+    print(random.randint(0,10),end=' ')#两次输出的结果一致
+
 
 ```
 
 结果：
 
 ```
-
+5 7 9 9 10 10 2 3 7 1 1 6 1 7 1 1 7 4 2 2 
+5 7 9 9 10 10 2 3 7 1 1 6 1 7 1 1 7 4 2 2 
 ```
 
 
