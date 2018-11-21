@@ -15,6 +15,17 @@ return self.randrange(a,b+1) #调用randrange函数来处理
 实例：
 
 ```
+import random
+
+for i in range(20):
+    print(random.randint(0,10),end=' ')
+```
+
+结果：
 
 ```
+1 1 7 5 10 1 4 1 0 8 7 7 2 10 6 8 6 0 3 1 
+```
+
+
 
