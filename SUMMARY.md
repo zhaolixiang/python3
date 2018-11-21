@@ -198,4 +198,5 @@
     * [创建数组](pythonshu-ju-ke-xue-ru-men/shi-yong-biao-ge-xing-shi-de-shu-zhi-shu-ju/chuang-jian-shu-zu.md)
 * [Python模块分析](pythonmo-kuai-fen-xi.md)
   * [random模块](pythonmo-kuai-fen-xi/randommo-kuai.md)
+  * [hashlib加密](pythonmo-kuai-fen-xi/hashlibjia-mi.md)
 
