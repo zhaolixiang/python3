@@ -43,5 +43,15 @@ for i in range(20):
 return istart+istep*self._randbelow(n) #调用randbelow函数处理
 ```
 
+实例：
 
+```
+
+```
+
+结果：
+
+```
+
+```
 
