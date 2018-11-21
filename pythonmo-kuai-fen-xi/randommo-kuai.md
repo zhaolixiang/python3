@@ -170,8 +170,22 @@ for i in range(20):
 核心源代码：
 
 ```
+for i in reversed(range(1,len(x))):
+    j=randbelow(i+1)
+    x[i],x[j]=x[k],x[i]
+```
+
+函数算法的时间复杂度：O\(n\)
+
+实例：
 
 ```
 
+```
 
+结果：
+
+```
+
+```
 
