@@ -86,7 +86,11 @@ return seq[i]
 实例：
 
 ```
+import random
 
+list3=["mark","帅",18,[183,138]]
+for j in range(10):
+    print(random.choice(list3),end=' ')
 ```
 
 代码：
@@ -94,4 +98,6 @@ return seq[i]
 ```
 
 ```
+
+
 
