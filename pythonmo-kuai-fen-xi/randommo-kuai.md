@@ -1,6 +1,6 @@
 random是Python产生伪随机数的模块，随机种子默认为系统时钟。下面分析模块中的方法：
 
-# 1、random.randint\(start,stop\)
+### 1、random.randint\(start,stop\)
 
 这是一个产生整数随机数的函数，参数start代表最小值，参数stop代表最大值，两端的数值都可以取到；
 
@@ -27,7 +27,7 @@ for i in range(20):
 1 1 7 5 10 1 4 1 0 8 7 7 2 10 6 8 6 0 3 1
 ```
 
-# 2、random.randrange\(start,stop,step\)
+### 2、random.randrange\(start,stop,step\)
 
 也是一个随机整数函数，参数可选
 
@@ -70,7 +70,7 @@ for i in range(10):
 30 50 20 40 75 85 25 65 80 95
 ```
 
-# 3、random.choice\(seq\)
+### 3、random.choice\(seq\)
 
 一个随机选择函数，seq是一个非空的集合，在集合中随机选择了一个元素输出，元素的类型没有限制。
 
@@ -99,7 +99,7 @@ for j in range(10):
 mark 帅 [183, 138] 18 mark 18 mark 帅 帅 [183, 138]
 ```
 
-# 4、random.random\(\)
+### 4、random.random\(\)
 
 这个函数形成从0.0到1.0之间的任意浮点数，左闭右开，没有参数。
 
@@ -118,7 +118,7 @@ for j in range(5):
 0.357486615834809 0.5928029747238529 0.37053940107869987 0.3802224543848519 0.9741990956161711
 ```
 
-# 5、random.send\(n=None\)
+### 5、random.send\(n=None\)
 
 一个可以对随机数生成器进行初始化的函数，n代表随机种子；当n=None时，随机种子为系统时间，当n为其他的数据，如int，str等时，则以提供的数据作为随机种子，此时生成的随机数列固定。
 
@@ -176,6 +176,30 @@ for i in reversed(range(1,len(x))):
 ```
 
 函数算法的时间复杂度：O\(n\)
+
+实例：
+
+```
+import random
+
+lists=['mark','帅哥',18,[183,138]]
+print(lists)
+random.shuffle(lists,random=None)
+print(lists)
+```
+
+结果：
+
+```
+['mark', '帅哥', 18, [183, 138]]
+['帅哥', 18, 'mark', [183, 138]]
+```
+
+### 8、random.sample\(population,k\):
+
+population参数是一个序列，如列表、元组、集合、字符串等；从集合中随机抽取k个元素形成新的序列，不会改变原有的序列。
+
+最坏时间复杂度：O\(n\*n\)
 
 实例：
 
