@@ -46,12 +46,29 @@ return istart+istep*self._randbelow(n) #调用randbelow函数处理
 实例：
 
 ```
+import random
 
+for i in range(10):
+    print(random.randrange(10),end=' ') #产生0到10（不包括10）的随机数
+
+print("")
+
+for i in range(10):
+    print(random.randrange(5,10),end=' ') #产生5到10（不包括10）的随机数
+
+print("")
+
+for i in range(10):
+    print(random.randrange(5,100,5),end=' ') #产生5到100（不包括100）范围内的5倍整数的随机数
 ```
 
 结果：
 
 ```
-
+1 1 2 4 4 3 4 6 1 4 
+6 6 5 7 8 9 6 6 6 5 
+30 50 20 40 75 85 25 65 80 95 
 ```
+
+
 
