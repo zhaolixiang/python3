@@ -125,12 +125,18 @@ for j in range(5):
 实例：
 
 ```
+import random
 
+random.seed("mark")
+for j in range(20):#无论启动多少次程序，输出的序列不变
+    print(random.randint(0,10),end=' ')
 ```
 
 结果：
 
 ```
-
+4 1 10 5 6 2 8 5 5 10 7 2 9 6 2 6 0 5 10 10 
 ```
+
+
 
