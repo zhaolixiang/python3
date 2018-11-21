@@ -38,6 +38,15 @@ m=hashlib.md5('cai'.encode('utf-8'))#加密的另一种写法
 举例：
 
 ```
+import hashlib
+
+m1=hashlib.md5()
+m2=m1.copy()
+m1.update('a'.encode('utf-8'))
+m1.update('b'.encode('utf-8'))
+print(m1.hexdigest())#输出密文
+m2.update('ab'.encode('utf-8'))
+print(m2.hexdigest())#输出另一个密文
 
 ```
 
