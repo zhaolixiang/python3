@@ -24,6 +24,38 @@ md5\(\),sha1\(\),sha224\(\),sha256\(\),sha3840\(\),sha512\(\)，分别得到不�
 
 ##### 10、hashlib.algorithms\_available：查看所有的hash加密算法
 
+代码实例：
+
+```
+import hashlib
+
+def hash_fun_1(str1):
+    #创建一个hahsh对象并对str1加密
+    m=hashlib.md5(str1.encode('utf-8'))
+    print('获取加密的密文，16进制，无参数',m.hexdigest())
+    print('获取加密的密文，二进制，无参数:',m.digest())
+    print('获取hash块的大小:',m.block_size)
+    print('hash密钥占多少个字节:',m.digest_size)
+    print('查看当前获得的hash对象的加密算法',m.name)
+
+    #更新密文
+    m.update(str1.encode('utf-8'))
+    print('获取加密的密文，16进制，无参数', m.hexdigest())
+    print('获取加密的密文，二进制，无参数:', m.digest())
+    print('获取hash块的大小:', m.block_size)
+    print('hash密钥占多少个字节:', m.digest_size)
+    print('查看当前获得的hash对象的加密算法', m.name)
+
+if __name__ == '__main__':
+    hash_fun_1('mark')
+```
+
+结果：
+
+```
+
+```
+
 # 二、运用：
 
 ##### 1、创建哈希对象，有两种方式：
@@ -80,6 +112,10 @@ print(binascii.hexlify(pwd).decode('utf-8'))
 ```
 129d11e9ba1f3ef4e1393516d434f356363ffe68d7baca37fd1e91f0e87abe36
 ```
+
+### 
+
+
 
 
 
