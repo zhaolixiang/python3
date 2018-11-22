@@ -141,12 +141,15 @@ logger.addHandler()
 logger.removeHandler()
 #判是否有处理器
 logger.hasHandlers()
+```
 
+# 三、logger的基本使用
 
+实例：
 
 ```
 
-##### 
+```
 
 
 
