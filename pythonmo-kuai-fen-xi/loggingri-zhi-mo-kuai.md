@@ -26,7 +26,7 @@ Formatters对象定义了日志的输出格式，有多种可选参数。
 | %\(name\)s | Logger的名字 |
 | %\(levellno\)s | 数字形式的日志级别 |
 | %\(levelname\)s | 文本形式的日志级别 |
-| %\(pathname\)s | 调用日志输出函数的模块的完整路径名，可能为None |
+| %\(pathname\)s | 调用日志输出函数的模块的完整路径名，可能没有 |
 | %\(filename\)s | 调用日志输出函数的模块的文件名 |
 | %\(module\)s | 调用日志输出函数的模块名 |
 | %\(funcName\)s | 调用日志输出函数的函数名 |
@@ -34,12 +34,10 @@ Formatters对象定义了日志的输出格式，有多种可选参数。
 | %\(created\)f | 当前时间，用unix标表示的时间浮点表示 |
 | %\(relativeCreated\)d | 输出日志信息时，自Logger创建以来的毫秒数 |
 | %\(asctime\)s | 字符串形式的当前时间，默认格式是‘2018-11-22 16：49：45，896’，逗号后面是毫秒 |
-| %\(thread\)d |  |
-| %\(threadName\)s |  |
-| %\(process\)d |  |
-| %\(message\)s |  |
-
-
+| %\(thread\)d | 线程ID，可能没有 |
+| %\(threadName\)s | 线程名，可能没有 |
+| %\(process\)d | 进程ID，可能没有 |
+| %\(message\)s | 用户输出的信息 |
 
 
 
