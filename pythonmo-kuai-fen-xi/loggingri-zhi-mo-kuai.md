@@ -194,5 +194,15 @@ if __name__ == '__main__':
 2018-11-22 16:31:34,024    CRITICAL:  this is critical message
 ```
 
+# 四、logger日志记录的逻辑调用过程
+
+1. 记录日志通过调用logger.debug等方法；
+2. 首先判断本条记录的日志级别是否大于设置的级别，如果不是，直接pass，不再执行；
+3. 将日志信息当做参数创建一个LogRecord日志记录对象
+4. 将LogRecord对象经过logger过滤器过滤，如果被过滤则pass
+5. 日志记录对象被Handler处理器的过滤器过滤
+6. 判断本条记录的日志级别是否大于Handler处理器设置的级别，如果不是，直接pass，不再执行；
+7. 最后调用处理器的emit方法处理日志记录；
+
 
 
