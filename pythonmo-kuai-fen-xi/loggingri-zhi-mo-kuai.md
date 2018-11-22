@@ -74,5 +74,29 @@ formatter=logging.Formatter(fmt='%(asctime)s    %(levelname)s:  %(message)s'
 | MemoryHandler | logging.handlers.MemoryHandler | 日志输出到内存中的指定buffer |
 | HTTPHandler | logging.handlers.HTTPHandler | 通过“GET”或者“POST”远程输出到HTTP服务器 |
 
+```
+from logging import Handler
+
+#所有日志处理器的父类
+handler=Handler()
+
+print('处理日志的等级：',handler.level)
+print('处理日志的名字：',handler.name)
+print('处理器的日志过滤器：：',handler.filters)
+print('日志的格式：：',handler.filters)
+
+#一些常用方法：
+handler.get_name()
+handler.set_name('')
+handler.createLock()#创建线程锁
+handler.acquire()#获取线程锁
+handler.release()#释放线程锁
+handler.setLevel('info') #设置日志处理器的记录级别
+handler.setFormatter(fmt='')#设置日志的输出格式
+handler.addFilter('')#往处理器中添加过滤器
+handler.removeFilter('')#往处理器中移除过滤器
+handler.emit('')#日志记录的处理逻辑，由子类实现
+```
+
 
 
