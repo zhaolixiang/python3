@@ -100,7 +100,53 @@ handler.emit('')#日志记录的处理逻辑，由子类实现
 
 ### Logger日志对象
 
+Logger管理着所有记录日志的方法。
 
+```
+from logging import error, debug, warning, info, fatal, critical, getLogger
+
+#返回一个Logger实例
+#以'root'为名字的日志对象在Logger对象中只有一个实例
+logger=getLogger('root')
+
+print('获取根日志对象',logger.root)
+print('获取manager',logger.manager)
+print('获取根日志对象的名字',logger.name)
+print('获取根日志对象记录水平',logger.level)
+print('获取根日志对象过滤器列表',logger.filters)
+print('获取根日志对象处理器列表',logger.handlers)
+print('获取根日志对象',logger.disabled)
+
+#设置日志记录水平
+logger.setLevel('info')
+
+#输出日志信息，格式化输出
+logger.info('this is %s','info',exc_info=1)
+#记录warning信息
+logger.warning('')
+#记录error信息
+logger.error('')
+#等价于logger.error('',exc_info=1)
+logger.exception('')
+#记录debug信息
+logger.debug('')
+#记录critical信息
+logger.critical('')
+#直接指定级别
+logger.log('info','')
+
+#添加处理器
+logger.addHandler()
+#移除处理器
+logger.removeHandler()
+#判是否有处理器
+logger.hasHandlers()
+
+
+
+```
+
+##### 
 
 
 
