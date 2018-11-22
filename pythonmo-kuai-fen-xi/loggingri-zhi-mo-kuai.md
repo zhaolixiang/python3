@@ -51,5 +51,28 @@ formatter=logging.Formatter(fmt='%(asctime)s    %(levelname)s:  %(message)s'
                             ,datefmt='%Y-%m-%d %H:%M:%S',style='%')
 ```
 
+### Handlers日志处理器
+
+日志处理器用来处理日志的具体流向，是输出到文件中还是标准输出等，它通过设置Formatter控制输出格式，添加filters过滤日志。
+
+##### 常用的处理器有两种
+
+1. StreamHandler：用于向控制台打印日志
+2. FileHandler：用于向日志文件打印日志
+
+##### 其它的处理器
+
+| 名称 | 详细位置 | 说明 |
+| :--- | :--- | :--- |
+| RotatingHandler | logging.handlers.RotatingHandler | 日志回滚方式，支持日志文件最大数量和日志文件回滚 |
+| TimeRotatingHandler | logging.handlers.TimeRotatingHandler | 日志回滚方式，在一定时间区域内回滚日志文件 |
+| SocketHandler | logging.handlers.SocketHandler | 远程输出日志到TCP/IP sockets |
+| DatagramHandler | logging.handlers.DatagramHandler | 远程输出日志到UDP sockets |
+| SMTPHandler | logging.handlers.SMTPHandler | 远程输出日志到邮件地址 |
+| SysLogHandler | logging.handlers.SysLogHandler | 日志输出到syslog |
+| NTEventLogHandler | logging.handlers.NTEventLogHandler | 远程输出日志到Windows NT/2000/xp的事件日志 |
+| MemoryHandler | logging.handlers.MemoryHandler | 日志输出到内存中的指定buffer |
+| HTTPHandler | logging.handlers.HTTPHandler | 通过“GET”或者“POST”远程输出到HTTP服务器 |
+
 
 
