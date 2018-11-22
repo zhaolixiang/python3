@@ -98,5 +98,9 @@ handler.removeFilter('')#往处理器中移除过滤器
 handler.emit('')#日志记录的处理逻辑，由子类实现
 ```
 
+### Logger日志对象
+
+
+
 
 
