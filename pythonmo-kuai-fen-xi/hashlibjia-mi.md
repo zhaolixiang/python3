@@ -65,12 +65,21 @@ print(m2.hexdigest())#输出另一个密文
 代码实例：
 
 ```
+import hashlib
+import binascii
 
+#sha256为算法名称，12345678为要加密的密码
+#mark指的是杂质，额外添加的东西，使得破解更难
+#10 000是迭代次数，可以理解为加密次数
+pwd=hashlib.pbkdf2_hmac('sha256',b'12345678',b'mark',10000)
+print(binascii.hexlify(pwd).decode('utf-8'))
 ```
 
 结果：
 
 ```
-
+129d11e9ba1f3ef4e1393516d434f356363ffe68d7baca37fd1e91f0e87abe36
 ```
+
+
 
