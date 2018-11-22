@@ -53,7 +53,16 @@ if __name__ == '__main__':
 结果：
 
 ```
-
+获取加密的密文，16进制，无参数 ea82410c7a9991816b5eeeebe195e20a
+获取加密的密文，二进制，无参数: b'\xea\x82A\x0cz\x99\x91\x81k^\xee\xeb\xe1\x95\xe2\n'
+获取hash块的大小: 64
+hash密钥占多少个字节: 16
+查看当前获得的hash对象的加密算法 md5
+获取加密的密文，16进制，无参数 ac673f4dbac79922838901b5974a419a
+获取加密的密文，二进制，无参数: b'\xacg?M\xba\xc7\x99"\x83\x89\x01\xb5\x97JA\x9a'
+获取hash块的大小: 64
+hash密钥占多少个字节: 16
+查看当前获得的hash对象的加密算法 md5
 ```
 
 # 二、运用：
@@ -114,8 +123,6 @@ print(binascii.hexlify(pwd).decode('utf-8'))
 ```
 
 ### 
-
-
 
 
 
