@@ -41,7 +41,92 @@ if __name__ == '__main__':
 
 现在对上面代码进行修改，可以看到pycharm背景变黄色区域，就是错误类型提醒：
 
-![](/assets/Jietu20181122-140418.jpg)
+# ![](/assets/Jietu20181122-140418.jpg)三、typing常用的类型
+
+1. int,long,float：整型，长整型，浮点型
+2. bool,str：布尔型，字符串类型
+3. List,Tuple,Dict,Set：列表，元组，字典，集合
+4. Iterable,Iterator：可迭代器，迭代器类型
+5. Generator：生成器类型
+
+# 四、typing支持可能的多种类型
+
+由于python天生支持多态，迭代器中的元素可能有多种。
+
+代码实例：
+
+```
+from typing import List, Tuple, Dict
+
+
+def add(a: int, string: str, f: float, b: bool or str) -> Tuple[List, Tuple, Dict, str or bool]:
+    list1 = list(range(a))
+    tup = (string, string, string)
+    d = {"a": f}
+    bl = b
+    return list1, tup, d, bl
+
+
+if __name__ == '__main__':
+    print(add(5, 'mark', 183.1, False))
+    print(add(5, 'mark', 183.1, 'False'))
+
+```
+
+运行结果（跟不用typing无异）：
+
+```
+([0, 1, 2, 3, 4], ('mark', 'mark', 'mark'), {'a': 183.1}, False)
+([0, 1, 2, 3, 4], ('mark', 'mark', 'mark'), {'a': 183.1}, 'False')
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 
 
 
 
