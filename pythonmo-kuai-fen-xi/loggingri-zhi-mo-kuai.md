@@ -39,5 +39,17 @@ Formatters对象定义了日志的输出格式，有多种可选参数。
 | %\(process\)d | 进程ID，可能没有 |
 | %\(message\)s | 用户输出的信息 |
 
+实例：
+
+```
+import logging
+
+#fmt:定义输出的日志信息的格式
+#datefmt：定义时间信息的格式，默认为：%Y-%m-%d %H:%M:%S
+#style:定义格式化输出的占位符，默认是%(name)格式，可选{}或$格式
+formatter=logging.Formatter(fmt='%(asctime)s    %(levelname)s:  %(message)s'
+                            ,datefmt='%Y-%m-%d %H:%M:%S',style='%')
+```
+
 
 
