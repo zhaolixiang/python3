@@ -214,7 +214,34 @@ if __name__ == '__main__':
 ### 使用文件方式配置
 
 ```
+#logging.cong
 
+[loggers]  
+#定义日志的对象名称是什么，注意必须定义root，否则报错
+keys=root,main
+
+[handlers]
+#定义处理器的名字是什么，可以有多个，用逗号隔开
+#kes=consoleHandler
+
+[formatters]
+#定义输出格式对象的名字，可以有多个，用逗号隔开
+keys=simpleFormatter
+
+[logger_root]
+#配置root对象的日志记录级别和使用的处理器
+level=INFO
+handlers=consoleHandler
+
+[logger_main]
+#配置main对象的日志记录级别和使用的处理器，qualname值得就是日志对象的名字
+level=INFO
+handlers=consoleHandler
+quanlname=main
+#logger对象把日志传递给所有相关的handler的时候，会逐级向上寻找这个logger和它所有的父logger的全部handler，
+#propagate=1表示会继续向上搜寻；
+#propagate=0表示停止搜寻，这个参数涉及重复打印的坑。
+propagate=0
 ```
 
 
