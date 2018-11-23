@@ -211,5 +211,11 @@ if __name__ == '__main__':
 3. 通过logging.config.fileConfig\(filepath\)，文件配置
 4. 通过dictConfig的字典方式配置，这是py3.2版本引入的新的配置方法
 
+### 使用文件方式配置
+
+```
+
+```
+
 
 
