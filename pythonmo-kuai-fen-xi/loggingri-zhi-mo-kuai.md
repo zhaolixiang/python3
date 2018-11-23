@@ -204,5 +204,12 @@ if __name__ == '__main__':
 6. 判断本条记录的日志级别是否大于Handler处理器设置的级别，如果不是，直接pass，不再执行；
 7. 最后调用处理器的emit方法处理日志记录；
 
+# 五、配置logger
+
+1. 通过代码进行完整配置，主要是通过getLogger方法实现，但不好修改
+2. 通过basicConfig方法实现，这种方式快速但不够层次分明
+3. 通过logging.config.fileConfig\(filepath\)，文件配置
+4. 通过dictConfig的字典方式配置，这是py3.2版本引入的新的配置方法
+
 
 
