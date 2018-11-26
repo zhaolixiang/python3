@@ -301,7 +301,7 @@ root:
     handlers: [console_err]
 ```
 
-# 监听logger配置更改
+# 六、监听logger配置更改
 
 > logging.config.listen\(port\)函数可以让英语程序在一个socket上监听新的配置信息，达到在运行时改变配置，而不用重启应用程序的目的。
 
