@@ -216,13 +216,13 @@ if __name__ == '__main__':
 ```
 #logging.cong
 
-[loggers]  
+[loggers]
 #定义日志的对象名称是什么，注意必须定义root，否则报错
 keys=root,main
 
 [handlers]
 #定义处理器的名字是什么，可以有多个，用逗号隔开
-#kes=consoleHandler
+keys=consoleHandler
 
 [formatters]
 #定义输出格式对象的名字，可以有多个，用逗号隔开
@@ -237,7 +237,7 @@ handlers=consoleHandler
 #配置main对象的日志记录级别和使用的处理器，qualname值得就是日志对象的名字
 level=INFO
 handlers=consoleHandler
-quanlname=main
+qualname=main
 #logger对象把日志传递给所有相关的handler的时候，会逐级向上寻找这个logger和它所有的父logger的全部handler，
 #propagate=1表示会继续向上搜寻；
 #propagate=0表示停止搜寻，这个参数涉及重复打印的坑。
@@ -248,7 +248,7 @@ propagate=0
 class=StreamHandler
 level=WARNING
 formatter=simpleFormatter
-args=(sys,stdout,)
+args=(sys,)
 
 [formatter_simpleFormatter]
 #配置输出格式过滤器simpleFormatter
@@ -271,8 +271,6 @@ filename=os.path.dirname(os.path.abspath(__file__))
 with  open(filename+'/logging.yaml','r') as f:
     log=yaml.load(f.read())
     dictConfig(log)
-
-
 ```
 
 ```
@@ -308,7 +306,16 @@ root:
 > logging.config.listen\(port\)函数可以让英语程序在一个socket上监听新的配置信息，达到在运行时改变配置，而不用重启应用程序的目的。
 
 ```
+import logging.config
+import logging
+logging.config.fileConfig("logging.conf")
+logger=logging.getLogger('test.listen')
 
+#监听端口号9999
+t=logging.config.listen(9999)
+#设置为后端运行
+t.setDaemon(True)
+t.start()
 ```
 
 
