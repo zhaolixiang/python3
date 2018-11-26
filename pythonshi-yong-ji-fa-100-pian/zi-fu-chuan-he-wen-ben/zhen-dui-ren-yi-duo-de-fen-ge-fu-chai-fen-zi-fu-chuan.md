@@ -7,7 +7,11 @@
 字符串对象的split\(\)方法只能处理非常简单的情况，而且不支持多个分隔符，对分隔符周围存在的多种空格情况也无能为力。当需要一些更为灵活地功能时，应该使用re.split\(\)方法：
 
 ```
-
+import re
+line='abc   def ; ghi, jkl,mno,      pkr'
+#分隔符：分号，都逗号，空格符，前后可以跟着任意数量的额外空格
+result=re.split(r'\s*[;,\s]\s*',line)
+print(result)
 ```
 
 # 3、分析😈
