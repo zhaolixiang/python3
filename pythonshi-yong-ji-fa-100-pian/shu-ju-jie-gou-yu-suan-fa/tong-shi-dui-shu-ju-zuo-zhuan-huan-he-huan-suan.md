@@ -60,14 +60,12 @@ marks=[
 ]
 min_mark=min(m['age'] for m in marks)
 print(min_mark)
-
-
 ```
 
 结果：
 
 ```
-
+17
 ```
 
 d
