@@ -49,9 +49,18 @@ else:
 存在py文件
 ```
 
-实例3：
+### 实例3：根据字典某个key取最小值
 
 ```
+marks=[
+    {'age':18,'money':100},
+    {'age':19,'money':500},
+    {'age':17,'money':900},
+    {'age':20,'money':1000},
+]
+min_mark=min(m['age'] for m in marks)
+print(min_mark)
+
 
 ```
 
