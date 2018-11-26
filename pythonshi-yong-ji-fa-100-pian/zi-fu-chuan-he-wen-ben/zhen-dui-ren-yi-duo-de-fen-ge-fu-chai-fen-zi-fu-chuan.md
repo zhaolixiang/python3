@@ -14,6 +14,12 @@ result=re.split(r'\s*[;,\s]\s*',line)
 print(result)
 ```
 
+结果：
+
+```
+['abc', 'def', 'ghi', 'jkl', 'mno', 'pkr']
+```
+
 # 3、分析😈
 
 
