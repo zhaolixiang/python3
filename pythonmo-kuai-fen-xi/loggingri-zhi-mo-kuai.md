@@ -313,7 +313,6 @@ logger=logging.getLogger('test.listen')
 
 #监听端口号9999
 t=logging.config.listen(9999)
-#设置为后端运行
 t.setDaemon(True)
 t.start()
 ```
