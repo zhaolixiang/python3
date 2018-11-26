@@ -22,6 +22,10 @@ c=ChainMap(a,b)
 print(c['x'])
 print(c['y'])
 print(c['z'])
+
+print(len(c))
+print(list(c.keys()))
+print(list(c.values()))
 ```
 
 运行结果：
@@ -30,9 +34,16 @@ print(c['z'])
 1
 2
 3
+3
+['y', 'z', 'x']
+[2, 3, 1]
 ```
 
 # 3、分析😈
+
+ChainMap可接受多个映射然后在逻辑上事它们表现为一个单独的映射机构。但是，这些映射运行时并不会合并在一起。相反，ChainMap只是简单地维护一个记录底层映射关系的列表，然后重定义常见的字典操作来扫描这个列表。大部分的列表操作都能正常工作。例如：len、keys\(\)、values\(\)
+
+
 
 
 
