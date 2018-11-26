@@ -17,4 +17,77 @@
 
 清理程序通过对记录已知计数器的有序集合执行zrange命令来一个接一个的遍历所有已知的计数器。在对计数器执行清理操作的时候，程序会取出计数器记录的所有计数样本的开始时间，并移除那些开始时间位于指定截止时间之前的样本，清理之后的计数器最多只会保留最新的120个样本。如果一个计数器在执行清理操作之后不再包含任何样本，那么程序将从记录已知计数器的有序集合里面移除这个计数器的引用信息。以上给出的描述大致地说明了计数器清理函数的运作原理，至于程序的一些边界情况最好还是通过代码来说明，要了解该函数的所有细节，请看下面代码：
 
+```
+import bisect
+import time
+
+import redis
+
+QUIT=True
+SAMPLE_COUNT=1
+
+def clean_counters(conn):
+    pipe=conn.pipeline(True)
+    #为了平等的处理更新频率各不相同的多个计数器，程序需要记录清理操作执行的次数
+    passes=0
+    #持续地对计数器进行清理，知道退出为止
+    while not QUIT:
+        #记录清理操作开始执行的时间，这个值将被用于计算清理操作的执行时长
+        start=time.time()
+        index=0
+        #渐进的遍历所有已知计数器
+        while index<conn.zcard('known:'):
+            #取得被检查的计数器的数据
+            hash=conn.zrange('known:',index,index)
+            index+=1
+            if not hash:
+                break
+            hash=hash[0]
+            #取得计数器的精度
+            prec=int(hash.partition(':')[0])
+            #因为清理程序每60秒就会循环一次，所以这里需要根据计数器的更新频率来判断是否真的有必要对计数器进行清理
+            bprec=int(prec//60) or 1
+            #如果这个计数器在这次循环里不需要进行清理，那么检查下一个计数器。
+            #举个例子：如果清理程序只循环了3次，而计数器的更新频率是5分钟一次，那么程序暂时还不需要对这个计数器进行清理
+            if passes % bprec:
+                continue
+            hkey='count:'+hash
+            #根据给定的精度以及需要保留的样本数量，计算出我们需要保留什么时间之前的样本。
+            cutoff=time.time()-SAMPLE_COUNT*prec
+            #将conn.hkeys(hkey)得到的数据都转换成int类型
+            samples=map(int,conn.hkeys(hkey))
+            samples.sort()
+            #计算出需要移除的样本数量。
+            remove=bisect.bisect_right(samples,cutoff)
+            #按需要移除技术样本
+            if remove:
+                conn.hdel(hkey,*samples[:remove])
+                #这个散列可能以及被清空
+                if remove==len(samples):
+                    try:
+                        #在尝试修改计数器散列之前，对其进行监视
+                        pipe.watch(hkey)
+                        #验证计数器散列是否为空，如果是的话，那么从记录已知计数器的有序集合里面移除它。
+                        if not pipe.hlen(hkey):
+                            pipe.multi()
+                            pipe.zrem('known:',hash)
+                            pipe.execute()
+                            #在删除了一个计数器的情况下，下次循环可以使用与本次循环相同的索引
+                            index-=1
+                        else:
+                            #计数器散列并不为空，继续让它留在记录已知计数器的有序集合里面
+                            pipe.unwatch()
+                    except redis.exceptions.WatchError:
+                        #有其他程序向这个计算器散列添加了新的数据，它已经不再是空的了，
+                        # 继续让它留在记录已知计数器的有序集合里面。
+                        pass
+            passes+=1
+            # 为了让清理操作的执行频率与计数器更新的频率保持一致
+            # 对记录循环次数的变量以及记录执行时长的变量进行更新。
+            duration=min(int(time.time()-start)+1,60)
+            #如果这次循环未耗尽60秒，那么在余下的时间内进行休眠，如果60秒已经耗尽，那么休眠1秒以便稍作休息
+            time.sleep(max(60-duration,1))
+```
+
+
 
