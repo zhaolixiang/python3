@@ -242,7 +242,32 @@ quanlname=main
 #propagate=1表示会继续向上搜寻；
 #propagate=0表示停止搜寻，这个参数涉及重复打印的坑。
 propagate=0
+
+[handler_consoleHandler]
+#配置处理器consoleHandler
+class=StreamHandler
+level=WARNING
+formatter=simpleFormatter
+args=(sys,stdout,)
+
+[formatter_simpleFormatter]
+#配置输出格式过滤器simpleFormatter
+format=%(asctime)-%(name)s-%(levelname)s-%(message)s
 ```
 
+> 注意：可以看到logger和Handler都可以设置日志级别，日志输出是取最高级别。
 
+### 使用字典形式配置
+
+字典形式配置功能更强大，也更加灵活。通过dictConfig函数，我们可以将其他格式的配置文件转化成字典，如json，YAML等。
+
+实例：
+
+```
+
+```
+
+```
+
+```
 
