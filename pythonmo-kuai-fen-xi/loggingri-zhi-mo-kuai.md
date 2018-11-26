@@ -264,11 +264,43 @@ format=%(asctime)-%(name)s-%(levelname)s-%(message)s
 实例：
 
 ```
+import yaml
+from logging.config import dictConfig
+import os
+filename=os.path.dirname(os.path.abspath(__file__))
+with  open(filename+'/logging.yaml','r') as f:
+    log=yaml.load(f.read())
+    dictConfig(log)
+
 
 ```
 
 ```
-
+#logging.yaml
+#注意：yaml格式严格，:后面一定要带空格
+version: 1
+formatters:
+    simple:
+          format: '%(asctime)s-%(name)s-%(levelname)s-%(message)s'
+handlers:
+    console:
+          class: logging.StreamHandler
+          level: DEBUG
+          formatter: simple
+          stream: ext://sys.stdout
+    console_err:
+          class: logging.StreamHandler
+          level: DEBUG
+          formatter: simple
+          stream: ext://sys.stderr
+loggers:
+    simpleExample:
+          level: DEBUG
+          handlers: [console]
+          propagate: no
+root:
+    level: DEBUG
+    handlers: [console_err]
 ```
 
 # 监听logger配置更改
