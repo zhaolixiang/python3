@@ -52,5 +52,34 @@ del c['x'] #可以正常删除a中的'x':1
 del c['y'] #会移除，因为第一个映射结构a中没有y键
 ```
 
+作为ChainMap的替代方案，我们可能会考虑利用字典的update\(\)方法将多个字典合并在一起，例如：
+
+```
+from collections import ChainMap
+a={'x':1,'z':3}
+b={'y':2,'z':4}
+
+#为了防止b被直接修改，先cope一份b
+c=dict(b)
+print(id(c))
+print(id(b))
+
+c.update(a)
+
+print(c['x'])
+print(c['y'])
+print(c['z'])
+```
+
+运行结果：
+
+```
+4550769400
+4549694808
+1
+2
+3
+```
+
 
 
