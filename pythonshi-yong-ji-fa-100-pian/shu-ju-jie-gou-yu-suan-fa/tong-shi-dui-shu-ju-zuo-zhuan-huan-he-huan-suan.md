@@ -12,8 +12,6 @@
 nums=[1,2,3]
 s=sum(x*x for x in nums)
 print(s)
-
-
 ```
 
 结果：
@@ -22,9 +20,35 @@ print(s)
 14
 ```
 
-d
+还有其它例子：
 
-d
+```
+import os
+filename=os.path.dirname(os.path.abspath(__file__))
+files1=os.listdir(filename+"/image")
+files2=os.listdir(filename)
+#any表示该iterable只要存在一个满足条件的，欧返回True，否则才返回False
+if any(name.endswith('.py') for name in files1):
+    print('存在py文件')
+else:
+    print('不存在py文件')
+
+
+
+#any表示该iterable只要存在一个满足条件的，欧返回True，否则才返回False
+if any(name.endswith('.py') for name in files2):
+    print('存在py文件')
+else:
+    print('不存在py文件')
+
+```
+
+运行结果：
+
+```
+不存在py文件
+存在py文件
+```
 
 d
 
