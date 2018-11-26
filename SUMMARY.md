@@ -76,6 +76,8 @@
     * [将名称映射到序列的元素中](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/jiang-ming-cheng-ying-she-dao-xu-lie-de-yuan-su-zhong.md)
     * [同时对数据做转换和换算](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/tong-shi-dui-shu-ju-zuo-zhuan-huan-he-huan-suan.md)
     * [将多个映射合并为单个映射](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/jiang-duo-ge-ying-she-he-bing-wei-dan-ge-ying-she.md)
+  * [字符串和文本](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben.md)
+    * [针对任意多的分隔符拆分字符串](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/zhen-dui-ren-yi-duo-de-fen-ge-fu-chai-fen-zi-fu-chuan.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
