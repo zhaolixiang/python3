@@ -14,8 +14,31 @@ b={'y':2,'z':4}
 现在假设想执行查找操作，我们必须检查这两个字典（例如，先在a中查找，如果没做找到在去b中查找）。一种简单的方法是利用collections模块中的ChainMap类来解决这个问题。例如：
 
 ```
+from collections import ChainMap
+a={'x':1,'z':3}
+b={'y':2,'z':4}
+
+c=ChainMap(a,b)
+print(c['x'])
+print(c['y'])
+print(c['z'])
+```
+
+运行结果：
 
 ```
+1
+2
+3
+```
+
+dsd
+
+d
+
+dd
+
+d
 
 # 3、分析😈
 
