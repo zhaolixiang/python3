@@ -26,6 +26,9 @@ print(c['z'])
 print(len(c))
 print(list(c.keys()))
 print(list(c.values()))
+
+a['z']=5
+print(c['z'])
 ```
 
 运行结果：
@@ -37,6 +40,7 @@ print(list(c.values()))
 3
 ['y', 'z', 'x']
 [2, 3, 1]
+5
 ```
 
 # 3、分析😈
