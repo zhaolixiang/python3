@@ -115,6 +115,13 @@ print('*'*20)
 text='今天是 11/27/2018，昨天是11/26/2018'
 for month,day,year in datepat.findall(text):
     print('{}-{}-{}'.format(year,month,day))
+
+print('*'*20)
+for m in datepat.finditer(text):
+    print(m.groups())
+
+
+
 ```
 
 结果：
@@ -132,8 +139,6 @@ for month,day,year in datepat.findall(text):
 2018-11-27
 2018-11-26
 ```
-
-
 
 # 3、分析😈
 
