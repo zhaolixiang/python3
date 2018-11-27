@@ -85,6 +85,12 @@ datepat=re.compile(r'\d+/\d+/\d')
 print(datepat.findall(text))
 ```
 
+运行结果：
+
+```
+['11/27/2', '11/26/2']
+```
+
 1
 
 1
