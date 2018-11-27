@@ -65,7 +65,6 @@ address=[
 
 result=[addr for addr in address if fnmatchcase(addr,'1[1-3][1-5]*BJ')]
 print(result)
-
 ```
 
 运行结果：
@@ -73,8 +72,6 @@ print(result)
 ```
 ['124 D 北京 BJ']
 ```
-
-1
 
 # 3、分析😈
 
