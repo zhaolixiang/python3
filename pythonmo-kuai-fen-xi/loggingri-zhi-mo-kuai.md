@@ -183,18 +183,16 @@ if __name__ == '__main__':
     logger.error('this is error message',extra={'mark':'mark'})
     logger.fatal('this is fatal message,it is same ad logger.critical',extra={'mark':'mark'})
     logger.critical('this is critical message',extra={'mark':'mark'})
-
-
 ```
 
 结果：
 
 ```
-2018-11-22 16:31:34,023    INFO:  this is information
-2018-11-22 16:31:34,023    WARNING:  this is warning message
-2018-11-22 16:31:34,023    ERROR:  this is error message
-2018-11-22 16:31:34,024    CRITICAL:  this is fatal message,it is same ad logger.critical
-2018-11-22 16:31:34,024    CRITICAL:  this is critical message
+2018-11-27 09:54:43,318    INFO   mark:  this is information
+2018-11-27 09:54:43,318    WARNING   mark:  this is warning message
+2018-11-27 09:54:43,318    ERROR   mark:  this is error message
+2018-11-27 09:54:43,319    CRITICAL   mark:  this is fatal message,it is same ad logger.critical
+2018-11-27 09:54:43,319    CRITICAL   mark:  this is critical message
 ```
 
 # 四、logger日志记录的逻辑调用过程
