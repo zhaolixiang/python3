@@ -41,9 +41,22 @@ print(result)
 ['abc', ' ', 'def', ';', 'ghi', ',', 'jkl', ',', 'mno', ',', 'pkr']
 ```
 
-在特定的上下文中获取到分隔符也可能是有用的。例如，也许稍后要用到分隔字符来改进字符串的输出：
+在特定的上下文中获取到分隔符也可能是有用的。例如，用分隔字符来改进字符串的输出：
 
 ```
+import re
+line='abc   def ; ghi, jkl,mno,      pkr'
+result=re.split(r'\s*(;|,|\s)\s*',line)
 
+values=result[::2]
+delimiters=result[1::2]+['']
+
+print(values)
+print(delimiters)
+
+last=''.join(v+d for v,d in zip(values,delimiters))
+print(last)
 ```
+
+
 
