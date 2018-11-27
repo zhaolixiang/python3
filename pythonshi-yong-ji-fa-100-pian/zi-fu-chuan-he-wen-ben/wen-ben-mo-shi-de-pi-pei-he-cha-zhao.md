@@ -79,7 +79,10 @@ else:
 match\(\)方法总是尝试在字符串的开头找到匹配项。如果想针对整个文本搜索出所有的匹配项，那么就应该使用findall\(\)方法，例如：
 
 ```
-
+import re
+text='今天是 11/27/2018，昨天是11/26/2018'
+datepat=re.compile(r'\d+/\d+/\d')
+print(datepat.findall(text))
 ```
 
 1
