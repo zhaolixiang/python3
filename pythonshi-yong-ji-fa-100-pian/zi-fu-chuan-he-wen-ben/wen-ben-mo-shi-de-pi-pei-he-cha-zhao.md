@@ -119,9 +119,6 @@ for month,day,year in datepat.findall(text):
 print('*'*20)
 for m in datepat.finditer(text):
     print(m.groups())
-
-
-
 ```
 
 结果：
@@ -138,6 +135,9 @@ for m in datepat.finditer(text):
 ********************
 2018-11-27
 2018-11-26
+********************
+('11', '27', '2018')
+('11', '26', '2018')
 ```
 
 # 3、分析😈
