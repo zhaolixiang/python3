@@ -45,8 +45,11 @@ True
 ```
 import re
 url='http://www.baidu.com'
+url2='utp://xxxxxx'
 m=re.match('http:|http:|ftp',url)
+m2=re.match('http:|http:|ftp',url2)
 print(m)
+print(m2)
 
 ```
 
@@ -54,7 +57,8 @@ print(m)
 
 ```
 <re.Match object; span=(0, 5), match='http:'>
+None
 ```
 
-
+这也行得通，但是通常对于简单的匹配来说，这种方式过于重量级，使用startswith\(\)、endswith\(\)会更简单，运行也更快。
 
