@@ -43,12 +43,18 @@ True
 有时候我们也比较倾向于使用正则表达式作为替代方案，例如：
 
 ```
+import re
+url='http://www.baidu.com'
+m=re.match('http:|http:|ftp',url)
+print(m)
 
 ```
 
 结果：
 
 ```
-
+<re.Match object; span=(0, 5), match='http:'>
 ```
+
+
 
