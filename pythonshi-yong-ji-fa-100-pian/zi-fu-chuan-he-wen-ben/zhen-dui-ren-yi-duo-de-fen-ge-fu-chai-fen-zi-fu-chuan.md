@@ -58,5 +58,13 @@ last=''.join(v+d for v,d in zip(values,delimiters))
 print(last)
 ```
 
+结果：
+
+```
+['abc', 'def', 'ghi', 'jkl', 'mno', 'pkr']
+[' ', ';', ',', ',', ',', '']
+abc def;ghi,jkl,mno,pkr
+```
+
 
 
