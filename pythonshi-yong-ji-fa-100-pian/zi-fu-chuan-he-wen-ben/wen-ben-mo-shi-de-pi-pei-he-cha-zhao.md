@@ -175,6 +175,15 @@ print(m)
 如果想要精确匹配，可以加一个结束标记：$
 
 ```
+import re
+#加入捕获组
+datepat=re.compile(r'(\d+)+/(\d+)+/(\d+)$')
+m1=datepat.match('11/27/2018xxxx')
+m2=datepat.match('11/27/2018')
+print(m1)
+print(m2)
+
+
 
 ```
 
