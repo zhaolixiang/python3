@@ -21,10 +21,13 @@ print(filename.startswith('https:'))
 ```
 True
 False
+```
+
+需要需要同时针对多个选项做检查，只需要给startswith\(\)和endswith\(\)提供包含可能选项的元组即可：
 
 ```
 
-1
+```
 
 1
 
