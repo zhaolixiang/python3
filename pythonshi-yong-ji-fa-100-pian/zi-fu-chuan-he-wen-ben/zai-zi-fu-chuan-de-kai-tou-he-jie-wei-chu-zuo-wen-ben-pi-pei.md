@@ -8,15 +8,19 @@
 
 实例：
 
-
-
 ```
+filename='mark.txt'
+url='http://www.baidu.com'
 
+print(filename.endswith('.txt'))
+print(filename.startswith('https:'))
 ```
 
 运行结果：
 
 ```
+True
+False
 
 ```
 
