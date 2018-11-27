@@ -38,7 +38,7 @@ print(result)
 结果：
 
 ```
-
+['abc', ' ', 'def', ';', 'ghi', ',', 'jkl', ',', 'mno', ',', 'pkr']
 ```
 
 
