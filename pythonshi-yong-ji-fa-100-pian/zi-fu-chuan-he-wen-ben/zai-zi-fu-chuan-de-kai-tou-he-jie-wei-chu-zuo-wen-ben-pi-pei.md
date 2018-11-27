@@ -13,7 +13,7 @@ filename='mark.txt'
 url='http://www.baidu.com'
 
 print(filename.endswith('.txt'))
-print(filename.startswith('https:'))
+print(url.startswith('https:'))
 ```
 
 运行结果：
@@ -26,12 +26,17 @@ False
 需要需要同时针对多个选项做检查，只需要给startswith\(\)和endswith\(\)提供包含可能选项的元组即可：
 
 ```
-
+url='http://www.baidu.com'
+print(url.startswith(('https:','http:')))
 ```
 
-1
+结果：
 
-1
+```
+True
+```
+
+> 注意，多个选项只能使用元组，如果使用列表或集合，请首先使用tuple\(\)将它们转化为元组，否则会报错。
 
 1
 
