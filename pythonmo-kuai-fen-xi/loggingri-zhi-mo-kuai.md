@@ -155,7 +155,7 @@ def my_get_logger(appname):
     #获取logger实例，如果参数为空则返回root logger
     logger=logging.getLogger(appname)
     #创建日志输出格式
-    formatter=logging.Formatter('%(asctime)s    %(levelname)s:  %(message)s')
+    formatter=logging.Formatter('%(asctime)s    %(levelname)s   %(mark)s:  %(message)s')
 
     #指定输出的文件路径
     file_handler=logging.FileHandler('test.log')
@@ -176,12 +176,15 @@ def my_get_logger(appname):
 
 if __name__ == '__main__':
     logger=my_get_logger('test')
-    logger.debug('this is debug info')
-    logger.info('this is information')
-    logger.warning('this is warning message')
-    logger.error('this is error message')
-    logger.fatal('this is fatal message,it is same ad logger.critical')
-    logger.critical('this is critical message')
+    # extra： 这是一个字典（dict）参数，它可以用来自定义消息格式中所包含的字段，但是它的key不能与logging模块定义的字段冲突。
+    logger.debug('this is debug info',extra={'mark':'mark'})
+    logger.info('this is information',extra={'mark':'mark'})
+    logger.warning('this is warning message',extra={'mark':'mark'})
+    logger.error('this is error message',extra={'mark':'mark'})
+    logger.fatal('this is fatal message,it is same ad logger.critical',extra={'mark':'mark'})
+    logger.critical('this is critical message',extra={'mark':'mark'})
+
+
 ```
 
 结果：
