@@ -36,13 +36,14 @@ print(fnmatch('mark.txt','*.TXT'))
 实例：
 
 ```
-
+from fnmatch import fnmatch,fnmatchcase
+print(fnmatchcase('mark.txt','*.TXT'))
 ```
 
 结果：
 
 ```
-
+False
 ```
 
 1
