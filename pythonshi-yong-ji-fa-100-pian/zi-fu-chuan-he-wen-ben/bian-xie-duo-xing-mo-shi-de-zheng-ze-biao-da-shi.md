@@ -33,7 +33,7 @@ print(str_pat.findall(text2))
 ```
 import re
 
-#将.缓存(?:.|\n)
+#将.换成(?:.|\n)
 str_pat=re.compile(r'/\*((?:.|\n)*?)\*/')
 text1="/* mark */"
 text2='''/* mark 
