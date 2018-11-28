@@ -75,13 +75,13 @@ def change_date(m):
     return '{}  {}  {}'.format(m.group(3),mon_name,m.group(2))
 print(datepat.sub(change_date,text))
 print(text)
-
 ```
 
 结果：
 
 ```
-
+今天是：2018  Nov  28
+今天是：11/28/2018
 ```
 
 替换回调函数的输入参数是一个匹配对象，由match\(\)和find\(\)返回。用.group\(\)方法来提取匹配中特定的部分。该函数返回替换后的文本。
