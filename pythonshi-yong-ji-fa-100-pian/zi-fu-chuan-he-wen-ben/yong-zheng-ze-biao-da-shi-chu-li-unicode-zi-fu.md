@@ -24,7 +24,7 @@ print(num.match(str2))
 <re.Match object; span=(0, 3), match='١٢٣'>
 ```
 
-1
+如果需要在模式字符串中包含指定的Unicode字符，可以针对Unicode字符使用转义序列（例如\uFFFF或\U）
 
 1
 
