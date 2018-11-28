@@ -16,10 +16,17 @@ print(str2)
 print(str1==str2)
 print(len(str1))
 print(len(str2))
-
 ```
 
+运行结果：
+
+```
+ñ
+ñ
+False
 1
+2
+```
 
 1
 
