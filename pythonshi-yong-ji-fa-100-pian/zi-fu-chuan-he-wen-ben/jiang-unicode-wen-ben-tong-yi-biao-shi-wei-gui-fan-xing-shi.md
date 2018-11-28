@@ -146,7 +146,23 @@ fi
 
 对于任何需要确保以规范和一致性的方式进行处理Unicode文本的程序来说，规范化都是重要的一部分。尤其是在处理用户输入时接收到的字符串时，此时你无法控制字符串的编码方式，那么规范化文本的表示就显得更为重要了。
 
+在对文本进行过滤和净化时，规范化同样也占据了重要的部分。例如，假设想从某些文本中去除所有的音符标记（可能是为了进行搜索或匹配）：
 
+```
+import unicodedata
+str='啦啦啦\ufb01我是测试\u00f1呱呱呱n\u0303'
+
+t1=unicodedata.normalize('NFD',str)
+print(str)
+print(t1)
+
+result=''.join(x for x in t1 if not unicodedata.combining(x))
+print(result)
+
+
+
+
+```
 
 
 
