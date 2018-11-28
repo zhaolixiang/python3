@@ -34,7 +34,7 @@ re.compile('[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff]+')
 
 # 3、分析😈
 
-把Unicode和正则表达式混在一起使用绝对能让人头疼欲裂，如果真的要这么做，应该考虑安装第三方的正则表达式库\([http://pypi.python.org/pypi/regex\)，](http://pypi.python.org/pypi/regex%29，这些第三方库针对Unicode大写转换提供了完整的支持，还包括其他各种有趣的特性，包括近似匹配。)
+把Unicode和正则表达式混在一起使用绝对能让人头疼欲裂，如果真的要这么做，应该考虑安装第三方的正则表达式库\([http://pypi.python.org/pypi/regex\)，](http://pypi.python.org/pypi/regex%29)
 
 这些第三方库针对Unicode大写转换提供了完整的支持，还包括其他各种有趣的特性，包括近似匹配。
 
