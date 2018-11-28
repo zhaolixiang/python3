@@ -16,13 +16,13 @@ result2=re.sub('mark','lx',text,flags=re.IGNORECASE)
 
 print(result1)
 print(result2)
-
 ```
 
 结果：
 
 ```
-
+['Mark', 'mark']
+lx is a handsome guy and lx is only 18 years old.
 ```
 
 1
