@@ -16,7 +16,6 @@ result2=re.sub('mark','python',text,flags=re.IGNORECASE)
 
 print(result1)
 print(result2)
-
 ```
 
 结果：
@@ -28,7 +27,11 @@ python is a handsome guy and python is only 18 years old.
 
 上面例子揭示了一种局限，就是虽然名字从【mark】替换为【python】，但是大小写并不吻合，例如第一个人名替换后应该也是大写：【Pyhton】。
 
-如果想要修正这个问题，需要用到一个支撑函数
+如果想要修正这个问题，需要用到一个支撑函数，实例如下：
+
+```
+
+```
 
 1
 
