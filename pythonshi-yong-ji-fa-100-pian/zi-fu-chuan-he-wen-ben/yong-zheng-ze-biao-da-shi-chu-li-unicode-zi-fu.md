@@ -15,14 +15,13 @@ str2='\u0661\u0662\u0663'
 
 print(num.match(str1))
 print(num.match(str2))
-
-
 ```
 
 结果：
 
 ```
-
+<re.Match object; span=(0, 3), match='123'>
+<re.Match object; span=(0, 3), match='١٢٣'>
 ```
 
 1
