@@ -7,6 +7,15 @@
 在Unicode中，有些特定的字符可以被表示成多种合法的代码点序列。为了说明这个问题，请看下面示例：
 
 ```
+str1='\u00f1'
+str2='n\u0303'
+
+print(str1)
+print(str2)
+
+print(str1==str2)
+print(len(str1))
+print(len(str2))
 
 ```
 
