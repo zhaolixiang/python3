@@ -70,5 +70,5 @@ def update_status(conn,context,type,value,timeout=5):
             continue
 ```
 
-update\_status\(\)函数的前半部分代码基本上可以忽略不看，因为它们和上节介绍的log
+update_status()函数的前半部分代码基本上可以忽略不看，因为它们和上节介绍的log_common()函数
 
