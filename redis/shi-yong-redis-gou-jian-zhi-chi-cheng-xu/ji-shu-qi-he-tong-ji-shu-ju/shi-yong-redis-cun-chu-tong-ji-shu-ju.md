@@ -16,3 +16,59 @@
 
 下面代码展示了负责更新统计数据的代码。和之前介绍过的常见日志程序一样，统计程序在写入数据之前会进行检查，确保被记录的是当前这小时的统计数据，并将不属于当前这一小时的旧数据进行归档。在此之后，程序会构建两个临时有序集合，其中一个用于保存最小值，而另一个则用于保存最大值然后使用zunionstore命令以及它的两个聚合函数min和max，分别计算两个临时有序集合与记录当前统计数据的有序集合之前的并集结果。通过使用zunionstore命令，程序可以快速的更新统计数据，而无须使用watch去监视可能会频繁进行更新的存储统计数据的键，因为这个键可能会频繁地进行更新。程序在并集计算完毕之后就会删除那些临时有序集合，并使用zincrby命令对统计数据有序集合里面的count、sum、sumsq这3个成员进更新。
 
+```
+import datetime
+import time
+import uuid
+
+import redis
+
+
+def update_status(conn,context,type,value,timeout=5):
+    #负责存储统计数据的键
+    destination='stats:%s:%s'%(context,type)
+    #像common_log()函数一样，处理当前这一个小时的数据和上一个小时的数据
+    start_key=destination+':start'
+    pipe=conn.pipeline(True)
+    end=time.time()+timeout
+    while time.time()<=end:
+        try:
+            pipe.watch(start_key)
+            now=datetime.utcnow().timetuple()
+            # 像common_log()函数一样，处理当前这一个小时的数据和上一个小时的数据
+            hour_start=datetime(*now[:4]).isoformat()
+
+            existing=pipe.get(start_key)
+            pipe.multi()
+            if existing and existing<hour_start:
+                # 像common_log()函数一样，处理当前这一个小时的数据和上一个小时的数据
+                pipe.rename(destination,destination+':last')
+                pipe.rename(start_key,destination+':pstart')
+                pipe.set(start_key,hour_start)
+
+            tkey1=str(uuid.uuid4())
+            tkey2=str(uuid.uuid4())
+            #将值添加到临时键里面
+            pipe.zadd(tkey1,'min','value')
+            pipe.zadd(tkey2,'max','value')
+            #使用聚合函数min和max，对存储统计数据的键以及两个临时键进行并集计算
+            pipe.zunionstore(destination,[destination,tkey1],aggregate='min')
+            pipe.zunionstore(destination,[destination,tkey2],aggregate='max')
+
+            #删除临时键
+            pipe.delete(tkey1,tkey2)
+            #对有序集合中的样本数量、值的和、值的平方之和3个成员进行更新。
+            pipe.zincrby(destination,'count')
+            pipe.zincrby(destination,'sum',value)
+            pipe.zincrby(destination,'sumsq',value*value)
+
+            #返回基本的计数信息，以便函数调用者在有需要时做进一步的处理
+            return pipe.execute()[-3:]
+
+        except redis.exceptions.WatchError:
+            #如果新的一个小时已经开始，并且旧的数据已经被归档，那么进行重试
+            continue
+```
+
+
+
