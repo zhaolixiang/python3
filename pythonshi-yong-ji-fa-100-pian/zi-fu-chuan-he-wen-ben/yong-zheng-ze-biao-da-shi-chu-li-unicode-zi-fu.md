@@ -13,17 +13,16 @@ num=re.compile('\d+')
 str1='123'
 str2='\u0661\u0662\u0663'
 
-print(str2)
 print(num.match(str1))
 print(num.match(str2))
+
+
 ```
 
 结果：
 
 ```
-١٢٣
-<re.Match object; span=(0, 3), match='123'>
-<re.Match object; span=(0, 3), match='١٢٣'>
+
 ```
 
 1
