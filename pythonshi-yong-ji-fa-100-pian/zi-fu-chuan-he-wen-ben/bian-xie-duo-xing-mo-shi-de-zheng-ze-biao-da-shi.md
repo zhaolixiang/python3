@@ -66,13 +66,13 @@ text2='''/* mark
             2018    */'''
 print(str_pat.findall(text1))
 print(str_pat.findall(text2))
-
 ```
 
 结果：
 
 ```
-
+[' mark ']
+[' mark \n            2018    ']
 ```
 
 
