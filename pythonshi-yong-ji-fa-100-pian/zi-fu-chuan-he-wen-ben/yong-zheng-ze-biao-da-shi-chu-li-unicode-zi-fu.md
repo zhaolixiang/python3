@@ -16,11 +16,13 @@ str2='\u0661\u0662\u0663'
 print(str2)
 print(num.match(str1))
 print(num.match(str2))
+```
 
+结果：
 
 ```
 
-1
+```
 
 1
 
