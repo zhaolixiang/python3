@@ -23,7 +23,7 @@ print(str_pat.findall(text2))
 ['love",jingjing say "yes']
 ```
 
-1
+在这个例子中，模式r'\"\(.\*\)\"'
 
 1
 
