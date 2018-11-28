@@ -95,7 +95,33 @@ Python还支持NFKC和NFKD的规范表示形式，它们为处理特定类型的
 实例：
 
 ```
+import unicodedata
+str='\ufb01'
 
+print(str)
+print(len(str))
+print('*'*10)
+
+t_nfd=unicodedata.normalize('NFD',str)
+t_nfkd=unicodedata.normalize('NFKD',str)
+t_nfc=unicodedata.normalize('NFC',str)
+t_nfkc=unicodedata.normalize('NFKC',str)
+
+print(t_nfd)
+print(len(t_nfd))
+print('*'*10)
+
+print(t_nfkd)
+print(len(t_nfkd))
+print('*'*10)
+
+print(t_nfc)
+print(len(t_nfc))
+print('*'*10)
+
+print(t_nfkc)
+print(len(t_nfkc))
+print('*'*10)
 ```
 
 1
