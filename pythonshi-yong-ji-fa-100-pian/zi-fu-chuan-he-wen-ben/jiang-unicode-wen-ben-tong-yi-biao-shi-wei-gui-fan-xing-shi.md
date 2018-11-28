@@ -67,14 +67,22 @@ print(t3==t4)
 
 print(len(t3))
 print(len(t4))
-
-
 ```
 
 结果：
 
 ```
-
+ñ
+ñ
+True
+1
+1
+**********
+ñ
+ñ
+True
+2
+2
 ```
 
 1
