@@ -67,11 +67,11 @@ print(result)
 Python is a handsome guy and python is only 18 years old.PYTHON
 ```
 
-1
-
-1
-
 # 3、分析😈
+
+对于简单的情况，只需加上re.IGNORECASE标记足以进行不区分大小写的匹配操作了。
+
+但请注意，对于某些涉及大写转换的Unicode匹配来说可能是不够的，以后章节会讲到。
 
 
 
