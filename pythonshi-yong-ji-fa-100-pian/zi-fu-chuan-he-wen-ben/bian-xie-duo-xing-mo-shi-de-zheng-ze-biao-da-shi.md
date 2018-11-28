@@ -17,7 +17,6 @@ text2='''/* mark
             2018    */'''
 print(str_pat.findall(text1))
 print(str_pat.findall(text2))
-
 ```
 
 结果：
@@ -34,20 +33,20 @@ print(str_pat.findall(text2))
 ```
 import re
 
-#str_pat=re.compile(r'/\*(.*?)\*/')
+#将.缓存(?:.|\n)
 str_pat=re.compile(r'/\*((?:.|\n)*?)\*/')
 text1="/* mark */"
 text2='''/* mark 
             2018    */'''
 print(str_pat.findall(text1))
 print(str_pat.findall(text2))
-
 ```
 
 结果：
 
 ```
-
+[' mark ']
+[' mark \n            2018    ']
 ```
 
 1
