@@ -84,6 +84,7 @@
     * [正则：查找和替换文本](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/cha-zhao-he-ti-huan-wen-ben.md)
     * [正则：以不区分大小写的方式对文本做查找和替换](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/zheng-ze-ff1a-yi-bu-qu-fen-da-xiao-xie-de-fang-shi-dui-wen-ben-zuo-cha-zhao-he-ti-huan.md)
     * [定义实现最短匹配的正则表达式](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/ding-yi-shi-xian-zui-duan-pi-pei-de-zheng-ze-biao-da-shi.md)
+    * [编写多行模式的正则表达式](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/bian-xie-duo-xing-mo-shi-de-zheng-ze-biao-da-shi.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
