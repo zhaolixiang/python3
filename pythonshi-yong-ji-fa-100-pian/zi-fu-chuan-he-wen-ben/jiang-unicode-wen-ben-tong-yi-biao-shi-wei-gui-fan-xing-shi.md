@@ -156,8 +156,13 @@ t1=unicodedata.normalize('NFD',str)
 print(str)
 print(t1)
 
+#使用combining()函数判断指定内容是否为一个组合型字符。
 result=''.join(x for x in t1 if not unicodedata.combining(x))
 print(result)
+
+
+
+
 ```
 
 运行结果：
@@ -166,8 +171,9 @@ print(result)
 啦啦啦ﬁ我是测试ñ呱呱呱ñ
 啦啦啦ﬁ我是测试ñ呱呱呱ñ
 啦啦啦ﬁ我是测试n呱呱呱n
-
 ```
+
+
 
 
 
