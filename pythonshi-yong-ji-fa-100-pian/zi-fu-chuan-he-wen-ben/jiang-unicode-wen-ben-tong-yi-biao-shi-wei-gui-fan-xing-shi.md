@@ -158,9 +158,14 @@ print(t1)
 
 result=''.join(x for x in t1 if not unicodedata.combining(x))
 print(result)
+```
 
+运行结果：
 
-
+```
+啦啦啦ﬁ我是测试ñ呱呱呱ñ
+啦啦啦ﬁ我是测试ñ呱呱呱ñ
+啦啦啦ﬁ我是测试n呱呱呱n
 
 ```
 
