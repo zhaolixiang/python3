@@ -9,6 +9,14 @@
 实例：假设向匹配C语言风格的注释：
 
 ```
+import re
+
+str_pat=re.compile(r'/\*(.*?)\*/')
+text1='/* mark say "love" */'
+text2='''/* mark say "love",'
+      'jingjing say "yes" */'''
+print(str_pat.findall(text1))
+print(str_pat.findall(text2))
 
 ```
 
@@ -21,8 +29,6 @@
 1
 
 111
-
-
 
 1
 
