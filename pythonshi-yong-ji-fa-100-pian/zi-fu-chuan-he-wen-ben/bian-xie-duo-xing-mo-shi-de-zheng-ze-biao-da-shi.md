@@ -58,6 +58,14 @@ re.compile\(\)函数可接受一个有用的标记：re.DOTALL，这使得表达
 实例：
 
 ```
+import re
+
+str_pat=re.compile(r'/\*(.*?)\*/',re.DOTALL)
+text1="/* mark */"
+text2='''/* mark 
+            2018    */'''
+print(str_pat.findall(text1))
+print(str_pat.findall(text2))
 
 ```
 
@@ -66,4 +74,6 @@ re.compile\(\)函数可接受一个有用的标记：re.DOTALL，这使得表达
 ```
 
 ```
+
+
 
