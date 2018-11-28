@@ -12,17 +12,18 @@
 import re
 
 str_pat=re.compile(r'/\*(.*?)\*/')
-text1='/* mark say "love" */'
-text2='''/* mark say "love",'
-      'jingjing say "yes" */'''
+text1="/* mark */"
+text2='''/* mark 
+            2018    */'''
 print(str_pat.findall(text1))
 print(str_pat.findall(text2))
+
 ```
 
 结果：
 
 ```
-[' mark say "love" ']
+[' mark ']
 []
 ```
 
@@ -31,6 +32,15 @@ print(str_pat.findall(text2))
 实例：
 
 ```
+import re
+
+#str_pat=re.compile(r'/\*(.*?)\*/')
+str_pat=re.compile(r'/\*((?:.|\n)*?)\*/')
+text1="/* mark */"
+text2='''/* mark 
+            2018    */'''
+print(str_pat.findall(text1))
+print(str_pat.findall(text2))
 
 ```
 
