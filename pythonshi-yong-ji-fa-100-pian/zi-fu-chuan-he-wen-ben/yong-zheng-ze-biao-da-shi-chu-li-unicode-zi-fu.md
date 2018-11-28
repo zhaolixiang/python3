@@ -21,7 +21,9 @@ print(num.match(str2))
 结果：
 
 ```
-
+١٢٣
+<re.Match object; span=(0, 3), match='123'>
+<re.Match object; span=(0, 3), match='١٢٣'>
 ```
 
 1
