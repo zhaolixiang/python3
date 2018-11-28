@@ -56,13 +56,16 @@ def matchcase(word):
 result=re.sub('mark',matchcase('python'),text,flags=re.IGNORECASE)
 
 print(result)
-
-
 ```
 
-1
+运行结果：
 
-1
+```
+<re.Match object; span=(0, 4), match='Mark'>
+<re.Match object; span=(27, 31), match='mark'>
+<re.Match object; span=(53, 57), match='MARK'>
+Python is a handsome guy and python is only 18 years old.PYTHON
+```
 
 1
 
