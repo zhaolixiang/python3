@@ -87,6 +87,7 @@
     * [编写多行模式的正则表达式](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/bian-xie-duo-xing-mo-shi-de-zheng-ze-biao-da-shi.md)
     * [将Unicode文本统一表示为规范形式](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/jiang-unicode-wen-ben-tong-yi-biao-shi-wei-gui-fan-xing-shi.md)
     * [用正则表达式处理Unicode字符](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/yong-zheng-ze-biao-da-shi-chu-li-unicode-zi-fu.md)
+    * [从字符串中去掉不需要的字符](pythonshi-yong-ji-fa-100-pian/zi-fu-chuan-he-wen-ben/cong-zi-fu-chuan-zhong-qu-diao-bu-xu-yao-de-zi-fu.md)
 * [Tornado](tornado.md)
   * [异步及协程基础](tornado/yi-bu-ji-xie-cheng-ji-chu.md)
     * [同步与异步I/O](tornado/yi-bu-ji-xie-cheng-ji-chu/tong-bu-yu-yi-bu-i-o.md)
