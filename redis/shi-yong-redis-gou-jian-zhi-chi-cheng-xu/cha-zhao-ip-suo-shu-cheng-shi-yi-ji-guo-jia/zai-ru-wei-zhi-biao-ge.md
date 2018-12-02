@@ -38,6 +38,33 @@ if __name__ == '__main__':
 在将IP地址转换为整数分值之后，程序就可以创建IP地址与城市ID之间的映射了。因为多个IP地址范围可能会被映射到同一个城市ID，所以程序会在普通的城市ID后面，加上一个\_字符以及有序集合目前已知的城市ID的数量，以此来构建一个独一无二的唯一城市ID。下面代码展示了程序时如何创建IP地址与城市ID之前的映射的。
 
 ```
+import csv
+
+
+#这个函数在执行时需要输入GeoLiteCity-Blocks.csv文件所在的路径
+def import_ips_to_redis(conn,filename):
+    csv_file=csv.reader(open(filename,'rb'))
+    #enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，
+    # 同时列出数据和数据下标，一般用在 for 循环当中。
+    for count,row in enumerate(csv_file):
+        start_ip=row[0] if row else ''
+        #按照需要将IP地址转换为分值
+        if 'i' in start_ip.lower():
+            continue
+        if '.' in start_ip:
+            start_ip=ip_to_score(start_ip)
+        elif start_ip.isdigit():
+            start_ip=int(start_ip,10)
+        else:
+            #略过文件的第一行以及格式不正确的条目
+            continue
+        #构建唯一的城市ID
+        city_id=row[2]+'_'+str(count)
+        #将城市ID及其对应的IP地址分值添加到有序集合里面。
+        conn_zadd('ip2cityid:',city_id,start_ip)
+
 
 ```
+
+
 
