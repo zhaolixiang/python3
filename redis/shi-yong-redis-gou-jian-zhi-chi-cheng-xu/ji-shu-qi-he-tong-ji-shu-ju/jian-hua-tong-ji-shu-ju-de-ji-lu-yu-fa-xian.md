@@ -63,9 +63,17 @@ def test(callback):
 
 def xxx():
     print('xxx')
-    
+
 if __name__ == '__main__':
     test(xxx)
+```
+
+运行结果：
+
+```
+1
+xxx
+2
 ```
 
 
