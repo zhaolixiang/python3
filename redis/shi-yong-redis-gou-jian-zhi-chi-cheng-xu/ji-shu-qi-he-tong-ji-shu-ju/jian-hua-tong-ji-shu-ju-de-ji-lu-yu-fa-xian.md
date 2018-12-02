@@ -38,9 +38,35 @@ def access__time(conn,context):
     pipe.execute()
 ```
 
-因为access\__time\(\)上下文管理器里面有一些没办法只用三言两语来解释的概念，所以我们最好还是直接通过使用这个管理器来了解它是如何运作的。接下来的这段代码展示了使用access\__time\(\)上下文管理器记录web页面访问时长的方法，负责处理被记录页面的是一个回调函数：
+因为access\_\_time\(\)上下文管理器里面有一些没办法只用三言两语来解释的概念，所以我们最好还是直接通过使用这个管理器来了解它是如何运作的。接下来的这段代码展示了使用access\_\_time\(\)上下文管理器记录web页面访问时长的方法，负责处理被记录页面的是一个回调函数：
 
 ```
 
 ```
+
+如果还不理解，看下面简单的实例：
+
+```
+import contextlib
+
+
+@contextlib.contextmanager
+def mark():
+    print("1")
+    yield
+    print(2)
+
+def test(callback):
+    with mark():
+        return callback()
+
+
+def xxx():
+    print('xxx')
+    
+if __name__ == '__main__':
+    test(xxx)
+```
+
+
 
