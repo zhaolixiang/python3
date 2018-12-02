@@ -20,8 +20,9 @@ def find_city_by_ip(conn,ip_address):
     city_id=city_id[0].partition('_')[0]
     #从散列里面取出城市信息
     return json.loads(conn.hget('cityid2city:',city_id))
-
 ```
 
+通过上面函数，我们现在可以基于IP地址来查找相应的城市信息并对用户的来源地进行分析了。
 
+本节介绍的【将数据转换为整数并搭配有序集合进行操作】的做法非常有用，它可以极大简化对特定元素或特定范围的查找工作。
 
