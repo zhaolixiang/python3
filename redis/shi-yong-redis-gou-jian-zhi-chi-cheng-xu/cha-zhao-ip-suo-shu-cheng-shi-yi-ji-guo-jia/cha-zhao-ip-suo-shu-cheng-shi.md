@@ -3,6 +3,25 @@
 下面清单展示了IP地址所属地查找程序的具体实现方法：；
 
 ```
+def find_city_by_ip(conn,ip_address):
+    if isinstance(ip_address,str):
+        #将IP地址转换为分值以便执行zrevrangebyscore命令
+        ip_address=ip_to_score(ip_address)
+
+    #查找唯一城市ID
+    city_id=conn.zrevrangebyscore('ip2cityed:',ip_address,0,start=0,num=1)
+
+    if not city_id:
+        return None
+    #partition() 方法用来根据指定的分隔符将字符串进行分割。
+    # 如果字符串包含指定的分隔符，则返回一个3元的元组，
+    # 第一个为分隔符左边的子串，第二个为分隔符本身，第三个为分隔符右边的子串。
+    #将唯一城市ID转换为普通城市ID
+    city_id=city_id[0].partition('_')[0]
+    #从散列里面取出城市信息
+    return json.loads(conn.hget('cityid2city:',city_id))
 
 ```
+
+
 
