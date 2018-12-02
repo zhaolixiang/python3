@@ -12,6 +12,30 @@
 Redis里面；除此之外，程序还会对记录当前上下文最大访问的时间的有序集合进行更新。
 
 ```
+import contextlib
+import time
+
+#将这个Python生成器用作上下文管理器
+@contextlib.contextmanager
+def access__time(conn,context):
+    #记录代码块执行前的时间
+    start=time.time()
+    #运行被包裹的代码块
+    yield
+
+    #计算代码块的执行时长
+    data=time.time()-start
+    #更新这一上下文的统计数据
+    stats=update_stats(conn,context,'AccessTime',data)
+    #计算页面的平局访问时长
+    average=stats[1]/stats[0]
+
+    pipe=conn.pipeline(True)
+    #将页面的平均访问时长添加到记录最长访问时间的有序集合里面
+    pipe.zadd('slowest:AccessTime',context,average)
+    #AccessTime有序集合只会保留最慢的100条记录
+    pipe.zremrangebyrank('slowessTime',0,-101)
+    pipe.execute()
 
 ```
 
