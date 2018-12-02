@@ -66,5 +66,18 @@ def import_ips_to_redis(conn,filename):
 
 在调用import\_ips\_to\_redis\(\)函数并将所有IP地址都载入Redis之后，我们会像下面代码展示的那样，创建一个城市ID映射至城市信息的散列。因为所有城市信息的格式都是固定的，并且不会随着时间而发生变化，所有我们会将这些信息编码为JSON列表然后再进行存储。
 
+```
+def import_cities_to_redis(conn,filename):
+    for row in csv.reader(open(filename,'rb')):
+        if len(row)<4 or not row[0].isdigit():
+            continue
+        row=[i.decode('latin-1') for i in row]
+        city_id=row[0]
+        country=row[1]
+        region=row[2]
+        city=row[3]
+        conn.hset('cityid2city:',city_id,json.dumps([city,region,country]))
+```
 
+在将所需的信息全部存储到Redis里面之后，接下来要考虑的就是如何实现IP地址查找功能了。
 
