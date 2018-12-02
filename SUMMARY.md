@@ -176,6 +176,7 @@
       * [简化统计数据的记录与发现](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/ji-shu-qi-he-tong-ji-shu-ju/jian-hua-tong-ji-shu-ju-de-ji-lu-yu-fa-xian.md)
     * [查找IP所属城市以及国家](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/cha-zhao-ip-suo-shu-cheng-shi-yi-ji-guo-jia.md)
       * [载入位置表格](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/cha-zhao-ip-suo-shu-cheng-shi-yi-ji-guo-jia/zai-ru-wei-zhi-biao-ge.md)
+      * [查找IP所属城市](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/cha-zhao-ip-suo-shu-cheng-shi-yi-ji-guo-jia/cha-zhao-ip-suo-shu-cheng-shi.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
