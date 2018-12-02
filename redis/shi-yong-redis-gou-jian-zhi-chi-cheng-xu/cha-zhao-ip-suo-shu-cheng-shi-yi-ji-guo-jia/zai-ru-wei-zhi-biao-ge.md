@@ -62,9 +62,7 @@ def import_ips_to_redis(conn,filename):
         city_id=row[2]+'_'+str(count)
         #将城市ID及其对应的IP地址分值添加到有序集合里面。
         conn_zadd('ip2cityid:',city_id,start_ip)
-
-
 ```
 
-
+在调用import__ips__to
 
