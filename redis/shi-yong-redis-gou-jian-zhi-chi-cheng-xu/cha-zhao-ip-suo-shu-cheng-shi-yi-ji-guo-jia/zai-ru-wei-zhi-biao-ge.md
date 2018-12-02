@@ -64,5 +64,7 @@ def import_ips_to_redis(conn,filename):
         conn_zadd('ip2cityid:',city_id,start_ip)
 ```
 
-在调用import_ips_to_redis()函数
+在调用import\_ips\_to\_redis\(\)函数并将所有IP地址都载入Redis之后，我们会像下面代码展示的那样，创建一个城市ID映射至城市信息的散列。因为所有城市信息的格式都是固定的，并且不会随着时间而发生变化，所有我们会将这些信息编码为JSON列表然后再进行存储。
+
+
 
