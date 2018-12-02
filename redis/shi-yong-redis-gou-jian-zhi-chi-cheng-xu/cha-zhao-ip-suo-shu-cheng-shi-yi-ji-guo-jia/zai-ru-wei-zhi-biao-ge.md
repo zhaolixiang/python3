@@ -64,5 +64,5 @@ def import_ips_to_redis(conn,filename):
         conn_zadd('ip2cityid:',city_id,start_ip)
 ```
 
-在调用import_ips_to
+在调用import_ips_to_redis()函数
 
