@@ -11,6 +11,13 @@
 根据IP地址来查找城市ID的查找表由有序集合实现，这个有序集合的成员为具体的城市ID，而分值则是一个根据IP地址计算出来的整数值。为了创建IP地址与城市ID之间的映射，程序需要将点分十进制格式的IP地址转换为一个整数分值，下面的ip\__to_\_score\(\)函数定义了整个转化过程：IP地址中的每8个二进制会被看做是无符号整数中的1字节，其中IP地址最开头的8个二进制位最高位。
 
 ```
+def ip_ti_score(ip_address):
+    score=0
+    for v in ip_address.split('.'):
+        score=score*256+int(v,10)
+    return score
 
 ```
+
+
 
