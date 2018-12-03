@@ -27,8 +27,7 @@ def is_under_maintenance(conn):
         IS_UNDER_MAINTENANCE=bool(conn.get('is-under-maintenance'))
     #返回一个布尔值，用于表示系统是否正在进行维护。
     return IS_UNDER_MAINTENANCE
-
 ```
 
-
+通过将is\__under_\_maintenance\(\)函数插入
 
