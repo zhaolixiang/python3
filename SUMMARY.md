@@ -179,6 +179,7 @@
       * [查找IP所属城市](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/cha-zhao-ip-suo-shu-cheng-shi-yi-ji-guo-jia/cha-zhao-ip-suo-shu-cheng-shi.md)
     * [服务的发现与配置](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/fu-wu-de-fa-xian-yu-pei-zhi.md)
       * [使用Redis存储配置信息](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/fu-wu-de-fa-xian-yu-pei-zhi/shi-yong-redis-cun-chu-pei-zhi-xin-xi.md)
+      * [为每个应用程序组件分别配置一个Redis服务器](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/fu-wu-de-fa-xian-yu-pei-zhi/wei-mei-ge-ying-yong-cheng-xu-zu-jian-fen-bie-pei-zhi-yi-ge-redis-fu-wu-qi.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
