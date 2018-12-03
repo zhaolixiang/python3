@@ -29,5 +29,9 @@ def is_under_maintenance(conn):
     return IS_UNDER_MAINTENANCE
 ```
 
-通过将is\__under_\_maintenance\(\)函数插入应用程序的正确位置上，我们可以在1秒内改变数以千计Web服务器的行为。
+通过将is\__under_\_maintenance\(\)函数插入应用程序的正确位置上，我们可以在1秒内改变数以千计Web服务器的行为。为了降低Redis在处理高访问量web服务器时的负载，is\__under_\_maintenance\(\)函数将服务器维护状态信息的更新频率限制为最多每秒1次，但如果有需要的话，我们也可以加快信息的更新频率，甚至直接移除函数里面限制更新速度的那些代码。虽然is\__under_\_maintenance\(\)函数看上去似乎并不实用，但它的确展示了将配置信息存储在一个普通可访问位置的威力。
+
+接下来我们要考虑的是，怎样才能将更复杂的配置选项存储到Redis里面呢？
+
+
 
