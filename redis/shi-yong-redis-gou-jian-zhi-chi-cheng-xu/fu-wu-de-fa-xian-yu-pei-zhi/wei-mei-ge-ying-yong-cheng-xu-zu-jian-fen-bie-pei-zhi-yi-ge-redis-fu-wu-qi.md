@@ -12,5 +12,5 @@ def set_config(conn,type,component,config):
     json.dumps(config)
 ```
 
-通过这个函数，我们可以随心所欲的设置任何JSON编码的配置信息。因为get\__config\(\)函数和前面介绍过的is\_\_under_\_maintenance\(\)函数具有相似的结构，所以我们只要在语义上稍作修改，就可以使用get\_config\(\)函数来替代is\__under_\_maintenance\(\)函数。下面代码列出了与set\_config\(\)相对应的get\_config\(\)函数，这个函数可以按照用户的需要，对配置信息进行0秒、1秒或者10秒的局部缓存。
+通过这个函数，我们可以随心所欲的设置任何JSON编码的配置信息。因为get\__config\(\)函数和前面介绍过的is_\_under_\_maintenance\(\)函数具有相似的结构，所以我们只要在语义上稍作修改，就可以使用get\_config\(\)函数来替代is\_\_under_\_maintenance\(\)函数。下面代码列出了与set\_config\(\)相对应的get\_config\(\)函数，这个函数可以按照用户的需要，对配置信息进行0秒、1秒或者10秒的局部缓存。
 
