@@ -9,7 +9,37 @@
 下面代码展示了我们定义的装饰器，它接受一个指定的配置作为参数并生成一个包装器，这个包装器可以包裹一个函数，使得之后对被包裹函数的调用可以自动连接至正确的Redis服务器，并且连接Redis服务器所使用的那个连接会和用户之后提供的其他参数一同传递至包裹的函数：
 
 ```
+REDIS_CONNECTIONS={}
 
+#将应用组件的名字传递给装饰器
+def redis_connection(component,wait=1):
+    #因为函数每次被调用都需要获取这个配置键，所以我们干脆把它缓存起来
+    key='config:redis:'+component
+    #包装器接受一个函数作为参数，并使用另一个函数来包裹这个函数。
+    def wrapper(function):
+        #将被包裹函数的一些有用的元数据复制给配置处理器。
+        @function.wraps(function)
+        def call(*args,**kwargs):#创建负责管理连接信息的函数
+            #如果有就配置存在，那么获取它
+            old_config=CONFIGS.get(key,object())
+            #如果有新配置存在，那么获取它
+            _config=get_config(config_connection,'redis',component,wait)
+
+            config={}
+            #对配置进行处理并将其用于创建Redis连接
+            for k,v in _config.iteritems():
+                config[k.encode('utf-8')]=v
+
+            #如果新旧配置并不相同，那么创建新的连接
+            if config!=old_config:
+                REDIS_CONNECTIONS[key]=redis.Redis(**config)
+
+            #将Redis连接以及其他匹配的参数传递给包裹函数，然后调用该函数并返回它的执行结果。
+            return function(REDIS_CONNECTIONS.get(key),*args,**kwargs)
+        #返回被包裹的函数
+        return call
+    #返回用于包裹Redis函数的包装器
+    return wrapper
 ```
 
 
