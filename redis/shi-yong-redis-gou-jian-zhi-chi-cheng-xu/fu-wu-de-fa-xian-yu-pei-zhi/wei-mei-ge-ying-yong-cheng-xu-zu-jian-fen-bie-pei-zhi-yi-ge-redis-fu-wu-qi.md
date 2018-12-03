@@ -39,8 +39,7 @@ def get_config(conn,type,component,wait=1):
             CONFIGS[key]=config
 
     return CONFIGS.get(key)
-
 ```
 
-
+在拥有了配置信息和获取配置信息的两个函数之后，我们还可以在此之上更近一步。我们在前面一直考虑的都是怎样存储和获取配置信息以便连接各个不同的Redis服务器，但直到目前为止，我们编写的绝大多数函数和第一个参数都是一个连接参数。
 
