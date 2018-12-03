@@ -29,5 +29,5 @@ def is_under_maintenance(conn):
     return IS_UNDER_MAINTENANCE
 ```
 
-通过将is\__under_\_maintenance\(\)函数插入
+通过将is\__under_\_maintenance\(\)函数插入应用程序的正确位置上，我们可以在1秒内改变数以千计Web服务器的行为。
 
