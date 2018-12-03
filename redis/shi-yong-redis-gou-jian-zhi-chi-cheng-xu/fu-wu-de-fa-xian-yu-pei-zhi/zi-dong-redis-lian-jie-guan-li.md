@@ -42,5 +42,9 @@ def redis_connection(component,wait=1):
     return wrapper
 ```
 
+> 同时使用\*args和\*\*kwargs
+>
+> 在Python中，函数定义的args变量用于虎丘
+
 
 
