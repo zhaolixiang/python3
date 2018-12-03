@@ -15,6 +15,32 @@ def set_config(conn,type,component,config):
 通过这个函数，我们可以随心所欲的设置任何JSON编码的配置信息。因为get\__config\(\)函数和前面介绍过的is_\_under_\_maintenance\(\)函数具有相似的结构，所以我们只要在语义上稍作修改，就可以使用get\_config\(\)函数来替代is_\_under\_maintenance\(\)函数。下面代码列出了与set\_config\(\)相对应的get\_config\(\)函数，这个函数可以按照用户的需要，对配置信息进行0秒、1秒或者10秒的局部缓存。
 
 ```
+import json
+import time
+
+CONFIGS={}
+CHECKED={}
+
+def get_config(conn,type,component,wait=1):
+    key='config:%s:%s'%(type,component)
+    #检查是否需要对这个组件的信息进行更新
+    if CHECKED.get(key)<time.time()-wait:
+        #有需要对配置进行更新，记录最后一次检查这个连接的时间
+        CHECKED[key]=time.time()
+        #取得Redis存储的组件配置
+        config=json.loads(conn.get(key) or '{}')
+        #将潜在的Unicode关键字参数转换为字符串的关键字参数
+        config=dict((str(k),config[k]) for k in config)
+        #取得组件正在使用的配置
+        old_cofig=CONFIGS.get(key)
+        #如果两个配置并不相同
+        if config!=old_cofig:
+            #那么对组件的配置进行更新
+            CONFIGS[key]=config
+
+    return CONFIGS.get(key)
 
 ```
+
+
 
