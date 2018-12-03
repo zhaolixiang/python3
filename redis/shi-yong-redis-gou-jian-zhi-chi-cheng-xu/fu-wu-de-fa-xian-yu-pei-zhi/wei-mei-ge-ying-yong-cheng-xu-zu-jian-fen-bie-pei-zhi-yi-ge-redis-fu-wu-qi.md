@@ -7,7 +7,9 @@
 我们将构建一个函数，该函数可以从一个键里面取出一个JSON编码的配置值，其中，存储配置值的键由服务的类型以及使用该服务的应用程序命名。举个例子，如何我们想要获取连接存储统计数据的Redis服务器所需的信息，那么就需要获取config:redis:statistics键的值。下面函数展示了设置配置值的具体方法：
 
 ```
-
+def set_config(conn,type,component,config):
+    conn.set('config:%s:%s'%(type,component))
+    json.dumps(config)
 ```
 
 通过这个函数，
