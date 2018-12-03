@@ -11,6 +11,22 @@
 下面代码展示了_is\_under\_maintenance\(\)函数的具体定义：_
 
 ```
+import time
+
+LAST_CHECKED=None
+IS_UNDER_MAINTENANCE=False
+
+def is_under_maintenance(conn):
+    #将连个变量设置为全局变量以便在之后对它们进行写入
+    global LAST_CHECKED,IS_UNDER_MAINTENANCE
+    #距离上次检查是否以及超过1秒？
+    if LAST_CHECKED<time.time()-1:
+        #更新最后检查时间
+        LAST_CHECKED=time.time()
+        #检查系统是否正在进行维护
+        IS_UNDER_MAINTENANCE=bool(conn.get('is-under-maintenance'))
+    #返回一个布尔值，用于表示系统是否正在进行维护。
+    return IS_UNDER_MAINTENANCE
 
 ```
 
