@@ -226,4 +226,5 @@
   * [logging日志模块](pythonmo-kuai-fen-xi/loggingri-zhi-mo-kuai.md)
 * [MongoDB](mongodb.md)
   * [为现代Web而生的数据库](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku.md)
+    * [生于云端](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/sheng-yu-yun-duan.md)
 
