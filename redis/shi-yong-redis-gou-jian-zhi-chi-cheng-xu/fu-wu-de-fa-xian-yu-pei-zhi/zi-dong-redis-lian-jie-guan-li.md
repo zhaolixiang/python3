@@ -49,7 +49,6 @@ def redis_connection(component,wait=1):
 上面战术的一系列嵌套函数初看上去可能会让人感动头昏目眩，但它们实际上并没有想象中的那么复杂。redis\__connection\(\)装饰器接受一个应用组件的名字作为参数并返回一个包装器。这个包装器接受一个我们想要将连接传递给它的函数为参数，然后对函数进行包裹并返回被包裹函数的调研器。这个调用器负责处理所有获取配置信息的工作，除此之外，它还负责连接Redis服务器并调用被包裹的函数。尽管redis\_connecition\(\)函数描述起来相当复杂，但实际使用起来却是非常方便的，下面代码就展示了怎样将redis_\_connection\(\)函数应用到之间介绍的log\_recent\(\)函数上面。
 
 ```
-
 @redis_connection('logs')
 def log_recent(conn,app,message,severity=logging.INFO,pipe=None):
     # 尝试将日志的安全级别准还为简单的字符串
@@ -68,10 +67,13 @@ def log_recent(conn,app,message,severity=logging.INFO,pipe=None):
     pipe.execute()
 
 log_recent('main','User 235 logged in')
-
 ```
 
 现在你已经看到怎样使用redis\__connection\(\)来装饰log_\_recent\(\)函数，这个装饰器还是蛮有用的，不是吗？通过使用这个改良后的方法来处理链接和配置，我们几乎可以把我们要调用的所有函数的代码都删去好几行。
 
 作为练习，请尝试使用redis\__connection\(\)去装饰之前介绍的access\_time\(\)上下文管理器，使得这个上下文管理器可以在不必手动传递Redis服务器连接的情况下执行。_
+
+### 
+
+
 
