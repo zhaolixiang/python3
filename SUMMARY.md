@@ -228,4 +228,5 @@
   * [为现代Web而生的数据库](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku.md)
     * [生于云端](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/sheng-yu-yun-duan.md)
     * [MongoDB的主要特性](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing.md)
+      * [文档数据模型](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/wen-dang-shu-ju-mo-xing.md)
 
