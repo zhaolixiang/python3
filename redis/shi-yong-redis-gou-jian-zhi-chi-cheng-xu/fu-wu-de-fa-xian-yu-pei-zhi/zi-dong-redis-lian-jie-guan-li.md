@@ -50,7 +50,28 @@ def redis_connection(component,wait=1):
 
 ```
 
+@redis_connection('logs')
+def log_recent(conn,app,message,severity=logging.INFO,pipe=None):
+    # 尝试将日志的安全级别准还为简单的字符串
+    severity = str(SEVERITY.get(severity, severity)).lower()
+    # 创建负责存储消息的键
+    destination = 'recent:%s:%s' % (name, severity)
+    # 将当前时间添加到消息里面，用于记录消息的发送时间
+    message = time.asctime() + '  ' + message
+    # 使用流水线来将通信往返次数降低为一次
+    pipe = pipe or conn.pipeline()
+    # 将消息添加到日志列表的最前面
+    pipe.lpush(destination, message)
+    # 对日志列表进行修建，让它只包含最新的100条消息
+    pipe.ltrim(destination, 0, 99)
+    # 执行两个命令
+    pipe.execute()
+
+log_recent('main','User 235 logged in')
+
 ```
 
+现在你已经看到怎样使用redis\__connection\(\)来装饰log_\_recent\(\)函数，这个装饰器还是蛮有用的，不是吗？通过使用这个改良后的方法来处理链接和配置，我们几乎可以把我们要调用的所有函数的代码都删去好几行。
 
+作为练习，请尝试使用redis\__connection\(\)去装饰之前介绍的access\_time\(\)上下文管理器，使得这个上下文管理器可以在不必手动传递Redis服务器连接的情况下执行。_
 
