@@ -15,7 +15,18 @@
 下面是这个操作的具体代码实现：
 
 ```
-
+def add_update_contact(conn,user,contact):
+    ac_list='recent:'+user
+    #准备执行原子操作
+    pipeline=conn.pipeline(True)
+    #如果联系人已经存在，那么移除他
+    pipeline.lrem(ac_list,contact)
+    #将联系人推入列表的最前端
+    pipeline.lpush(ac_list,contact)
+    #只保留列表里面的前100个联系人
+    pipeline.ltrim(ac_list,0,99)
+    #实际地执行以上操作
+    pipeline.execute()
 ```
 
 
