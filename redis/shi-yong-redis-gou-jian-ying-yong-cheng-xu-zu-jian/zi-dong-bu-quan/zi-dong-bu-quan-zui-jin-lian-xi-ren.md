@@ -41,6 +41,18 @@ def remove_contact(conn,user,contact):
 构建最近联系人自动补全列表需要执行的最后一个操作，就是获取自动补全列表并查找匹配的用户。因为实际的自动补全处理是在Python里面完成的，所以操作需要首先获取整个列表结构，然后再在Python里面处理它，正如下面代码：
 
 ```
-
+def fetch_autocomplete_list(conn,user,prefix):
+    #获取自动补全列表
+    candidates=conn.lrange('recent:'+user,0,-1)
+    matches=[]
+    #检查每个候选联系人
+    for candidate in candidates:
+        if candidate.lower().startswith(prefix):
+            #发现匹配联系人
+            matches.append(candidate)      
+    #返回所有匹配的联系人
+    return matches
 ```
+
+
 
