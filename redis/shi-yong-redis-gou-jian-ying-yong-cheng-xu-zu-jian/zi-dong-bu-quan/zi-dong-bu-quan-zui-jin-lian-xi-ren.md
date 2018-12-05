@@ -29,5 +29,7 @@ def add_update_contact(conn,user,contact):
     pipeline.execute()
 ```
 
+跟之前提到过的一样，我们指定的联系已经存在，那么上面函数从列表里面移除该联系人，然后将他重新推入列表的最左端，最后对列表进行修剪以防止联系人人数超过限制。
+
 
 
