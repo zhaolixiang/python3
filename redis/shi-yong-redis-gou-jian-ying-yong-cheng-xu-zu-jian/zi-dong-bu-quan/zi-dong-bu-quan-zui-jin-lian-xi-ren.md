@@ -38,5 +38,9 @@ def remove_contact(conn,user,contact):
     conn.lrem('recent:'+user,contact)
 ```
 
+构建最近联系人自动补全列表需要执行的最后一个操作，就是获取自动补全列表并查找匹配的用户。因为实际的自动补全处理是在Python里面完成的，所以操作需要首先获取整个列表结构，然后再在Python里面处理它，正如下面代码：
 
+```
+
+```
 
