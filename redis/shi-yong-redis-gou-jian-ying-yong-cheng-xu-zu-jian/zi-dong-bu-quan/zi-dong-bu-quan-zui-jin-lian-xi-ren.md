@@ -31,5 +31,12 @@ def add_update_contact(conn,user,contact):
 
 跟之前提到过的一样，我们指定的联系已经存在，那么上面函数从列表里面移除该联系人，然后将他重新推入列表的最左端，最后对列表进行修剪以防止联系人人数超过限制。
 
+构建最近联系人自动补全列表要做的第二个操作，就是在用户不想再看见某个联系人的时候，将制定的联系人从联系人列表里面移除掉，这个操作可以通过以下这个lrem调用来完成：
+
+```
+def remove_contact(conn,user,contact):
+    conn.lrem('recent:'+user,contact)
+```
+
 
 
