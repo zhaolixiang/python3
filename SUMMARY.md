@@ -232,4 +232,5 @@
     * [MongoDB的主要特性](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing.md)
       * [文档数据模型](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/wen-dang-shu-ju-mo-xing.md)
       * [即时查询](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/ji-shi-cha-xun.md)
+      * [二级索引](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/er-ji-suo-yin.md)
 
