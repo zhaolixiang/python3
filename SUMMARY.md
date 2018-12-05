@@ -183,6 +183,7 @@
       * [自动Redis连接管理](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/fu-wu-de-fa-xian-yu-pei-zhi/zi-dong-redis-lian-jie-guan-li.md)
     * [本章小结](redis/shi-yong-redis-gou-jian-zhi-chi-cheng-xu/ben-zhang-xiao-jie.md)
   * [使用Redis构建应用程序组件](redis/shi-yong-redis-gou-jian-ying-yong-cheng-xu-zu-jian.md)
+    * [自动补全](redis/shi-yong-redis-gou-jian-ying-yong-cheng-xu-zu-jian/zi-dong-bu-quan.md)
 * [Mysql](mysql.md)
 * [python参考手册](pythoncan-kao-shou-ce.md)
   * [词法约定和语法](ci-fa-yue-ding-he-yu-fa.md)
