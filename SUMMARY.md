@@ -236,4 +236,5 @@
       * [即时查询](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/ji-shi-cha-xun.md)
       * [二级索引](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/er-ji-suo-yin.md)
       * [复制](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/fu-zhi.md)
+      * [速度和耐久性](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/su-du-he-nai-jiu-xing.md)
 
