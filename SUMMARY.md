@@ -238,4 +238,6 @@
       * [复制](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/fu-zhi.md)
       * [速度和耐久性](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/su-du-he-nai-jiu-xing.md)
 * [深入浅出-python机器学习](shen-ru-qian-51fa-python-ji-qi-xue-xi.md)
+* [面试题](mian-shi-ti.md)
+  * [整数数组中两个数之和为目标数值](mian-shi-ti/zheng-shu-shu-zu-zhong-liang-ge-shu-zhi-he-wei-mu-biao-shu-zhi.md)
 
