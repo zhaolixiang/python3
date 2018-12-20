@@ -9,7 +9,21 @@
 代码：
 
 ```
+def two_sun(nums,target):
+    d={}
+    for i,num in enumerate(nums):
+        if target-num in d:
+            return [d[target-num],i]
+        d[num]=i
 
+if __name__ == '__main__':
+    print(two_sun([2,7,11,14],13))
+```
+
+运行结果：”
+
+```
+[0, 2]
 ```
 
 
