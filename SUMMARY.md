@@ -240,5 +240,6 @@
 * [深入浅出-python机器学习](shen-ru-qian-51fa-python-ji-qi-xue-xi.md)
 * [面试题](mian-shi-ti.md)
   * [整数数组中两个数之和为目标数值](mian-shi-ti/zheng-shu-shu-zu-zhong-liang-ge-shu-zhi-he-wei-mu-biao-shu-zhi.md)
-* Flask
+* [Flask](flask.md)
+  * [设置开发环境和生产环境](flask/she-zhi-kai-fa-huan-jing-he-sheng-chan-huan-jing.md)
 
