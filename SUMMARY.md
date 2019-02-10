@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [First Chapter](chapter1.md)
+* [Flask](flask.md)
 * [python知识语法精讲](pythonzhi-shi-yu-fa-jing-jiang.md)
   * [mac安装python3](macan-zhuang-python3.md)
   * [python控制台输入、输出](pythonkong-zhi-tai-shu-ru-3001-shu-chu.md)
@@ -238,6 +239,5 @@
       * [复制](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/fu-zhi.md)
       * [速度和耐久性](mongodb/wei-xian-dai-web-er-sheng-de-shu-ju-ku/mongodbde-zhu-yao-te-xing/su-du-he-nai-jiu-xing.md)
 * [深入浅出-python机器学习](shen-ru-qian-51fa-python-ji-qi-xue-xi.md)
-* [面试题](mian-shi-ti.md)
-  * [整数数组中两个数之和为目标数值](mian-shi-ti/zheng-shu-shu-zu-zhong-liang-ge-shu-zhi-he-wei-mu-biao-shu-zhi.md)
+* [Flask](flask.md)
 
