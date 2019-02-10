@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
 * [First Chapter](chapter1.md)
-* [Flask](flask.md)
 * [python知识语法精讲](pythonzhi-shi-yu-fa-jing-jiang.md)
   * [mac安装python3](macan-zhuang-python3.md)
   * [python控制台输入、输出](pythonkong-zhi-tai-shu-ru-3001-shu-chu.md)
