@@ -242,4 +242,5 @@
   * [整数数组中两个数之和为目标数值](mian-shi-ti/zheng-shu-shu-zu-zhong-liang-ge-shu-zhi-he-wei-mu-biao-shu-zhi.md)
 * [Flask](flask.md)
   * [设置开发环境和生产环境](flask/she-zhi-kai-fa-huan-jing-he-sheng-chan-huan-jing.md)
+  * [启动可以被外部访问的程序](flask/qi-dong-ke-yi-bei-wai-bu-fang-wen-de-cheng-xu.md)
 
