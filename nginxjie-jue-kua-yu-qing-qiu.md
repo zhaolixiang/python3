@@ -21,22 +21,23 @@ vim /usr/local/etc/nginx/nginx.conf
 
 ```
 server {
-        listen       8094;
+        listen       8080;
         server_name  localhost;
 
         #charset koi8-r;
 
         #access_log  logs/host.access.log  main;
-
-       location / {
-            root   html;
-            index  index.html index.htm;
-        }
-        location /apis {
+        location / {
     rewrite  ^.+apis/?(.*)$ /$1 break;
     include  uwsgi_params;
-       proxy_pass   http://localhost:1894;
-       }}
+       proxy_pass   http://localhost:8000;
+       }
+       location /api{
+       proxy_pass http://localhost:5001;
+       }
+
+
+     }
 ```
 
 重启生效
