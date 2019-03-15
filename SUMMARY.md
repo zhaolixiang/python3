@@ -244,5 +244,4 @@
 * [Flask](flask.md)
   * [设置开发环境和生产环境](flask/she-zhi-kai-fa-huan-jing-he-sheng-chan-huan-jing.md)
   * [常用命令](flask/qi-dong-ke-yi-bei-wai-bu-fang-wen-de-cheng-xu.md)
-* [nginx解决跨域请求](nginxjie-jue-kua-yu-qing-qiu.md)
 
