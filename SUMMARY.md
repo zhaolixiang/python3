@@ -7,7 +7,6 @@
   * [python控制台输入、输出](pythonkong-zhi-tai-shu-ru-3001-shu-chu.md)
   * [python运算符、比较、逻辑运算符](pythonyun-suan-fu-3001-bi-jiao-3001-luo-ji-yun-suan-fu.md)
   * [python判断与循环语句](pythonpan-duan-yu-xun-huan-yu-ju.md)
-  * [字符串处理](zi-fu-chuan-chu-li.md)
   * [python列表处理](pythonlie-biao-chu-li.md)
   * [利用range创建数值列表](li-yong-range-chuang-jian-shu-zhi-lie-biao.md)
   * [字典处理](zi-dian-chu-li.md)
