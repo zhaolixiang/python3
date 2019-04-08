@@ -56,7 +56,6 @@
   * [网络编程与套接字](wang-luo-bian-cheng-yu-tao-jie-zi.md)
 * [Python实用技法250篇](pythonshi-yong-ji-fa-100-pian.md)
   * [数据结构与算法](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa.md)
-    * [使用deque保留最新的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-yong-deque-bao-liu-zui-xin-de-n-ge-yuan-su.md)
     * [找到最大或最小的N个元素](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/zhao-dao-zui-da-huo-zui-xiao-de-n-ge-yuan-su.md)
     * [实现优先级队列](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/shi-xian-you-xian-ji-dui-lie.md)
     * [一键多值字典：defaultdict](pythonshi-yong-ji-fa-100-pian/shu-ju-jie-gou-yu-suan-fa/yi-jian-duo-zhi-zi-dian.md)
